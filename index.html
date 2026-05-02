@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ash — Graphic Designer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <script>
+    (function () {
+      var saved = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
+
+  <!-- ── Navigation ─────────────────────────────────── -->
+  <header class="nav-header">
+    <nav class="nav-container">
+      <a href="#" class="nav-logo">Ash</a>
+      <ul class="nav-links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <!-- Sun: shown in dark mode -->
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/>
+          <line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/>
+          <line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <!-- Moon: shown in light mode -->
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ── Hero ───────────────────────────────────────── -->
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Graphic Designer</p>
+        <h1 class="hero-name">Ash</h1>
+        <p class="hero-tagline">Designed with intention.</p>
+        <a href="#work" class="btn-primary">View My Work</a>
+      </div>
+    </section>
+
+    <!-- ── Services ───────────────────────────────────── -->
+    <section id="work" class="services">
+      <div class="container">
+        <h2 class="section-title">What I Do</h2>
+        <p class="section-subtitle">From concept to final file — thoughtful design at every stage.</p>
+        <div class="services-grid">
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="24,4 30,18 46,18 34,28 38,44 24,34 10,44 14,28 2,18 18,18"/>
+              </svg>
+            </div>
+            <h3>Brand Identity</h3>
+            <p>Logos, color systems, and visual language that tell your story at a glance. Built to scale from business card to billboard.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="8" y="4" width="32" height="40" rx="2"/>
+                <line x1="16" y1="16" x2="32" y2="16"/>
+                <line x1="16" y1="24" x2="32" y2="24"/>
+                <line x1="16" y1="32" x2="24" y2="32"/>
+              </svg>
+            </div>
+            <h3>Print &amp; Editorial</h3>
+            <p>Brochures, posters, books, and packaging with layouts that guide the eye and elevate the message.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="4" y="8" width="40" height="28" rx="2"/>
+                <line x1="16" y1="44" x2="32" y2="44"/>
+                <line x1="24" y1="36" x2="24" y2="44"/>
+              </svg>
+            </div>
+            <h3>Digital Design</h3>
+            <p>Social media graphics, web assets, and UI components that feel polished on every screen size.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── About ──────────────────────────────────────── -->
+    <section id="about" class="about">
+      <div class="container about-inner">
+        <div class="about-image">
+          <div class="image-placeholder" role="img" aria-label="Photo of Ash"></div>
+        </div>
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>Hi, I'm Ash — a graphic designer based in [City]. I've spent the last [X] years helping brands find their visual voice, working with clients ranging from independent studios to established businesses.</p>
+          <p>I believe good design is invisible: it communicates, guides, and resonates without getting in the way. Whether you're building something new or refreshing something existing, I'd love to help.</p>
+          <a href="#contact" class="btn-secondary">Let's Talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ────────────────────────────────────── -->
+    <section id="contact" class="contact">
+      <div class="container contact-inner">
+        <h2>Get in Touch</h2>
+        <p class="contact-sub">Have a project in mind? I'm currently accepting new clients.</p>
+        <a href="mailto:hello@example.com" class="contact-email">hello@example.com</a>
+        <p class="contact-note">
+          Or find me on
+          <a href="#" aria-label="Instagram">Instagram</a>
+          &middot;
+          <a href="#" aria-label="LinkedIn">LinkedIn</a>
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Ash. All rights reserved.</p>
+  </footer>
+
+
+  <script>
+    var btn = document.getElementById('theme-toggle');
+    btn.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var next = isDark ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
+
+</body>
+</html>
