@@ -334,6 +334,9 @@ a:hover { color: var(--black); }
 }
 @media (max-width: 767px) {
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); padding: 0 var(--gutter) 2px; }
+  .portfolio-item-overlay { padding: 10px; }
+  .portfolio-item-title { font-size: 9px; letter-spacing: 0.03em; }
+  .portfolio-item-cats { font-size: 8px; margin-top: 4px; }
 }
 
 .portfolio-item {
