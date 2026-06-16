@@ -235,8 +235,10 @@ a:hover { color: var(--black); }
   :root { --gutter: 24px; }
   .site-nav { gap: 20px; }
   .nav-link { font-size: 11px; }
+}
 
-  /* swap button row for dropdown */
+/* Filter: dropdown on anything below full desktop (≤1199px) */
+@media (max-width: 1199px) {
   .filter-bar { display: none; }
   .filter-bar-mobile {
     display: block;
