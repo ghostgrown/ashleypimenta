@@ -1,9 +1,11 @@
 /* Portfolio filter bar */
 (function () {
   const btns = document.querySelectorAll(".filter-btn");
-  const select = document.querySelector(".filter-select");
   const items = document.querySelectorAll(".portfolio-item");
-  if (!btns.length && !select) return;
+  const customSelect = document.getElementById("customSelect");
+  const trigger = customSelect && customSelect.querySelector(".custom-select-trigger");
+  const label = customSelect && customSelect.querySelector(".custom-select-label");
+  const options = customSelect ? customSelect.querySelectorAll(".custom-select-option") : [];
 
   function applyFilter(value) {
     items.forEach((item) => {
@@ -16,23 +18,55 @@
     });
   }
 
+  function syncButtons(value) {
+    btns.forEach((b) => b.classList.toggle("active", b.dataset.filter === value));
+  }
+
+  function syncDropdown(value) {
+    options.forEach((opt) => opt.classList.toggle("active", opt.dataset.value === value));
+    if (label) {
+      const active = [...options].find((o) => o.dataset.value === value);
+      if (active) label.textContent = active.textContent;
+    }
+  }
+
+  // Desktop buttons
   btns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      btns.forEach((b) => b.classList.remove("active"));
-      btn.classList.add("active");
-      if (select) select.value = btn.dataset.filter;
-      applyFilter(btn.dataset.filter);
+      const val = btn.dataset.filter;
+      syncButtons(val);
+      syncDropdown(val);
+      applyFilter(val);
     });
   });
 
-  if (select) {
-    select.addEventListener("change", () => {
-      btns.forEach((b) => {
-        b.classList.toggle("active", b.dataset.filter === select.value);
-      });
-      applyFilter(select.value);
+  // Custom dropdown
+  if (trigger) {
+    trigger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      customSelect.classList.toggle("open");
+      trigger.setAttribute("aria-expanded", customSelect.classList.contains("open"));
     });
   }
+
+  options.forEach((opt) => {
+    opt.addEventListener("click", () => {
+      const val = opt.dataset.value;
+      syncDropdown(val);
+      syncButtons(val);
+      applyFilter(val);
+      customSelect.classList.remove("open");
+      trigger.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Close on outside click
+  document.addEventListener("click", () => {
+    if (customSelect) {
+      customSelect.classList.remove("open");
+      if (trigger) trigger.setAttribute("aria-expanded", "false");
+    }
+  });
 })();
 
 /* Sliders */

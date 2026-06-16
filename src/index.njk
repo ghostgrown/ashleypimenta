@@ -20,19 +20,25 @@ bodyClass: home-page
 </div>
 
 <div class="filter-bar-mobile">
-  <select class="filter-select" aria-label="Filter by category">
-    <option value="all">All Work</option>
-    <option value="art-direction">Art Direction</option>
-    <option value="banner">Banner</option>
-    <option value="digital">Digital</option>
-    <option value="illustration">Illustration</option>
-    <option value="motion">Motion</option>
-    <option value="ooh">OOH</option>
-    <option value="print">Print</option>
-    <option value="promotional">Promotional</option>
-    <option value="social">Social</option>
-    <option value="ux-ui">UX/UI</option>
-  </select>
+  <div class="custom-select" id="customSelect">
+    <button class="custom-select-trigger" aria-haspopup="listbox" aria-expanded="false">
+      <span class="custom-select-label">All Work</span>
+      <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l5 5 5-5" stroke="#0f0f0f" stroke-width="1.5" stroke-linecap="round"/></svg>
+    </button>
+    <ul class="custom-select-list" role="listbox">
+      <li class="custom-select-option active" data-value="all" role="option">All Work</li>
+      <li class="custom-select-option" data-value="art-direction" role="option">Art Direction</li>
+      <li class="custom-select-option" data-value="banner" role="option">Banner</li>
+      <li class="custom-select-option" data-value="digital" role="option">Digital</li>
+      <li class="custom-select-option" data-value="illustration" role="option">Illustration</li>
+      <li class="custom-select-option" data-value="motion" role="option">Motion</li>
+      <li class="custom-select-option" data-value="ooh" role="option">OOH</li>
+      <li class="custom-select-option" data-value="print" role="option">Print</li>
+      <li class="custom-select-option" data-value="promotional" role="option">Promotional</li>
+      <li class="custom-select-option" data-value="social" role="option">Social</li>
+      <li class="custom-select-option" data-value="ux-ui" role="option">UX/UI</li>
+    </ul>
+  </div>
 </div>
 
 <div class="portfolio-grid">
