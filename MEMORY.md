@@ -1,88 +1,77 @@
-# Portfolio Dev Log
+# ashleypimenta.com — Project Memory
 
-Running notes for picking this project back up between sprints.
+Eleventy portfolio site for Ashley M. Bettencourt-Pimenta. Live at `ashleypimenta.netlify.app`. Custom domain (`ashleypimenta.com`) still on Dreamhost — DNS flip pending.
 
----
+## Stack
 
-## Project Overview
+- **SSG:** Eleventy 2.x + Nunjucks templates
+- **Hosting:** Netlify (free tier) — auto-deploys on push to `main`
+- **Netlify site ID:** `50562b82-88f4-4738-b562-c86ddcf6b685`
+- **Fonts:** Lato (Google Fonts) + Font Awesome 6.5 (footer icons)
+- **Breakpoints:** 767px mobile, 991px tablet, 1199px desktop-sm
+- **Gutter:** `--gutter` CSS var — 40px desktop / 24px tablet / 20px mobile
 
-Single-page portfolio site for **Ash**, graphic designer.
-Stack: semantic HTML5 + plain CSS. No frameworks, no build tools — open `index.html` in a browser to preview.
-
----
-
-## File Structure
+## Repo Structure
 
 ```
-my-first-portfolio/
-├── index.html      — all markup, one page
-├── styles.css      — all styles, plain CSS with custom properties
-└── MEMORY.md       — this file
+ashleypimenta/
+├── src/                    — Eleventy source
+│   ├── _data/              — projects.js, photography.js (custom YAML parsers)
+│   ├── _includes/layouts/  — base.njk, project.njk
+│   ├── assets/css/         — style.css
+│   ├── assets/js/          — main.js (filter, slider, lightbox, nav)
+│   ├── admin/              — Decap CMS (not wired yet)
+│   ├── index.njk           — Work page (main portfolio grid)
+│   ├── work/index.njk      — Individual project template
+│   ├── photography.njk
+│   ├── explorations.njk
+│   ├── scad.njk
+│   └── about.njk
+├── content/
+│   ├── projects/*.md       — 35 project files
+│   └── photography.yml     — 68 photos with width classes
+├── uploads/                — All project images (in git, pushed by year)
+├── netlify.toml            — build: npm run build, publish: _site
+├── .eleventy.js            — passthrough copy, collections, filters
+├── package.json
+└── _site/                  — built output (gitignored)
 ```
 
----
+## Dev
 
-## Design System
+```bash
+cd /Users/ash/Code/ashleypimenta
+npm start        # eleventy --serve on :8080, auto-reloads
+npm run build    # one-shot build to _site/
+```
 
-| Token | Value | Notes |
+## Filter Bar
+
+- **Desktop (>991px):** 11 buttons — All Work, Art Direction, Banner, Digital, Illustration, Motion, OOH, Print, Promotional, Social, UX/UI
+- **Mobile/Tablet (≤991px):** `<select>` dropdown replaces button row
+- Filter bar lives ABOVE and OUTSIDE the portfolio grid — inside causes mobile overflow clipping
+
+## Project Flags (in .md frontmatter)
+
+| Flag | Effect |
+|---|---|
+| (none) | Main Work grid |
+| `exploration: true` | Explorations / SCAD page only |
+| `hidden: true` | Excluded from site entirely |
+
+## Site Pages
+
+| Page | URL | Nav |
 |---|---|---|
-| `--accent` | `#C96442` | Terracotta — the signature color |
-| `--accent-light` | `#FBF5F2` / `#1E1410` | Tinted section backgrounds (light / dark) |
-| `--bg` | `#FFFFFF` / `#141210` | Page background (light / dark) |
-| `--bg-nav` | `rgba(255,255,255,0.94)` / `rgba(20,18,16,0.94)` | Frosted nav (light / dark) |
-| `--text` | `#1C1C1C` / `#F0EAE5` | Body text (light / dark) |
-| `--text-muted` | `#787878` / `#9A8880` | Secondary text (light / dark) |
-| `--border` | `#E8E0DC` / `#3A2C26` | Lines & outlines (light / dark) |
-| `--font-serif` | Cormorant Garamond | Headings, hero name, tagline |
-| `--font-sans` | Inter | Body, nav links, buttons |
+| Work | `/` | Work |
+| SCAD | `/scad/` | Creative Explorations |
+| Photography | `/photography/` | Photography |
+| About | `/about/` | About |
+| Explorations | `/explorations/` | (hidden from nav) |
 
-Dark mode is driven by `[data-theme="dark"]` on `<html>`. Preference is saved to `localStorage`; first-time visitors inherit `prefers-color-scheme`.
+## Open Items
 
----
-
-## Sections Built
-
-| Section | ID | Notes |
-|---|---|---|
-| Nav | — | Fixed, frosted glass. Logo + 3 links + dark/light toggle |
-| Hero | `#hero` | Full-viewport. Eyebrow label, display name, italic tagline, CTA button |
-| Services | `#work` | 3-column grid of outlined terracotta cards with inline SVG icons |
-| About | `#about` | 2-col: image placeholder left, text + button right |
-| Contact | `#contact` | Centered. Email link, Instagram + LinkedIn placeholders |
-| Footer | — | Simple copyright line |
-
----
-
-## Session Log
-
-### Sprint 1 — 2026-05-02
-- Built initial page from scratch: `index.html` + `styles.css`
-- Fonts: Cormorant Garamond (serif headings) + Inter (sans body)
-- Services cards changed from filled white blocks → transparent with terracotta outline
-- Added light/dark mode toggle to nav
-  - Moon icon shown in light mode, sun in dark mode
-  - Anti-flash inline script at top of `<body>` prevents wrong-theme flicker on load
-
----
-
-## Placeholder Content to Swap Out
-
-- `[City]` — designer's location (About section)
-- `[X]` — years of experience (About section)
-- `hello@example.com` — real contact email (Contact section + `mailto:` href)
-- `#` hrefs on Instagram and LinkedIn links
-- About paragraphs — replace with real bio
-- Services descriptions — tailor to actual offerings
-- Image placeholder in About — replace `.image-placeholder` div with a real `<img>`
-
----
-
-## Ideas / Next Steps
-
-- [ ] Portfolio / work grid section (case study cards with hover overlays)
-- [ ] Scroll-triggered fade-in animations (Intersection Observer, no libraries)
-- [ ] Active nav link highlight on scroll
-- [ ] Mobile hamburger menu
-- [ ] Favicon
-- [ ] Open Graph meta tags for social sharing
-- [ ] Deploy (Netlify / GitHub Pages — just drag the folder)
+- [ ] **Domain DNS flip** — point ashleypimenta.com to Netlify, cancel Dreamhost
+- [ ] **Decap CMS** — wire up `/admin/` with Netlify Identity
+- [ ] **Remaining captions** — burberry, bookcovers, palmsnights, basquiat-book, lifeisgood, thetruth, evalongoria, cnn-dei, cnn-back-to-where-it-all-began, juliachild, people-of-earth, moonstruck-fine-foods
+- [ ] **BMW order** — lone item at bottom of 4-col grid, ask Ashley where she wants it
