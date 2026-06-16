@@ -14,6 +14,14 @@ Do NOT change this breakpoint without Ashley's explicit approval. Accessibility 
 ## Never use native `<select>` for styled dropdowns
 macOS/iOS override the open-state appearance regardless of CSS. Use the custom div-based dropdown pattern in `src/index.njk` (`#customSelect`) for any dropdown that needs to match the site style.
 
+## When Ashley says "update memory"
+1. Save any new memory files and update MEMORY.md as needed
+2. **Always output a session summary** formatted exactly as:
+   - Header: `SESSION — YYYY-MM-DD`
+   - Body: bullet points of everything worked on
+   - No apostrophes anywhere in the summary
+   Do this every time without being asked again.
+
 ## Source files
 - `src/assets/css/style.css` — all styles
 - `src/assets/js/main.js` — filter logic, slider, lightbox, nav

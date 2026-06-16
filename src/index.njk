@@ -3,7 +3,12 @@ layout: layouts/base.njk
 bodyClass: home-page
 ---
 
-<h1 class="page-heading">Portfolio</h1>
+<div class="page-hero">
+  <h1 class="hero-name">Ashley M. Bettencourt-Pimenta</h1>
+  <p class="hero-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+</div>
+
+<h2 class="page-heading">Work</h2>
 
 <div class="filter-bar">
   <button class="filter-btn active" data-filter="all">All Work</button>
@@ -50,7 +55,6 @@ bodyClass: home-page
     {% endif %}
     <div class="portfolio-item-overlay">
       <h3 class="portfolio-item-title">{{ p.title }}</h3>
-      <p class="portfolio-item-cats">{{ p.categories | join(" / ") }}</p>
     </div>
   </a>
   {% endif %}

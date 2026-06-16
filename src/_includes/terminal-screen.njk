@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found</title>
+  <link rel="icon" type="image/png" href="/uploads/2024/11/cropped-AshleyPimenta_Logo-2024-Badge-32x32.png">
+  <style>
+    :root { --green: #1ff042; }
+
+    @keyframes cursor-blink {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+
+    /* whole-screen CRT flicker — barely-there brightness jitter */
+    @keyframes crt-flicker {
+      0%   { opacity: 0.92; }
+      8%   { opacity: 0.85; }
+      9%   { opacity: 0.95; }
+      20%  { opacity: 0.88; }
+      50%  { opacity: 0.93; }
+      71%  { opacity: 0.86; }
+      72%  { opacity: 0.96; }
+      100% { opacity: 0.9; }
+    }
+
+    /* slow vertical drift of a faint bright band, like a rolling CRT */
+    @keyframes crt-roll {
+      0%   { background-position: 0 0; }
+      100% { background-position: 0 100vh; }
+    }
+
+    /* power-on: screen blooms open from a thin line */
+    @keyframes power-on {
+      0%   { transform: scaleY(0.004) scaleX(1); opacity: 0; filter: brightness(6); }
+      35%  { transform: scaleY(0.004) scaleX(1); opacity: 1; filter: brightness(6); }
+      55%  { transform: scaleY(1) scaleX(1); opacity: 1; filter: brightness(2); }
+      100% { transform: scaleY(1) scaleX(1); opacity: 1; filter: brightness(1); }
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body { height: 100%; margin: 0; }
+
+    html { background: #000; }
+
+    body {
+      background:
+        radial-gradient(ellipse at center, rgba(31, 240, 66, 0.10) 0%, rgba(0, 0, 0, 0) 60%),
+        #000;
+      color: var(--green);
+      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+      min-height: 100vh;
+      cursor: text;
+      text-shadow: 0 0 3px rgba(31, 240, 66, 0.55);
+      /* whole screen powers on, then settles into a faint flicker */
+      transform-origin: center;
+      animation: power-on 0.7s ease-out both, crt-flicker 5s linear 0.7s infinite;
+    }
+
+    /* ===== CRT overlay: scanlines + rolling band + vignette over everything ===== */
+    .crt {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    /* fine horizontal scanlines across the whole page */
+    .crt::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.28) 3px,
+        rgba(0, 0, 0, 0.28) 4px
+      );
+    }
+    /* corner vignette + a soft rolling bright band */
+    .crt::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(31, 240, 66, 0.04), rgba(31, 240, 66, 0.04));
+      box-shadow: inset 0 0 180px 40px rgba(0, 0, 0, 0.9);
+    }
+    /* the slow rolling scan band */
+    .crt-roll {
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(31, 240, 66, 0.05) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      background-size: 100% 240px;
+      background-repeat: no-repeat;
+      animation: crt-roll 7s linear infinite;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body { animation: none; }
+      .crt-roll { animation: none; display: none; }
+    }
+
+    /* full-screen click target keeps focus on the hidden input */
+    .terminal {
+      padding: clamp(1.5rem, 5vw, 4rem);
+      min-height: 100vh;
+    }
+
+    .prompt {
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      white-space: pre-wrap;
+      text-shadow: 0 0 2px rgba(31, 240, 66, 0.75);
+      line-height: 1.25;
+      margin: 0 0 0.75em;
+    }
+
+    .prompt::before { content: "> "; }
+
+    /* the live line the visitor is typing into — gets a blinking block cursor */
+    .live::after {
+      content: "";
+      display: inline-block;
+      vertical-align: -0.15em;
+      width: 0.6em;
+      height: 1em;
+      margin-left: 4px;
+      background: var(--green);
+      box-shadow: 0 0 2px rgba(31, 240, 66, 0.65);
+      animation: cursor-blink 1.25s steps(1) infinite;
+    }
+
+    /* hidden input — captures keystrokes, never shown */
+    .capture {
+      position: fixed;
+      top: 0; left: 0;
+      width: 1px; height: 1px;
+      opacity: 0;
+      border: 0; padding: 0;
+      background: transparent;
+      color: transparent;
+    }
+
+    @keyframes boot-flicker {
+      0%   { opacity: 0; }
+      10%  { opacity: 0.4; }
+      15%  { opacity: 0.1; }
+      25%  { opacity: 0.8; }
+      30%  { opacity: 0.2; }
+      45%  { opacity: 1; }
+      50%  { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    /* bright bar that sweeps down the monogram like a scanner pass */
+    @keyframes scan-sweep {
+      0%   { transform: translateY(-110%); }
+      100% { transform: translateY(110%); }
+    }
+
+    /* the logo reveal — black PNG recolored to phosphor green via alpha mask */
+    .logo-reveal {
+      margin: 1.5rem 0 0.5rem;
+      opacity: 0;
+    }
+    .logo-reveal.show { opacity: 1; }
+
+    .logo-phosphor {
+      position: relative;
+      overflow: hidden;
+      width: clamp(160px, 40vw, 280px);
+      aspect-ratio: 786 / 511;
+      background-color: var(--green);
+      /* the monogram shape clips the green fill AND both overlays below */
+      -webkit-mask: url("/uploads/2024/11/AshleyPimenta_Logo-2024.png") center / contain no-repeat;
+      mask: url("/uploads/2024/11/AshleyPimenta_Logo-2024.png") center / contain no-repeat;
+      filter: drop-shadow(0 0 10px rgba(31, 240, 66, 0.7));
+    }
+    .logo-reveal.show .logo-phosphor {
+      animation: boot-flicker 0.9s steps(1, end) 1 both;
+    }
+
+    /* static CRT scanlines, clipped to the monogram by the parent mask */
+    .logo-phosphor::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0,
+        rgba(0, 0, 0, 0) 2px,
+        rgba(0, 0, 0, 0.45) 3px,
+        rgba(0, 0, 0, 0.45) 4px
+      );
+      pointer-events: none;
+    }
+
+    /* the moving scanner bar — phosphor green, no white */
+    .logo-phosphor::before {
+      content: "";
+      position: absolute;
+      left: 0; right: 0;
+      height: 40%;
+      background: linear-gradient(
+        to bottom,
+        rgba(31, 240, 66, 0) 0%,
+        rgba(180, 255, 190, 0.9) 50%,
+        rgba(31, 240, 66, 0) 100%
+      );
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    .logo-reveal.show .logo-phosphor::before {
+      animation: scan-sweep 0.5s ease-in-out 0.2s 2 both;
+    }
+
+    a { color: var(--green); }
+  </style>
+</head>
+<body>
+  <div class="crt-roll" aria-hidden="true"></div>
+  <div class="crt" aria-hidden="true"></div>
+
+  <form class="terminal" id="terminal" autocomplete="off">
+    <p class="prompt">AMBP-DOS v4.0.4  —  SYSTEM HALTED</p>
+    <p class="prompt">404 — the page you requested cannot be found.</p>
+    <p class="prompt">try saying the magic word.  (or 'help' for a way home)</p>
+    <p class="prompt live" id="liveLine"></p>
+    <input type="text" class="capture" id="capture" autofocus
+           autocapitalize="off" autocorrect="off" spellcheck="false">
+  </form>
+
+  <script>
+    (function () {
+      var terminal = document.getElementById("terminal");
+      var input = document.getElementById("capture");
+      var live = document.getElementById("liveLine");
+
+      // keep focus on the hidden input no matter where the visitor clicks
+      input.focus();
+      document.body.addEventListener("click", function () { input.focus(); });
+
+      // mirror what's being typed into the live line
+      input.addEventListener("input", function () {
+        live.textContent = input.value;
+      });
+
+      function println(text) {
+        var p = document.createElement("p");
+        p.className = "prompt";
+        p.textContent = text;
+        terminal.insertBefore(p, live);
+      }
+
+      var commands = {
+        abracadabra: showLogo,
+        help: function () {
+          println("commands: abracadabra · home · work · about · photography");
+        },
+        home: function () { window.location.href = "/"; },
+        work: function () { window.location.href = "/"; },
+        about: function () { window.location.href = "/about/"; },
+        photography: function () { window.location.href = "/photography/"; }
+      };
+
+      terminal.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var raw = input.value.trim();
+        var cmd = raw.toLowerCase();
+        if (raw) println("> " + raw);          // echo the entered command
+        input.value = "";
+        live.textContent = "";
+
+        if (commands[cmd]) {
+          commands[cmd]();
+        } else if (raw) {
+          println("sorry, '" + raw + "' is not recognized. try the magic word, or 'help'.");
+        }
+        live.scrollIntoView({ block: "end" });
+      });
+
+      // the easter egg — a robotic boot sequence that assembles the monogram
+      function showLogo() {
+        // machine boot log, printed line by line on a timer
+        var bootLog = [
+          "> ACCESS GRANTED",
+          "> INITIALIZING AMBP.SYS …",
+          "> LOADING MONOGRAM ░░░░░░░░",
+          "> RECONSTRUCTING ▓▓▓▓▓▓▓▓"
+        ];
+        bootLog.forEach(function (msg, i) {
+          setTimeout(function () { println(msg); live.scrollIntoView({ block: "end" }); }, i * 320);
+        });
+
+        var afterBoot = bootLog.length * 320;
+
+        // scramble-decrypt the name once the boot log finishes
+        var line = document.createElement("p");
+        line.className = "prompt";
+        terminal.insertBefore(line, live);
+        setTimeout(function () {
+          scramble(line, "ASHLEY M. BETTENCOURT-PIMENTA");
+        }, afterBoot);
+
+        // build the masked monogram, hidden until the scan kicks in
+        var wrap = document.createElement("div");
+        wrap.className = "logo-reveal";
+        wrap.innerHTML = '<div class="logo-phosphor" role="img" ' +
+          'aria-label="Ashley M. Bettencourt-Pimenta logo"></div>';
+        terminal.insertBefore(wrap, live);
+
+        // flicker + scan-sweep reveal after the name decrypts
+        setTimeout(function () {
+          wrap.classList.add("show");
+          wrap.scrollIntoView({ block: "end" });
+        }, afterBoot + 600);
+      }
+
+      // glitchy character-scramble that settles into the final string
+      function scramble(el, finalText) {
+        var glyphs = ";.,:~`*+/\\|".split("");
+        var chars = finalText.split("");
+        var settled = 0;
+
+        var timer = setInterval(function () {
+          el.textContent = chars.map(function (ch, i) {
+            if (ch === " ") return " ";
+            if (i < settled) return ch;
+            return glyphs[Math.floor(Math.random() * glyphs.length)];
+          }).join("");
+
+          settled += 1;
+          if (settled > chars.length) clearInterval(timer);
+        }, 35);
+      }
+    }());
+  </script>
+</body>
+</html>

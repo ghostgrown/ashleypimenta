@@ -16,11 +16,6 @@ eleventyComputed:
     {% if project.subtitle %}
     <p class="project-subtitle">{{ project.subtitle }}</p>
     {% endif %}
-    <div class="project-categories">
-      {% for cat in project.categories %}
-      <span class="project-cat">{{ cat }}</span>
-      {% endfor %}
-    </div>
     {% if project.description %}
     <div class="project-description">
       {{ project.description | nl2br | safe }}

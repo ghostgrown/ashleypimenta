@@ -1,0 +1,86 @@
+<style>
+  .notfound {
+    text-align: center;
+    padding: clamp(3rem, 10vh, 7rem) 1.5rem;
+    color: var(--black);
+  }
+
+  /* hand-drawn sad face — original mark in Ashley's line language */
+  .notfound-face {
+    width: clamp(140px, 32vw, 210px);
+    height: auto;
+    margin: 0 auto 2rem;
+    display: block;
+    overflow: visible;
+  }
+  /* a gentle drip on the tear */
+  @keyframes tear-drip {
+    0%, 70%  { transform: translateY(0); opacity: 1; }
+    100%     { transform: translateY(6px); opacity: 0.85; }
+  }
+  .notfound-tear {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: tear-drip 2.6s ease-in-out infinite alternate;
+  }
+
+  .notfound-kicker {
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin: 0 0 0.6rem;
+  }
+  .notfound-msg {
+    font-family: var(--font);
+    font-weight: 900;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    line-height: 1.1;
+    margin: 0 0 0.5rem;
+  }
+  .notfound-sub {
+    font-family: var(--font);
+    font-weight: 300;
+    font-size: 1.05rem;
+    max-width: 32ch;
+    margin: 0 auto 2rem;
+    color: #555;
+  }
+  .notfound-home {
+    display: inline-block;
+    font-family: var(--font);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--mid);
+    border-bottom: 2px solid var(--mid);
+    padding-bottom: 2px;
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+  .notfound-home:hover { color: var(--black); border-color: var(--black); }
+</style>
+
+<section class="notfound">
+  <svg class="notfound-face" viewBox="0 0 280 200" role="img"
+       aria-label="A sad face" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- eyes -->
+    <circle cx="96"  cy="104" r="13" fill="var(--black)"/>
+    <circle cx="184" cy="104" r="13" fill="var(--black)"/>
+    <!-- frown -->
+    <path d="M66 170 C 110 120, 170 120, 214 170"
+          stroke="var(--black)" stroke-width="16"
+          stroke-linecap="round"/>
+    <!-- blue tear -->
+    <path class="notfound-tear"
+          d="M184 124 C 174 144, 174 156, 184 162 C 194 156, 194 144, 184 124 Z"
+          fill="var(--accent)"/>
+  </svg>
+
+  <p class="notfound-kicker">Error 404</p>
+  <h1 class="notfound-msg">This page wandered off.</h1>
+  <p class="notfound-sub">The file you were looking for couldn’t be found.</p>
+  <a class="notfound-home" href="/">← Back to home</a>
+</section>
