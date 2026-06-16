@@ -1,0 +1,52 @@
+---
+layout: layouts/base.njk
+bodyClass: home-page
+---
+
+<h1 class="page-heading">Portfolio</h1>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">All Work</button>
+  <button class="filter-btn" data-filter="art-direction">Art Direction</button>
+  <button class="filter-btn" data-filter="banner">Banner</button>
+  <button class="filter-btn" data-filter="digital">Digital</button>
+  <button class="filter-btn" data-filter="illustration">Illustration</button>
+  <button class="filter-btn" data-filter="motion">Motion</button>
+  <button class="filter-btn" data-filter="ooh">OOH</button>
+  <button class="filter-btn" data-filter="print">Print</button>
+  <button class="filter-btn" data-filter="promotional">Promotional</button>
+  <button class="filter-btn" data-filter="social">Social</button>
+  <button class="filter-btn" data-filter="ux-ui">UX/UI</button>
+</div>
+
+<div class="filter-bar-mobile">
+  <select class="filter-select" aria-label="Filter by category">
+    <option value="all">All Work</option>
+    <option value="art-direction">Art Direction</option>
+    <option value="banner">Banner</option>
+    <option value="digital">Digital</option>
+    <option value="illustration">Illustration</option>
+    <option value="motion">Motion</option>
+    <option value="ooh">OOH</option>
+    <option value="print">Print</option>
+    <option value="promotional">Promotional</option>
+    <option value="social">Social</option>
+    <option value="ux-ui">UX/UI</option>
+  </select>
+</div>
+
+<div class="portfolio-grid">
+  {% for p in projects %}
+  {% if not p.exploration and not p.hidden %}
+  <a href="/work/{{ p.slug }}/" class="portfolio-item" data-categories="{{ p.categories | catClasses }}">
+    {% if p.cover %}
+    <img src="/uploads/{{ p.cover }}" alt="{{ p.title }}" loading="{% if loop.index <= 8 %}eager{% else %}lazy{% endif %}">
+    {% endif %}
+    <div class="portfolio-item-overlay">
+      <h3 class="portfolio-item-title">{{ p.title }}</h3>
+      <p class="portfolio-item-cats">{{ p.categories | join(" / ") }}</p>
+    </div>
+  </a>
+  {% endif %}
+  {% endfor %}
+</div>

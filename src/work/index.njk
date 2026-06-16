@@ -1,0 +1,79 @@
+---
+pagination:
+  data: projects
+  size: 1
+  alias: project
+permalink: "/work/{{ project.slug }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ project.title }}"
+---
+
+<div class="project-page">
+  <div class="project-header">
+    <a href="/" class="back-link">&#8592; Work</a>
+    <h1 class="project-title">{{ project.title }}</h1>
+    {% if project.subtitle %}
+    <p class="project-subtitle">{{ project.subtitle }}</p>
+    {% endif %}
+    <div class="project-categories">
+      {% for cat in project.categories %}
+      <span class="project-cat">{{ cat }}</span>
+      {% endfor %}
+    </div>
+    {% if project.description %}
+    <div class="project-description">
+      {{ project.description | nl2br | safe }}
+    </div>
+    {% endif %}
+    {% if project.links and project.links.length %}
+    <div class="project-links">
+      {% for link in project.links %}
+      <a href="{{ link.url }}" target="_blank" rel="noopener" class="project-link">{{ link.label }}</a>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+
+  {% if project.gallery and project.gallery.length %}
+  <div class="project-gallery">
+    {% for item in project.gallery %}
+
+      {% if item.type == "image" %}
+      <div class="gallery-item width-{{ item.width | replace('/', '-') }}">
+        <img src="/uploads/{{ item.image }}" alt="{{ item.caption or project.title }}" loading="lazy">
+        {% if item.caption %}
+        <p class="gallery-caption">{{ item.caption }}</p>
+        {% endif %}
+      </div>
+
+      {% elif item.type == "slider" %}
+      <div class="gallery-item gallery-slider width-{{ item.width | replace('/', '-') }}">
+        <div class="slider-track">
+          {% for slide in item.slides %}
+          <div class="slide {% if loop.first %}active{% endif %}">
+            <img src="/uploads/{{ slide.image }}" alt="{{ slide.caption or project.title }}" loading="lazy">
+            {% if slide.caption %}
+            <p class="gallery-caption">{{ slide.caption }}</p>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% if item.slides.length > 1 %}
+        <button class="slider-prev" aria-label="Previous">&#8249;</button>
+        <button class="slider-next" aria-label="Next">&#8250;</button>
+        {% endif %}
+      </div>
+
+      {% elif item.type == "video" %}
+      <div class="gallery-item gallery-video width-{{ item.width | replace('/', '-') }}">
+        <video autoplay muted loop playsinline controls>
+          <source src="/uploads/{{ item.file }}">
+        </video>
+      </div>
+      {% endif %}
+
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>

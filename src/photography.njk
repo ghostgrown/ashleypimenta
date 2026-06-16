@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Photography
+bodyClass: photography-page
+---
+
+<div class="photo-gallery">
+  {% for photo in photography %}
+  <div class="photo-item w-{{ photo.width or 'full' }}">
+    <img src="/uploads/{{ photo.image }}" alt="{{ photo.caption or 'Photography' }}" loading="{% if loop.index <= 9 %}eager{% else %}lazy{% endif %}">
+  </div>
+  {% endfor %}
+</div>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+  <img class="lightbox-img" src="" alt="">
+  <button class="lightbox-next" aria-label="Next">&#8250;</button>
+</div>

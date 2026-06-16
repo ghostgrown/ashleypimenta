@@ -1,0 +1,273 @@
+photos:
+  - order: 1
+    image: "2020/12/ashmpimenta-photography-101-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 2
+    image: "2020/12/ashmpimenta-photography-003-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 3
+    image: "2020/12/ashmpimenta-photography-004-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 4
+    image: "2020/12/ashmpimenta-photography-100-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 5
+    image: "2020/12/ashmpimenta-photography-138-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 6
+    image: "2020/12/ashmpimenta-photography-105-scaled.jpg"
+    width: "third"
+    caption: ""
+  - order: 7
+    image: "2020/12/ashmpimenta-photography-092-scaled.jpg"
+    width: "third"
+    caption: ""
+  - order: 8
+    image: "2020/12/ashmpimenta-photography-106-scaled.jpg"
+    width: "third"
+    caption: ""
+  - order: 9
+    image: "2020/12/ashmpimenta-photography-157-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 10
+    image: "2020/12/ashmpimenta-photography-161-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 11
+    image: "2020/12/ashmpimenta-photography-169-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 12
+    image: "2020/12/ashmpimenta-photography-176-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 13
+    image: "2020/12/ashmpimenta-photography-164-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 14
+    image: "2020/12/ashmpimenta-photography-148-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 15
+    image: "2020/12/ashmpimenta-photography-183-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 16
+    image: "2020/12/ashmpimenta-photography-061-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 17
+    image: "2020/12/ashmpimenta-photography-097-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 18
+    image: "2020/12/ashmpimenta-photography-032-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 19
+    image: "2020/12/ashmpimenta-photography-088-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 20
+    image: "2020/12/ashmpimenta-photography-111-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 21
+    image: "2020/12/ashmpimenta-photography-045-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 22
+    image: "2020/12/ashmpimenta-photography-009-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 23
+    image: "2020/12/ashmpimenta-photography-012-scaled-e1608074626592.jpg"
+    width: "full"
+    caption: ""
+  - order: 24
+    image: "2020/12/ashmpimenta-photography-127-1-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 25
+    image: "2020/12/ashmpimenta-photography-031-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 26
+    image: "2020/12/ashmpimenta-photography-119-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 27
+    image: "2020/12/ashmpimenta-photography-034-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 28
+    image: "2020/12/ashmpimenta-photography-060-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 29
+    image: "2020/12/ashmpimenta-photography-017-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 30
+    image: "2020/12/ashmpimenta-photography-057-1-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 31
+    image: "2020/12/ashmpimenta-photography-010-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 32
+    image: "2020/12/ashmpimenta-photography-079-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 33
+    image: "2020/12/ashmpimenta-photography-065-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 34
+    image: "2020/12/ashmpimenta-photography-064-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 35
+    image: "2020/12/ashmpimenta-photography-115-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 36
+    image: "2020/12/ashmpimenta-photography-042-scaled.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 37
+    image: "2020/12/ashmpimenta-photography-076-scaled.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 38
+    image: "2020/12/ashmpimenta-photography-043-scaled.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 39
+    image: "2020/12/ashmpimenta-photography-069-scaled.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 40
+    image: "2020/12/ashmpimenta-photography-068-scaled.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 41
+    image: "2020/12/ashmpimenta-photography-090-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 42
+    image: "2020/12/ashmpimenta-photography-085-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 43
+    image: "2020/12/ashmpimenta-photography-082-1-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 44
+    image: "2020/12/ashmpimenta-photography-083-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 45
+    image: "2020/12/ashmpimenta-photography-059-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 46
+    image: "2020/12/ashmpimenta-photography-087-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 47
+    image: "2020/12/ashmpimenta-photography-073-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 48
+    image: "2020/12/ashmpimenta-photography-086-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 49
+    image: "2020/12/ashmpimenta-photography-033-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 50
+    image: "2020/12/ashmpimenta-photography-048-1-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 51
+    image: "2020/12/ashmpimenta-photography-172-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 52
+    image: "2020/12/ashmpimenta-photography-179-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 53
+    image: "2020/12/ashmpimenta-photography-173-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 54
+    image: "2020/12/ashmpimenta-photography-150-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 55
+    image: "2020/12/ashmpimenta-photography-134-1-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 56
+    image: "2020/12/ashmpimenta-photography-162-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 57
+    image: "2020/12/ashmpimenta-photography-168-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 58
+    image: "2020/12/ashmpimenta-photography-151-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 59
+    image: "2020/12/ashmpimenta-photography-146-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 60
+    image: "2020/12/ashmpimenta-photography-143-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 61
+    image: "2020/12/ashmpimenta-photography-180-scaled.jpg"
+    width: "full"
+    caption: ""
+  - order: 62
+    image: "2020/12/ashmpimenta-photography-094-1-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 63
+    image: "2020/12/ashmpimenta-photography-095-scaled.jpg"
+    width: "half"
+    caption: ""
+  - order: 64
+    image: "2020/12/ashmpimenta-photography-022-scaled.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 65
+    image: "2020/12/ashmpimenta-photography-005.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 66
+    image: "2020/12/ashmpimenta-photography-037-scaled.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 67
+    image: "2020/12/ashmpimenta-photography-155-scaled.jpg"
+    width: "fifth"
+    caption: ""
+  - order: 68
+    image: "2020/12/ashmpimenta-photography-136-scaled.jpg"
+    width: "fifth"
+    caption: ""

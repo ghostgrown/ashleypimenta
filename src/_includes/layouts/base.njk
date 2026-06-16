@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} — {% endif %}Ashley M. Bettencourt-Pimenta</title>
+  <link rel="icon" type="image/png" href="/uploads/2024/11/cropped-AshleyPimenta_Logo-2024-Badge-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body class="{{ bodyClass }}">
+
+  <header class="site-header">
+    <a href="/" class="site-logo">
+      <img src="/uploads/2024/11/AshleyPimenta_Logo-2024.png" alt="Ashley M. Bettencourt-Pimenta">
+    </a>
+    <nav class="site-nav" id="site-nav">
+      <a href="/" class="nav-link {% if page.url == '/' %}active{% endif %}">Work</a>
+      <a href="/photography/" class="nav-link {% if page.url == '/photography/' %}active{% endif %}">Photography</a>
+      <a href="/about/" class="nav-link {% if page.url == '/about/' %}active{% endif %}">About</a>
+    </nav>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </header>
+
+  <main class="site-main">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <ul class="footer-social">
+      <li><a href="https://www.linkedin.com/in/ashbettencourt" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+      <li><a href="mailto:ashleypimentadesign@gmail.com?subject=Hello!" aria-label="Email"><i class="far fa-envelope"></i></a></li>
+    </ul>
+    <p>© <span class="year"></span> Ashley M. Bettencourt-Pimenta</p>
+  </footer>
+
+  <script src="/assets/js/main.js"></script>
+</body>
+</html>

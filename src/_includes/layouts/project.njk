@@ -1,0 +1,60 @@
+{% extends "layouts/base.njk" %}
+
+{% set p = project %}
+
+{% block content %}
+<div class="project-page">
+  <div class="project-header">
+    <a href="/" class="back-link">&#8592; Work</a>
+    <h1 class="project-title">{{ p.title }}</h1>
+    {% if p.subtitle %}
+    <p class="project-subtitle">{{ p.subtitle }}</p>
+    {% endif %}
+    <div class="project-categories">
+      {% for cat in p.categories %}
+      <span class="project-cat">{{ cat }}</span>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if p.gallery and p.gallery.length %}
+  <div class="project-gallery">
+    {% for item in p.gallery %}
+      {% if item.type == "image" %}
+      <div class="gallery-item width-{{ item.width | replace('/', '-') }}">
+        <img src="/uploads/{{ item.image }}" alt="{{ item.caption or p.title }}" loading="lazy">
+        {% if item.caption %}
+        <p class="gallery-caption">{{ item.caption }}</p>
+        {% endif %}
+      </div>
+
+      {% elif item.type == "slider" %}
+      <div class="gallery-item gallery-slider width-{{ item.width | replace('/', '-') }}">
+        <div class="slider-track">
+          {% for slide in item.slides %}
+          <div class="slide {% if loop.first %}active{% endif %}">
+            <img src="/uploads/{{ slide.image }}" alt="{{ slide.caption or p.title }}" loading="lazy">
+            {% if slide.caption %}
+            <p class="gallery-caption">{{ slide.caption }}</p>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+        {% if item.slides.length > 1 %}
+        <button class="slider-prev" aria-label="Previous">&#8249;</button>
+        <button class="slider-next" aria-label="Next">&#8250;</button>
+        {% endif %}
+      </div>
+
+      {% elif item.type == "video" %}
+      <div class="gallery-item gallery-video width-{{ item.width | replace('/', '-') }}">
+        <video autoplay muted loop playsinline controls>
+          <source src="/uploads/{{ item.file }}">
+        </video>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
