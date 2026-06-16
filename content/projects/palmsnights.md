@@ -9,7 +9,7 @@ cover: "2018/11/featureimage-palmsnights3.png"
 gallery:
   - type: image
     image: "2019/01/PalmsNights-Microsite-Homepage.png"
-    caption: ""
+    caption: "Palms Nights home page"
     width: "1-1"
   - type: slider
     width: "1-1"
@@ -36,7 +36,7 @@ gallery:
     width: "1-1"
   - type: image
     image: "2018/11/OOH-portfolio-rgb.png"
-    caption: ""
+    caption: "OOH bus shelter ad promo"
     width: "1-1"
 description: |
   CAMPAIGN | OOH, DIGITAL, PRINT

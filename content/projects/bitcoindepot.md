@@ -21,7 +21,7 @@ gallery:
     width: "1-1"
   - type: image
     image: "2020/03/BitcoinDepot-ATM-ScreenTM-Template_5760x2560-Portfolio-US-scaled.jpg"
-    caption: ""
+    caption: "Bitcoin Depot BTM Screen Design – United States Version"
     width: "1-1"
   - type: image
     image: "2020/03/Bitcoin-Depot-Product-Wrap-Left.jpg"
@@ -58,15 +58,15 @@ gallery:
     width: "1-1"
   - type: image
     image: "2020/03/BitcoinDepot-ContractFlyer-FINAL-A.png"
-    caption: ""
+    caption: "Digital Contract Flyer | Page 1"
     width: "1-1"
   - type: image
     image: "2020/03/BitcoinDepot-ContractFlyer-FINAL-B.png"
-    caption: ""
+    caption: "Digital Contract Flyer | Page 2"
     width: "1-1"
   - type: image
     image: "2020/03/BitcoinDepot-Franchise-Flyer-2021-FINAL.png"
-    caption: ""
+    caption: "Digital Franchise Flyer"
     width: "1-1"
   - type: image
     image: "2020/03/BitcoinDepot-HM-BannerSet.png"
@@ -81,35 +81,35 @@ gallery:
     width: "1-1"
   - type: image
     image: "2020/03/GoogleDisplayAdBanners-2020-1200x300-1.jpg"
-    caption: ""
+    caption: "Google Display Banner Ad | Set 1"
     width: "1-1"
   - type: image
     image: "2021/04/BitcoinDepot-googleads-2020-scaled.jpg"
-    caption: ""
+    caption: "Google Display Banner Ad | Set"
     width: "1-3"
   - type: image
     image: "2020/03/AppLaunch-Mockup-SM-3-FINAL-scaled.jpg"
-    caption: ""
+    caption: "APP Launch Rollout | Fullscreen Graphic"
     width: "1-1"
   - type: image
     image: "2020/03/AppLaunch-Website-Banner-scaled.jpg"
-    caption: ""
+    caption: "APP Launch Rollout | Bitcoin Depot Website Banner Graphic"
     width: "1-1"
   - type: image
     image: "2020/03/AppLaunch-EmailDesign-FINAL-scaled.png"
-    caption: ""
+    caption: "APP Launch Rollout | Email Design"
     width: "1-1"
   - type: image
     image: "2020/03/BitcoinDepot-NACS-HalfPage-AD.png"
-    caption: ""
+    caption: "NACS Half Page AD | Print"
     width: "1-1"
   - type: image
     image: "2020/03/BitcoinDepot-Newsletter-WeMissYou-6.29.20.jpg"
-    caption: ""
+    caption: "Abandoned Cart Email Graphic"
     width: "1-2"
   - type: image
     image: "2020/03/BitcoinDepot-GoogleDisplayAd-Set-2.png"
-    caption: ""
+    caption: "Promotional Banners + Google Display Banner Ads | 1080x1080, 1200x300, 300x250 728x90"
     width: "1-1"
   - type: image
     image: "2021/03/SM-TechMadness-2000x2000-1.jpg"
@@ -117,7 +117,7 @@ gallery:
     width: "1-3"
   - type: image
     image: "2021/05/SM-CyberSet-2-IG-scaled.jpg"
-    caption: ""
+    caption: "Social Media"
     width: "1-3"
   - type: image
     image: "2021/05/SM-10KFollowers.gif"
@@ -146,43 +146,43 @@ gallery:
         caption: ""
   - type: image
     image: "2020/03/SocialMedia-BTCFact_2000x2000-compressed.jpg"
-    caption: ""
+    caption: "Social Media Fact"
     width: "1-2"
   - type: image
     image: "2020/03/SM-BTCFacts2_3000x3000-ig-scaled.jpg"
-    caption: ""
+    caption: "Social Media | Bitcoin Fact"
     width: "1-2"
   - type: image
     image: "2020/03/SM-LTCFacts_3000x3000-scaled.jpg"
-    caption: ""
+    caption: "Social Media | Litecoin Fact"
     width: "1-2"
   - type: image
     image: "2020/03/SM-BTCFacts2_3000x3000-twitter-scaled.jpg"
-    caption: ""
+    caption: "Social Media | Bitcoin Fact"
     width: "1-2"
   - type: image
     image: "2020/03/SM-LTCFacts_Twitter2-scaled.jpg"
-    caption: ""
+    caption: "Social Media | Litecoin Fact"
     width: "1-2"
   - type: image
     image: "2020/03/SM-ETHFacts-Cover_2000x2000-compressed.jpg"
-    caption: ""
+    caption: "Social Media | Ethereum facts set"
     width: "1-3"
   - type: image
     image: "2020/03/SM-ETHFacts_2000x2000-compressed.v2.jpg"
-    caption: ""
+    caption: "Social Media | Ethereum facts set"
     width: "1-3"
   - type: image
     image: "2020/03/SM-ETHFacts-1_2000x2000-compressed.jpg"
-    caption: ""
+    caption: "Social Media | Ethereum facts set"
     width: "1-3"
   - type: image
     image: "2021/03/BitcoinDepot-SM-IG-500Giveaway-Graphic.jpg"
-    caption: ""
+    caption: "Social Media Graphic | Giveaway"
     width: "1-2"
   - type: image
     image: "2020/03/SM-Graphic-BuyOnline.jpg"
-    caption: ""
+    caption: "Social Media"
     width: "1-2"
   - type: image
     image: "2020/07/SocialMedia-IndependenceDay.v3-2020_2000x2000.gif"
@@ -190,15 +190,15 @@ gallery:
     width: "1-2"
   - type: image
     image: "2020/03/Artboard-1-scaled.jpg"
-    caption: ""
+    caption: "Social Media"
     width: "1-2"
   - type: image
     image: "2020/03/BitcoinDepot-SM-CoinDesk.v2-compressed.jpg"
-    caption: ""
+    caption: "Social Media | Quote"
     width: "1-2"
   - type: image
     image: "2020/03/sm-1000BTMs-2000x2000-1.gif"
-    caption: ""
+    caption: "Social Media | Animation"
     width: "1-2"
   - type: slider
     width: "1-4"
@@ -213,7 +213,7 @@ gallery:
         caption: ""
   - type: image
     image: "2020/05/SocialMedia-CincoDeMayo2020_2000x2000.jpg"
-    caption: ""
+    caption: "[Seasonal] Social Media Graphic | Cinco De Mayo"
     width: "1-4"
   - type: image
     image: "2020/03/BitcoinDepot-StPattysDay2020_2000x2000.jpg"
@@ -221,7 +221,7 @@ gallery:
     width: "1-4"
   - type: image
     image: "2021/06/SM-Pride-Graphic.jpg"
-    caption: ""
+    caption: "Social Media Graphic | Pride"
     width: "1-3"
   - type: image
     image: "2020/03/sm-pumpkin-2000x2000-1.jpg"

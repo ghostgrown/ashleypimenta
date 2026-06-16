@@ -13,7 +13,7 @@ gallery:
     width: "1-1"
   - type: image
     image: "2023/09/CNN_Amanpour_Enamel-Pin-Design_40yrs.jpg"
-    caption: ""
+    caption: "Pin Final Mockup"
     width: "1-1"
   - type: image
     image: "2023/09/AshleyPimenta_CNN_Amanpour_Pin.v3-1.png"

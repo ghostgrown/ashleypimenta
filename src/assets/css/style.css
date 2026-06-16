@@ -159,13 +159,13 @@ a:hover { color: var(--black); }
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--black);
-  background: var(--white);
-  border: 1px solid var(--black);
+  color: #0f0f0f;
+  background-color: #ffffff;
+  border: 1px solid #0f0f0f;
   border-radius: 0;
   appearance: none;
   -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%230f0f0f' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 14px center;
   padding-right: 36px;
@@ -273,7 +273,7 @@ a:hover { color: var(--black); }
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 767px) {
-  .portfolio-grid { grid-template-columns: 1fr; padding: 0 var(--gutter) 2px; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); padding: 0 var(--gutter) 2px; }
 }
 
 .portfolio-item {

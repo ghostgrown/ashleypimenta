@@ -16,7 +16,7 @@ gallery:
     width: "1-1"
   - type: image
     image: "2018/11/basquiat-finalhalfshot-2.jpg"
-    caption: ""
+    caption: "Sketches sections printed on matte, toothed paper"
     width: "1-1"
   - type: image
     image: "2018/11/an-artist.jpg"
@@ -24,7 +24,7 @@ gallery:
     width: "1-1"
   - type: image
     image: "2018/11/basquiat-halfshot.jpg"
-    caption: ""
+    caption: "Handwritten chapter titles mimicking Basquiat's style overlayed on a scan of one of his blank sketchbook pages"
     width: "1-1"
   - type: image
     image: "2018/11/basquiat-finalhalfshot-3-1.jpg"
@@ -32,11 +32,11 @@ gallery:
     width: "1-1"
   - type: image
     image: "2018/11/basquiat-finalhalfshot-1.jpg"
-    caption: ""
+    caption: "Die cut of Famous painting"
     width: "1-1"
   - type: image
     image: "2018/11/basquiat-halfshot-4.jpg"
-    caption: ""
+    caption: "Close up"
     width: "1-1"
 description: |
   BOOK DESIGN

@@ -12,10 +12,10 @@ gallery:
     width: "1-1"
   - type: image
     image: "2018/11/Social-1200x628_v14.jpg"
-    caption: ""
+    caption: "Web graphics created for New York Comedy Festival 2018."
     width: "1-1"
   - type: image
     image: "2018/11/Social-1200x628_v1.jpg"
-    caption: ""
+    caption: "Web graphics created for New York Comedy Festival 2018."
     width: "1-1"
 ---

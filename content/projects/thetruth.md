@@ -12,27 +12,28 @@ gallery:
     width: "1-1"
   - type: image
     image: "2019/02/alienmap-closedbookletform.jpg"
-    caption: ""
+    caption: "UFO Map: cover"
     width: "1-1"
   - type: image
     image: "2019/02/alienmap-semiopenedup.jpg"
-    caption: ""
+    caption: "UFO Map: half opened up"
     width: "1-1"
   - type: image
     image: "2019/02/alienmap.jpg"
-    caption: ""
+    caption: "UFO (charted) Map of accurate sightings, documented abduction sites, and crash landings. 
+Lines were created using pins and color coded thread that naturally created this unique pattern in connection to Earth's Ley Lines."
     width: "1-1"
   - type: image
     image: "2019/02/alienmap-closeup.jpg"
-    caption: ""
+    caption: "UFO Map: Close-up"
     width: "1-1"
   - type: image
     image: "2019/02/aliens-postcard-1.jpg"
-    caption: ""
+    caption: "Underground Press Postcard: Government DNA cloning"
     width: "1-1"
   - type: image
     image: "2019/02/aliens-postcard.jpg"
-    caption: ""
+    caption: "Underground Press Postcard: Government DNA cloning close-up"
     width: "1-1"
   - type: slider
     width: "1-1"
@@ -43,7 +44,8 @@ gallery:
         caption: ""
   - type: image
     image: "2019/02/Alien-Deliverables.png"
-    caption: ""
+    caption: "Underground Press Deliverables:
+Peace Treaty, Newspaper, Ley Lines booklet, UFO Map, Poisoned Planet Poster, Postcards"
     width: "1-1"
 description: |
   GRAPHIC DESIGN | ART DIRECTION

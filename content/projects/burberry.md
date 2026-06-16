@@ -8,7 +8,7 @@ cover: "2018/11/burberry-featureimage.jpg"
 gallery:
   - type: image
     image: "2018/11/headshot-burberry.jpg"
-    caption: ""
+    caption: "Complete invitation"
     width: "1-1"
   - type: image
     image: "2018/11/burberry-vertshot3.jpg"
@@ -16,15 +16,15 @@ gallery:
     width: "1-1"
   - type: image
     image: "2018/11/burberry-vertshot.jpg"
-    caption: ""
+    caption: "Gold foil on black paper"
     width: "1-1"
   - type: image
     image: "2018/11/burberry-halfshot.jpg"
-    caption: ""
+    caption: "Hand made envelope with plaid pattern interior under lipped black layer and vellum sleeve"
     width: "1-1"
   - type: image
     image: "2018/11/burberry-halfshot-3.jpg"
-    caption: ""
+    caption: "Hand cut die cut"
     width: "1-1"
   - type: image
     image: "2018/11/burberry-halfshot-2.jpg"

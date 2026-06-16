@@ -10,18 +10,18 @@ cover: "2022/08/featureimage-cnn-juliachild.jpg"
 gallery:
   - type: image
     image: "2022/07/JuliaChild-RoughCut-Collage-Mockup-Endpage-8B.jpg"
-    caption: ""
+    caption: "On-Air Fullscreen Graphic"
     width: "1-1"
   - type: video
     file: "2022/07/IMG_0019.mp4"
     width: "1-1"
   - type: image
     image: "2022/07/Julia-QuoteDesign-D.v3..jpg"
-    caption: ""
+    caption: "CNN Social Media Graphic"
     width: "1-1"
   - type: image
     image: "2022/07/Julia-QuoteDesign-A.v3.jpg"
-    caption: ""
+    caption: "CNN Social Media Graphic"
     width: "1-2"
   - type: slider
     width: "1-3"
@@ -58,7 +58,7 @@ gallery:
     width: "1-1"
   - type: image
     image: "2022/07/3.jpg"
-    caption: ""
+    caption: "Julia Child End Page Quote"
     width: "1-1"
   - type: image
     image: "2022/07/Julia_KeyArt_1920x1080.jpg"
