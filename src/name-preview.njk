@@ -1,0 +1,603 @@
+---
+layout: layouts/base.njk
+title: Name Font Preview
+permalink: /name-preview/
+---
+
+<style>
+  .np-wrap { max-width: 1100px; margin: 0 auto; padding: 40px var(--gutter, 32px) 80px; }
+  .np-intro { border-bottom: 1px solid #e8e8e8; padding-bottom: 24px; margin-bottom: 8px; }
+  .np-intro h2 { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; margin: 0 0 6px; }
+  .np-intro p { font-family: 'Lato', sans-serif; font-size: 13px; line-height: 1.6; color: #666; margin: 0; max-width: 680px; }
+
+  .np-card { padding: 40px 0 36px; border-bottom: 1px solid #ececec; overflow: hidden; }
+  .np-card.ship { background: #fafafa; margin: 0 calc(-1 * var(--gutter, 32px)); padding: 40px var(--gutter, 32px) 36px; }
+
+  .np-tag { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
+  .np-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 12px; color: #111; border: 1px solid #ccc; border-radius: 999px; padding: 3px 11px; letter-spacing: 0.04em; }
+  .np-num.win { background: #111; color: #fff; border-color: #111; }
+  .np-fontname { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #111; }
+  .np-spec { font-family: 'Lato', sans-serif; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #999; }
+  .np-why { font-family: 'Lato', sans-serif; font-size: 12.5px; line-height: 1.5; color: #555; margin: 14px 0 0; max-width: 720px; }
+
+  /* the name itself */
+  .np-name { color: #111; line-height: 1; white-space: nowrap; margin: 0; font-size: clamp(20px, 3.4vw, 37px); text-transform: uppercase; letter-spacing: 0.05em !important; }
+  .np-desc { font-family: 'Lato', sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-top: 12px; }
+
+  .opt-current { font-family: 'Source Serif Pro', serif; font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em; }
+  .opt-space   { font-family: 'Space Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+  .opt-inter   { font-family: 'Inter', sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+  .opt-plex    { font-family: 'IBM Plex Sans', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+  .opt-jost    { font-family: 'Jost', sans-serif; font-weight: 700; letter-spacing: 0.005em; }
+
+  /* wider net */
+  .opt-archivo { font-family: 'Archivo', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
+  .opt-manrope { font-family: 'Manrope', sans-serif; font-weight: 800; letter-spacing: -0.02em; }
+  .opt-dmsans  { font-family: 'DM Sans', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+  .opt-poppins { font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+  .opt-sora    { font-family: 'Sora', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+  .opt-oswald  { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.005em; }
+  .opt-syne    { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
+  .opt-bebas   { font-family: 'Bebas Neue', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.03em; }
+  .opt-anton   { font-family: 'Anton', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.01em; }
+
+  /* like syne — wide, arty, design-forward */
+  .opt-syne2      { font-family: 'Syne', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
+  .opt-bricolage  { font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
+  .opt-cabinet    { font-family: 'Cabinet Grotesk', sans-serif; font-weight: 800; letter-spacing: -0.01em; }
+  .opt-clash      { font-family: 'Clash Display', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+  .opt-unbounded  { font-family: 'Unbounded', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+  .opt-familjen   { font-family: 'Familjen Grotesk', sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+  .opt-anybody    { font-family: 'Anybody', sans-serif; font-weight: 800; font-stretch: 125%; font-variation-settings: 'wdth' 125; letter-spacing: -0.01em; }
+
+  /* condensed with character */
+  .opt-bigshould  { font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; letter-spacing: 0.01em; }
+  .opt-fjalla     { font-family: 'Fjalla One', sans-serif; font-weight: 400; letter-spacing: 0.005em; }
+  .opt-staat      { font-family: 'Staatliches', sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; }
+  .opt-saira      { font-family: 'Saira Semi Condensed', sans-serif; font-weight: 800; letter-spacing: 0; }
+  .opt-khand      { font-family: 'Khand', sans-serif; font-weight: 700; letter-spacing: 0.01em; }
+  .opt-archnarrow { font-family: 'Archivo Narrow', sans-serif; font-weight: 700; letter-spacing: 0.005em; }
+  .opt-teko       { font-family: 'Teko', sans-serif; font-weight: 600; letter-spacing: 0.01em; }
+  .opt-league     { font-family: 'League Gothic', sans-serif; font-weight: 400; letter-spacing: 0.005em; }
+  .opt-barlowsc   { font-family: 'Barlow Semi Condensed', sans-serif; font-weight: 700; letter-spacing: 0; }
+  .opt-pathway    { font-family: 'Pathway Gothic One', sans-serif; font-weight: 400; letter-spacing: 0.01em; }
+
+  .np-band { border: 0; border-top: 2px solid #111; margin: 56px 0 0; padding-top: 18px; }
+  .np-band h3 { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: #111; margin: 0 0 4px; }
+  .np-band p { font-family: 'Lato', sans-serif; font-size: 12.5px; line-height: 1.55; color: #777; margin: 0; max-width: 680px; }
+
+  @media (max-width: 560px) {
+    .np-name { white-space: normal; font-size: clamp(20px, 7vw, 30px); }
+  }
+
+  /* recommended block */
+  .np-rec { background: #0f0f0f; margin: 28px calc(-1 * var(--gutter, 32px)) 0; padding: 44px var(--gutter, 32px) 40px; }
+  .rec-flag { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: #6cf; margin: 0 0 26px; }
+  .rec-name { font-family: 'Big Shoulders Display', sans-serif; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: #fff; line-height: 0.92; display: flex; flex-direction: column; margin: 0; }
+  .rec-l1 { font-size: clamp(34px, 6.4vw, 72px); }
+  .rec-l2 { font-size: clamp(21px, 4.1vw, 46px); }
+  .rec-desc { font-family: 'Lato', sans-serif; font-weight: 400; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #888; margin-top: 22px; }
+  .rec-note { font-family: 'Lato', sans-serif; font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #bbb; margin: 14px 0 0; border-top: 1px solid #333; padding-top: 14px; }
+
+  /* all-caps comparison strip */
+  .caps-strip { padding: 6px 0 0; }
+  .cap-item { padding: 20px 0; border-bottom: 1px solid #ececec; }
+  .cap-item .lbl { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: #999; display: block; margin-bottom: 9px; }
+  .cap-item .lbl em { font-style: normal; color: #c0392b; }
+  .cap-name { text-transform: uppercase !important; letter-spacing: 0.06em !important; font-size: clamp(17px, 2.9vw, 33px); line-height: 1; color: #111; white-space: nowrap; margin: 0; }
+  @media (max-width: 560px) { .cap-name { white-space: normal; font-size: clamp(15px, 5.5vw, 22px); } }
+
+  /* lockups — Unbounded / split / brand */
+  .lockup { padding: 38px 0 34px; border-bottom: 1px solid #ececec; }
+  .lockup.brand { background: #faf7f2; margin: 0 calc(-1 * var(--gutter, 32px)); padding: 38px var(--gutter, 32px) 34px; }
+  .lock-tag { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #111; display: block; margin-bottom: 22px; }
+  .lock-tag em { font-style: normal; color: #b8860b; }
+  .lock-note { font-family: 'Lato', sans-serif; font-size: 11px; letter-spacing: 0.05em; text-transform: uppercase; color: #888; margin: 16px 0 0; }
+  .lk { display: flex; flex-direction: column; line-height: 0.93; margin: 0; text-transform: uppercase; color: #111; }
+  .lk span { display: block; white-space: nowrap; }
+  .lk-split .s1 { font-family: 'Unbounded', sans-serif; font-weight: 500; letter-spacing: 0.01em; font-size: clamp(30px, 5.4vw, 60px); }
+  .lk-split .s2 { font-family: 'Big Shoulders Display', sans-serif; font-weight: 600; letter-spacing: 0.05em; font-size: clamp(20px, 3.5vw, 40px); }
+  .lk-uall .u1 { font-family: 'Unbounded', sans-serif; font-weight: 500; letter-spacing: 0.01em; font-size: clamp(20px, 3.8vw, 34px); }
+  .lk-uall .u2 { font-family: 'Unbounded', sans-serif; font-weight: 500; letter-spacing: 0.01em; font-size: clamp(13px, 2.2vw, 20px); }
+  @media (max-width: 560px) {
+    .lk span { white-space: normal; }
+    .lk-split .s1 { font-size: clamp(26px, 9vw, 38px); }
+    .lk-split .s2 { font-size: clamp(17px, 6vw, 24px); }
+  }
+
+  /* clever-vs-lazy header mockups */
+  .mock { border: 1px solid #ddd; border-radius: 8px; overflow: hidden; margin-bottom: 24px; background: #fff; }
+  .mock-label { font-family: 'Lato', sans-serif; font-weight: 900; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 18px; }
+  .mock-label.bad { background: #fbeaea; color: #b3261e; }
+  .mock-label.good { background: #eaf6ed; color: #1f7a3d; }
+  .mock-header { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 18px 22px; border-top: 1px solid #f0f0f0; border-bottom: 1px solid #f0f0f0; flex-wrap: wrap; }
+  .mock-logo { height: 34px; width: auto; }
+  .mock-nav { display: flex; gap: 26px; }
+  .mock-nav a { text-decoration: none; color: #111; text-transform: uppercase; }
+  .nav-lato a { font-family: 'Lato', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; }
+  .nav-unb a  { font-family: 'Unbounded', sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.01em; }
+  .mock-hero { padding: 28px 22px 32px; }
+  .mh-name { text-transform: uppercase; color: #111; line-height: 0.95; margin: 0; display: flex; flex-direction: column; }
+  .mh-name span { white-space: nowrap; }
+  .mh-name .l1 { font-family: 'Unbounded', sans-serif; font-weight: 500; letter-spacing: 0.01em; font-size: clamp(20px, 3.4vw, 32px); }
+  .mh-name .l2 { font-family: 'Unbounded', sans-serif; font-weight: 500; letter-spacing: 0.01em; font-size: clamp(13px, 2.2vw, 20px); }
+  .mh-tag-lato { font-family: 'Lato', sans-serif; font-weight: 400; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #999; margin-top: 12px; }
+  .mh-tag-unb { font-family: 'Unbounded', sans-serif; font-weight: 500; font-size: 10px; letter-spacing: 0.03em; text-transform: uppercase; color: #999; margin-top: 12px; }
+  @media (max-width: 560px) { .mh-name span { white-space: normal; } .mock-nav { gap: 16px; } }
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800&family=Manrope:wght@700;800&family=DM+Sans:wght@700&family=Poppins:wght@600;700;800&family=Sora:wght@700;800&family=Oswald:wght@500;600;700&family=Syne:wght@700;800&family=Bebas+Neue&family=Anton&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wdth,wght@125,700;125,800&family=Archivo+Narrow:wght@700&family=Barlow+Semi+Condensed:wght@600;700&family=Big+Shoulders+Display:wght@600;700;800&family=Bricolage+Grotesque:wght@700;800&family=Familjen+Grotesk:wght@600;700&family=Fjalla+One&family=Khand:wght@600;700&family=League+Gothic&family=Pathway+Gothic+One&family=Saira+Semi+Condensed:wght@600;700;800&family=Staatliches&family=Teko:wght@500;600;700&family=Unbounded:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+
+<div class="np-wrap">
+
+  <div class="np-intro">
+    <h2>Name Wordmark — Sans-serif Options</h2>
+    <p><strong>Decision: ALL-CAPS.</strong> Both the design director and business director agree caps is right (your nav/headings are already an all-caps system) — and both <strong>cut Syne</strong>: wide faces collapse in caps. Recommended treatment below, then an all-caps comparison strip, then the full library for reference.</p>
+  </div>
+
+  <!-- ============ CLEVER VS LAZY (UNBOUNDED) ============ -->
+  <div class="np-band">
+    <h3>"Clever" vs "lazy" — same brand font, two disciplines</h3>
+    <p>Your real site chrome (logo + nav + name) mocked up two ways with Unbounded. Top: blanket it on <em>everything</em>. Bottom: Unbounded owns the name only, Lato keeps the UI. Watch the nav links especially — a wide rounded display face goes muddy and eats horizontal space at 13px.</p>
+  </div>
+
+  <div class="mock">
+    <div class="mock-label bad">✕ Unbounded everywhere — reads lazy / mushy</div>
+    <div class="mock-header">
+      <img class="mock-logo" src="/uploads/2024/11/AshleyPimenta_Logo-2024.png" alt="AP">
+      <nav class="mock-nav nav-unb"><a>Work</a><a>Photography</a><a>About</a></nav>
+    </div>
+    <div class="mock-hero">
+      <h1 class="mh-name"><span class="l1">Ashley M.</span><span class="l2">Bettencourt-Pimenta</span></h1>
+      <p class="mh-tag-unb">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    </div>
+  </div>
+
+  <div class="mock">
+    <div class="mock-label good">✓ Unbounded on the name only — reads intentional</div>
+    <div class="mock-header">
+      <img class="mock-logo" src="/uploads/2024/11/AshleyPimenta_Logo-2024.png" alt="AP">
+      <nav class="mock-nav nav-lato"><a>Work</a><a>Photography</a><a>About</a></nav>
+    </div>
+    <div class="mock-hero">
+      <h1 class="mh-name"><span class="l1">Ashley M.</span><span class="l2">Bettencourt-Pimenta</span></h1>
+      <p class="mh-tag-lato">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    </div>
+  </div>
+
+  <!-- ============ RECOMMENDED ============ -->
+  <div class="np-rec">
+    <p class="rec-flag">★ Recommended — both experts converge</p>
+    <h1 class="rec-name">
+      <span class="rec-l1">Ashley M.</span>
+      <span class="rec-l2">Bettencourt-Pimenta</span>
+    </h1>
+    <p class="rec-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="rec-note">Big Shoulders Display · 600 · UPPERCASE · +0.07em · two-line flush-left stack, line 2 ≈ 65% of line 1</p>
+  </div>
+
+  <!-- ============ HONORING THE BRAND FONT (UNBOUNDED) ============ -->
+  <div class="np-band">
+    <h3>Honoring the brand font — Unbounded</h3>
+    <p>Unbounded is a Bettencourt Studios brand font, so it's worth seeing. The director's view: a brand font is permission, not obligation — it sprawls on the full 28-char name, but it <em>sings</em> on a short element. Three ways to play it, below.</p>
+  </div>
+
+  <!-- Director's compromise: split lockup -->
+  <div class="lockup brand">
+    <span class="lock-tag"><em>★</em> Director's compromise — split lockup (brand honored + reads senior)</span>
+    <h1 class="lk lk-split">
+      <span class="s1">Ashley</span>
+      <span class="s2">Bettencourt-Pimenta</span>
+    </h1>
+    <p class="lock-note">"ASHLEY" in Unbounded 500 (the brand font, where wide rounded sings) &nbsp;·&nbsp; "BETTENCOURT-PIMENTA" in Big Shoulders Display 600 (built for the long caps line)</p>
+  </div>
+
+  <!-- Brand-pure: all Unbounded -->
+  <div class="lockup">
+    <span class="lock-tag">Brand-pure — all Unbounded (the "doesn't embarrass itself" spec)</span>
+    <h1 class="lk lk-uall">
+      <span class="u1">Ashley M.</span>
+      <span class="u2">Bettencourt-Pimenta</span>
+    </h1>
+    <p class="lock-note">Unbounded · 500 · UPPERCASE · +0.01em · two lines, line 2 ≈ 58% · note how wide the surname runs even at the smaller size</p>
+  </div>
+
+  <!-- ============ ALL-CAPS COMPARISON ============ -->
+  <div class="np-band">
+    <h3>All-caps, head to head</h3>
+    <p>The top contenders set in caps at one size, so you can compare honestly now that caps is decided. Note the last one.</p>
+  </div>
+  <div class="caps-strip">
+    <div class="cap-item"><span class="lbl">★ Big Shoulders Display — the pick</span><p class="cap-name opt-bigshould">Ashley M. Bettencourt-Pimenta</p></div>
+    <div class="cap-item"><span class="lbl">Oswald — fallback</span><p class="cap-name opt-oswald">Ashley M. Bettencourt-Pimenta</p></div>
+    <div class="cap-item"><span class="lbl">Bebas Neue — poster classic</span><p class="cap-name opt-bebas">Ashley M. Bettencourt-Pimenta</p></div>
+    <div class="cap-item"><span class="lbl">League Gothic — timeless gothic</span><p class="cap-name opt-league">Ashley M. Bettencourt-Pimenta</p></div>
+    <div class="cap-item"><span class="lbl">Inter — business director's neutral lean</span><p class="cap-name opt-inter">Ashley M. Bettencourt-Pimenta</p></div>
+    <div class="cap-item"><span class="lbl">Syne — <em>both experts cut it · see how wide+caps sprawls</em></span><p class="cap-name opt-syne2">Ashley M. Bettencourt-Pimenta</p></div>
+  </div>
+
+  <!-- CURRENT -->
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">NOW</span>
+      <span class="np-fontname">Source Serif Pro</span>
+      <span class="np-spec">800 · Uppercase · -0.02em</span>
+    </div>
+    <h1 class="np-name opt-current">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">What ships today — a serif, all-caps. The director wants to move off this to a sans for contrast with the mark.</p>
+  </div>
+
+  <!-- 1 SHIP -->
+  <div class="np-card ship">
+    <div class="np-tag">
+      <span class="np-num win">01 · SHIP</span>
+      <span class="np-fontname">Space Grotesk</span>
+      <span class="np-spec">700 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-space">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Mechanical, slightly quirky grotesk — cold enough to contrast the ink-blob mark, but its angled terminals and distinctive G/a keep it from feeling corporate-dead. Best friction-vs-mark balance. <strong>The director's pick to ship.</strong></p>
+  </div>
+
+  <!-- 2 -->
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">02</span>
+      <span class="np-fontname">Inter</span>
+      <span class="np-spec">800 · UPPERCASE · -0.02em</span>
+    </div>
+    <h1 class="np-name opt-inter">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">The neutral default of good product design — zero personality, maximum craft, pure foil to the mark. Risk: so neutral it can read "system font," a touch anonymous for a graphic designer's own name.</p>
+  </div>
+
+  <!-- 3 -->
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">03</span>
+      <span class="np-fontname">IBM Plex Sans</span>
+      <span class="np-spec">700 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-plex">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Engineered, humanist-grotesque, a touch of warmth in the curves. Reads beautifully at length. Loses to Space Grotesk only because it's softer, so the contrast with the mark is less electric.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">04</span>
+      <span class="np-fontname">Jost</span>
+      <span class="np-spec">700 · UPPERCASE · +0.005em</span>
+    </div>
+    <h1 class="np-name opt-jost">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Geometric Futura-revival. Elegant, but its perfect circles start to <em>echo</em> the round blobby mark instead of opposing it — closest to the wrong strategy. Fallback only.</p>
+  </div>
+
+  <!-- ============ WIDER NET ============ -->
+
+  <div class="np-band">
+    <h3>Band B · Neutral grotesk alternates</h3>
+    <p>Same "go quiet" thesis as the director's four — more cold, engineered grotesks if you like the strategy but not those exact faces.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">05</span>
+      <span class="np-fontname">Archivo</span>
+      <span class="np-spec">800 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-archivo">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Grotesque built for headlines — slightly narrow, editorial, a hair of grit. Holds the long name tighter than Inter without going cold-dead.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">06</span>
+      <span class="np-fontname">Manrope</span>
+      <span class="np-spec">800 · UPPERCASE · -0.02em</span>
+    </div>
+    <h1 class="np-name opt-manrope">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Modern semi-geometric — rounder and warmer than Inter, still very clean. Reads contemporary-product.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">07</span>
+      <span class="np-fontname">DM Sans</span>
+      <span class="np-spec">700 · UPPERCASE · -0.02em</span>
+    </div>
+    <h1 class="np-name opt-dmsans">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Low-contrast geometric with a small x-height — quiet and friendly. The softest of the neutral group.</p>
+  </div>
+
+  <div class="np-band">
+    <h3>Band C · Friendlier geometrics</h3>
+    <p>Warmer, rounder shapes that lean toward the playful side of your mark instead of opposing it.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">08</span>
+      <span class="np-fontname">Poppins</span>
+      <span class="np-spec">700 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-poppins">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Perfect-circle geometric, friendly and ubiquitous. Echoes the round blobs of the mark — director would warn it competes, but it reads approachable.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">09</span>
+      <span class="np-fontname">Sora</span>
+      <span class="np-spec">700 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-sora">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Geometric grotesk with quirky details — a middle ground between Poppins' warmth and Space Grotesk's edge.</p>
+  </div>
+
+  <div class="np-band">
+    <h3>Band D · Condensed — best for the long name</h3>
+    <p>Narrow faces fit "Bettencourt-Pimenta" in less width, so the name can sit larger without breaking.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">10</span>
+      <span class="np-fontname">Oswald</span>
+      <span class="np-spec">600 · UPPERCASE · +0.005em</span>
+    </div>
+    <h1 class="np-name opt-oswald">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Tall, condensed gothic. Editorial and strong; handles the long name with room to spare. Classic for wordmarks.</p>
+  </div>
+
+  <div class="np-band">
+    <h3>Band E · Display with personality</h3>
+    <p>Loud, characterful faces. These <em>match</em> the mark's energy rather than contrast it — the opposite of the director's thesis, but worth seeing.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">11</span>
+      <span class="np-fontname">Syne</span>
+      <span class="np-spec">800 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-syne">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Art-and-design-world favorite — wide, slightly weird, distinctive. Says "I'm a designer" loudly. Real personality, picks a fight with the mark.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">12</span>
+      <span class="np-fontname">Bebas Neue</span>
+      <span class="np-spec">Display · UPPERCASE · +0.03em</span>
+    </div>
+    <h1 class="np-name opt-bebas">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Tall, all-caps poster face — designed for caps, so the length works here. Bold, confident, fashion-flyer energy.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">13</span>
+      <span class="np-fontname">Anton</span>
+      <span class="np-spec">Display · UPPERCASE · +0.01em</span>
+    </div>
+    <h1 class="np-name opt-anton">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Ultra-heavy condensed. Maximum impact — but very loud next to an already-loud mark. Use only if you want the name to shout too.</p>
+  </div>
+
+  <!-- ============ MORE LIKE SYNE ============ -->
+
+  <div class="np-band">
+    <h3>Band F · More like Syne — wide, arty, design-forward</h3>
+    <p>Your front-runner's world: distinctive display faces with real personality, the kind that say "a designer chose this." A couple (Clash, Cabinet) are Fontshare faces, the design-studio go-to.</p>
+  </div>
+
+  <div class="np-card ship">
+    <div class="np-tag">
+      <span class="np-num win">14 · ★ YOUR PICK</span>
+      <span class="np-fontname">Syne</span>
+      <span class="np-spec">800 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-syne2">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">The one you liked — shown again here as the reference for this band so you can compare the cousins below against it.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">15</span>
+      <span class="np-fontname">Bricolage Grotesque</span>
+      <span class="np-spec">800 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-bricolage">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Today's designer darling — editorial grotesk with deliberate quirks and warmth. Syne's energy, a touch more readable.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">16</span>
+      <span class="np-fontname">Clash Display</span>
+      <span class="np-spec">700 · UPPERCASE · -0.01em &nbsp;·&nbsp; Fontshare</span>
+    </div>
+    <h1 class="np-name opt-clash">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">The studio-portfolio standard. Neo-grotesque with confident, slightly squared shapes. Reads premium and current.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">17</span>
+      <span class="np-fontname">Cabinet Grotesk</span>
+      <span class="np-spec">800 · UPPERCASE · -0.01em &nbsp;·&nbsp; Fontshare</span>
+    </div>
+    <h1 class="np-name opt-cabinet">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Slightly condensed display grotesk with personality in the details — bridges your two likes (arty + tighter set).</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">18</span>
+      <span class="np-fontname">Unbounded</span>
+      <span class="np-spec">700 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-unbounded">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Rounded, wide, playful — Google's own display face. Loud and friendly; leans into the blobby roundness of your mark.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">19</span>
+      <span class="np-fontname">Familjen Grotesk</span>
+      <span class="np-spec">700 · UPPERCASE · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-familjen">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Scandinavian grotesk with subtle quirks — quieter than Syne but still has a point of view. The "safe but interesting" choice.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">20</span>
+      <span class="np-fontname">Anybody (Expanded)</span>
+      <span class="np-spec">800 · UPPERCASE · Wide · -0.01em</span>
+    </div>
+    <h1 class="np-name opt-anybody">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Stretched-wide retro-techno display — the most "Syne-wide" of the set. Big personality; needs room, may break on narrow screens.</p>
+  </div>
+
+  <!-- ============ CONDENSED WITH CHARACTER ============ -->
+
+  <div class="np-band">
+    <h3>Band G · Condensed with character — your latest favorite</h3>
+    <p>Tall, narrow faces with personality. These fit the long name in less width so it can sit bigger, and the vertical compression reads editorial and bold. (Oswald #10, Bebas #12 and Anton #13 above are also condensed.)</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">21</span>
+      <span class="np-fontname">Big Shoulders Display</span>
+      <span class="np-spec">800 · UPPERCASE · +0.01em</span>
+    </div>
+    <h1 class="np-name opt-bigshould">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Industrial, sharp-cornered condensed — designed for Chicago's signage. Tons of character, very designer. My top pick where your two tastes meet.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">22</span>
+      <span class="np-fontname">Fjalla One</span>
+      <span class="np-spec">700 · UPPERCASE · +0.005em</span>
+    </div>
+    <h1 class="np-name opt-fjalla">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Sturdy medium-condensed with a friendly weight. Workhorse with warmth — less severe than Oswald.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">23</span>
+      <span class="np-fontname">Saira Semi Condensed</span>
+      <span class="np-spec">800 · UPPERCASE · 0</span>
+    </div>
+    <h1 class="np-name opt-saira">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Modern semi-condensed grotesk — only gently narrow, so it stays clean and contemporary, not "sports jersey." Balanced.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">24</span>
+      <span class="np-fontname">Khand</span>
+      <span class="np-spec">700 · UPPERCASE · +0.01em</span>
+    </div>
+    <h1 class="np-name opt-khand">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Condensed with squared-off curves and a distinctive flat-sided feel. Crisp and a little unexpected.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">25</span>
+      <span class="np-fontname">Archivo Narrow</span>
+      <span class="np-spec">700 · UPPERCASE · +0.005em</span>
+    </div>
+    <h1 class="np-name opt-archnarrow">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">The narrow cut of Archivo (#05) — same engineered grotesk, just tighter. Quiet-condensed, the director-approved end of this band.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">26</span>
+      <span class="np-fontname">Staatliches</span>
+      <span class="np-spec">Display · UPPERCASE · +0.02em</span>
+    </div>
+    <h1 class="np-name opt-staat">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Condensed all-caps with art-deco bones — poster-y and elegant. A more refined cousin of Bebas.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">27</span>
+      <span class="np-fontname">Teko</span>
+      <span class="np-spec">600 · UPPERCASE · +0.01em</span>
+    </div>
+    <h1 class="np-name opt-teko">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Very tall and tight, low-contrast and modern. Maximum vertical drama; great when you want the name skinny and big.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">28</span>
+      <span class="np-fontname">League Gothic</span>
+      <span class="np-spec">Display · UPPERCASE · +0.005em</span>
+    </div>
+    <h1 class="np-name opt-league">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">The classic open-source condensed gothic — timeless newspaper/poster feel. Strong, neutral, never dates.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">29</span>
+      <span class="np-fontname">Barlow Semi Condensed</span>
+      <span class="np-spec">700 · UPPERCASE · 0</span>
+    </div>
+    <h1 class="np-name opt-barlowsc">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Californian-warm semi-condensed grotesk — slightly rounded, very legible. The friendly end of condensed.</p>
+  </div>
+
+  <div class="np-card">
+    <div class="np-tag">
+      <span class="np-num">30</span>
+      <span class="np-fontname">Pathway Gothic One</span>
+      <span class="np-spec">Display · UPPERCASE · +0.01em</span>
+    </div>
+    <h1 class="np-name opt-pathway">Ashley M. Bettencourt-Pimenta</h1>
+    <p class="np-desc">Graphic &amp; Digital Designer &nbsp;|&nbsp; Brand &middot; Campaign &middot; Digital &middot; Print</p>
+    <p class="np-why">Thin, tall, elegant condensed gothic — the most delicate of the band. Refined and fashion-editorial.</p>
+  </div>
+
+</div>
