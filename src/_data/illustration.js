@@ -3,9 +3,9 @@ const path = require("path");
 const yaml = require("js-yaml");
 
 module.exports = function () {
-  const yamlPath = path.join(__dirname, "../../content/photography.yml");
+  const yamlPath = path.join(__dirname, "../../content/illustration.yml");
   const raw = fs.readFileSync(yamlPath, "utf8");
   const data = yaml.load(raw) || {};
-  const photos = data.photos || [];
-  return photos.slice().sort((a, b) => (a.order || 0) - (b.order || 0));
+  const items = data.items || [];
+  return items.slice().sort((a, b) => (a.order || 0) - (b.order || 0));
 };

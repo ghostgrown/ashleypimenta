@@ -1,13 +1,13 @@
 ---
 layout: layouts/base.njk
-title: Photography
-bodyClass: photography-page
+title: Illustration
+bodyClass: illustration-page
 ---
 
 <div class="photo-gallery">
-  {% for photo in photography %}
-  <div class="photo-item w-{{ photo.width or 'full' }}">
-    <img src="{{ photo.image }}" alt="{{ photo.caption or 'Photography' }}" loading="{% if loop.index <= 9 %}eager{% else %}lazy{% endif %}">
+  {% for item in illustration %}
+  <div class="photo-item w-{{ item.width or 'half' }}">
+    <img src="{{ item.image }}" alt="{{ item.title or 'Illustration' }}" loading="{% if loop.index <= 9 %}eager{% else %}lazy{% endif %}">
   </div>
   {% endfor %}
 </div>

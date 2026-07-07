@@ -1,0 +1,60 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_library:
+  name: cloudinary
+  config:
+    cloud_name: uwsjmkh2
+    api_key: "886599329832498"
+
+collections:
+  - name: "illustration"
+    label: "Illustration"
+    files:
+      - name: "illustration"
+        label: "Illustration Gallery"
+        file: "content/illustration.yml"
+        fields:
+          - label: "Pieces"
+            name: "items"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - label: "Width"
+                name: "width"
+                widget: "select"
+                options:
+                  - { label: "Half", value: "half" }
+                  - { label: "Full", value: "full" }
+                  - { label: "Third", value: "third" }
+                  - { label: "Fifth", value: "fifth" }
+                default: "half"
+              - { label: "Order", name: "order", widget: "number", value_type: "int" }
+
+  - name: "photography"
+    label: "Photography"
+    files:
+      - name: "photography"
+        label: "Photography Gallery"
+        file: "content/photography.yml"
+        fields:
+          - label: "Photos"
+            name: "photos"
+            widget: "list"
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
+              - label: "Width"
+                name: "width"
+                widget: "select"
+                options:
+                  - { label: "Full", value: "full" }
+                  - { label: "Half", value: "half" }
+                  - { label: "Third", value: "third" }
+                  - { label: "Fifth", value: "fifth" }
+                default: "full"
+              - { label: "Caption", name: "caption", widget: "string", required: false }
+              - { label: "Order", name: "order", widget: "number", value_type: "int" }

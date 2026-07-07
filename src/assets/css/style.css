@@ -590,7 +590,8 @@ a:hover { color: var(--black); }
 /* ============================================================
    PHOTOGRAPHY PAGE
    ============================================================ */
-.photography-page { position: relative; }
+.photography-page,
+.illustration-page { position: relative; }
 
 .photo-gallery {
   display: flex;
@@ -604,6 +605,7 @@ a:hover { color: var(--black); }
   overflow: hidden;
   background: var(--gray);
   flex: 0 0 calc(100% - 0px);
+  min-height: 100px;
 }
 
 .photo-item.w-full  { flex: 0 0 100%; }
