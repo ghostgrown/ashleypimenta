@@ -4,34 +4,34 @@ exploration: true
 order: 27
 categories:
   - "DIGITAL"
-cover: "2016/09/bmw-featureimage.png"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470508/ed7plvx6nkpamduhvu3r.png"
 gallery:
   - type: image
-    image: "2018/11/bmw-zoom1-media.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470512/wlpk3ehvnd7t17lzwyes.jpg"
     caption: "Visual representation of research on social media."
     width: "1-1"
   - type: image
-    image: "2018/11/bmw-zoom1-learningstyles.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470512/lijvs8lwm0pftr2sjego.png"
     caption: "Applying research to identify different learning styles, and applying that to BMW customers and potential buyers."
     width: "1-1"
   - type: image
-    image: "2018/11/bmw-zoom3-push.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/m8hdojcoh2sufa2eiahq.png"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2018/11/bmw-zoom1-marketingfunnel.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470512/jspg6tzxpomswklfyfpf.png"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2018/11/bmw-zoom3-bookmarks.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470512/r9hrz6mxx2vmq40ativt.jpg"
     caption: "Execution"
     width: "1-1"
   - type: image
-    image: "2018/11/bmw-zoom3-airplanecard.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470512/uljjqtjp6xpzbwm6ac9y.jpg"
     caption: "Execution"
     width: "1-1"
   - type: image
-    image: "2018/11/FINALprocessbook_cover_BMW-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470508/miice1in3ud9xi5gcfnf.jpg"
     caption: ""
     width: "2-3"
 description: |

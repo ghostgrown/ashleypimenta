@@ -4,7 +4,7 @@ subtitle: "MENU DESIGN"
 order: 13
 categories:
   - "PROMOTIONAL"
-cover: "2021/08/featureimage-moonstruck-wesukisuki.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470546/z6szpne5ppk8n7joclam.jpg"
 description: |
   Designed the menu for a very special food event located in East Atlanta Village, Georgia. Moonstruck Fine Foods pop up X We Suki Suki, the notorious Vietnamese banh mi sandwiches & pho restaurant.
 ---

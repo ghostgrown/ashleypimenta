@@ -5,18 +5,18 @@ order: 17
 categories:
   - "BANNER"
   - "DIGITAL"
-cover: "2020/05/ashleypimenta-NYCF.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470533/gwcxb49el0p9irnrod08.jpg"
 gallery:
   - type: image
-    image: "2019/04/NY-ComedyFestival2019-Hero.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470518/jknufesbulkrhicl4ncl.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/Social-1200x628_v14.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470510/jqb5d23xpvvfuppb76aq.jpg"
     caption: "Web graphics created for New York Comedy Festival 2018."
     width: "1-1"
   - type: image
-    image: "2018/11/Social-1200x628_v1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470510/eyvbg6fawviaizbr8ded.jpg"
     caption: "Web graphics created for New York Comedy Festival 2018."
     width: "1-1"
 description: |

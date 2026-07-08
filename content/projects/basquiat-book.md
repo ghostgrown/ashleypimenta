@@ -4,38 +4,38 @@ exploration: true
 order: 24
 categories:
   - "PRINT"
-cover: "2018/11/basquiat-book.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470511/e4uadfpgrti4gdgdhyvc.jpg"
 gallery:
   - type: image
-    image: "2019/05/bookcover-mockup-1024x750.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470522/xkugb6rxujlh6tim2h2h.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/basquiat-finalhalfshot-4.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470512/byug6ptugi5df0zpmrlr.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/basquiat-finalhalfshot-2.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470511/mt0ogxzll7gofzardzv6.jpg"
     caption: "Sketches sections printed on matte, toothed paper"
     width: "1-1"
   - type: image
-    image: "2018/11/an-artist.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470511/wwxldmj78cfxe1znuqqy.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/basquiat-halfshot.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470512/brx5lojc9hzsz799bvbu.jpg"
     caption: "Handwritten chapter titles mimicking Basquiat's style overlayed on a scan of one of his blank sketchbook pages"
     width: "1-1"
   - type: image
-    image: "2018/11/basquiat-finalhalfshot-3-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470511/fievi28rlx7bism6z16g.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/basquiat-finalhalfshot-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470511/xrvkj4cb5yypvqkh15qo.jpg"
     caption: "Die cut of Famous painting"
     width: "1-1"
   - type: image
-    image: "2018/11/basquiat-halfshot-4.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470512/lkdpzwotl3cnwwqn1mmu.jpg"
     caption: "Close up"
     width: "1-1"
 description: |

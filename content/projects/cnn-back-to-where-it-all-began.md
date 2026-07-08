@@ -6,50 +6,50 @@ categories:
   - "ILLUSTRATION"
   - "PRINT"
   - "PROMOTIONAL"
-cover: "2023/09/AshleyPimenta_FeatureImage_902x742_Techwood.v2.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470552/npx8f3z92oic9zpruiyu.jpg"
 gallery:
   - type: image
-    image: "2023/09/CNN_Techwood-Backshirt.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470553/xlawshbwbjkvehiqzvqv.png"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2023/09/CNN_TECHWOODATL_SHIRT-VintageWhiteF-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470552/cehvusahzjnaadso6u4f.jpg"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2023/09/CNN_TECHWOODATL_SHIRT-VintageWhiteB-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470552/em4l35tsl7ttm6c1rzlw.jpg"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2023/09/IMG_0125.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470652/y2qqyfkzfmyrnrhuvrkd.png"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2023/09/IMG_0124.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470652/n7aj75ttcwza2gdqj2vd.png"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2023/09/IMG_0138.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470653/dtbscnzezex32cbyc8cd.png"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2023/09/IMG_0137.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470653/fj8mhoxcim6nhuo34wcd.png"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2023/09/IMG_0127.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470652/or0si2xwmwc3d9xlhlms.png"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2023/09/IMG_0128.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470652/wlktkwjhhekxswgjvrpp.png"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2023/09/IMG_0126.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470652/xese5kghyuwq3a3ilyk0.png"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2023/09/FRONT-DESIGN.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470553/iz9wnvrotpttwyerltsn.png"
     caption: ""
     width: "1-1"
 description: |

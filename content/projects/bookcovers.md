@@ -4,18 +4,18 @@ exploration: true
 order: 22
 categories:
   - "PRINT"
-cover: "2018/11/mentald-featureimage.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/q3hhj2mdmwpihttcsv97.jpg"
 gallery:
   - type: image
-    image: "2018/11/MentalDisorder_portfolio-1-web-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470509/cdlnlt50nilfjxxy53hr.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/MentalDisorder_portfolio-2-web-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470509/fbxqsqsnay0wmnu0olod.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/MentalDisorder_portfolio-3-web-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470509/wpuikqwy7nztszgrr0vb.jpg"
     caption: ""
     width: "1-1"
 description: |

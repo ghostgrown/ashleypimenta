@@ -4,30 +4,30 @@ exploration: true
 order: 25
 categories:
   - "PRINT"
-cover: "2018/11/lifeisgood-featureimage.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470514/semf0yl2w3l7hf6xvuy9.jpg"
 gallery:
   - type: image
-    image: "2018/11/lifeisgood-header-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/zqcvifc06kiftvlzgw7b.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/lifeisgood-half-halfshot-2-e1556070298312.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470514/nkeldu68scvakf56jlkg.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/lifeisgood-halfshot-2.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/o45amgpdqjbfukkz1gmi.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/lifeisgood-half-halfshot-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470514/urb56vp4h23lgwb0cwid.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2018/11/lifeisgood-halfshot-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470514/oyfalj3rwgsrkoi6ix6h.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2018/11/lifeisgood-half-halfshot-3.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470514/muzoc9on7izydsw5olzd.jpg"
     caption: ""
     width: "1-3"
 description: |

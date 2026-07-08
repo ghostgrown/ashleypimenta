@@ -4,18 +4,18 @@ subtitle: "PRINT"
 order: 14
 categories:
   - "PRINT"
-cover: "2020/04/PoE_featureimage.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470532/ni8dtz0w1pmy4poxikqg.jpg"
 gallery:
   - type: image
-    image: "2019/08/RecordSleeve.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470523/g5bfz1roqk12dxf1soaa.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2019/08/PoE_Aside.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470523/phth1w1worrvfq6yptge.png"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2019/08/PoE_Bside.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470523/gbt4s9my28fioboqpmas.png"
     caption: ""
     width: "1-2"
 description: |

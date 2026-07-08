@@ -5,26 +5,26 @@ order: 9
 categories:
   - "ILLUSTRATION"
   - "PROMOTIONAL"
-cover: "2023/09/AshleyPimenta_FeatureImage_902x742.v2.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470552/xe2dxdkjksbhwri1ozbf.jpg"
 gallery:
   - type: image
-    image: "2023/09/CNN_Amanpour_EnamelPinDesign.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470552/g2b8eaisvflahfmi1twq.png"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2023/09/CNN_Amanpour_Enamel-Pin-Design_40yrs.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470552/hs0uk1au6bay8thq30up.jpg"
     caption: "Pin Final Mockup"
     width: "1-1"
   - type: image
-    image: "2023/09/AshleyPimenta_CNN_Amanpour_Pin.v3-1.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470651/ts3iy0xicy902l1gqyyt.png"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2023/09/AshleyPimenta_CNN_Amanpour_Pin.v3.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470651/gzmcv48m4es3qyclogjj.png"
     caption: "CNN | Christiane Amanpour 40TH Anniversary Pin | Back Side"
     width: "1-2"
   - type: image
-    image: "2023/09/AshleyPimenta_CNN_Amanpour_Pin.v1.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470651/ysetobwiirpvdpuqusvj.png"
     caption: ""
     width: "1-1"
 description: |

@@ -51,7 +51,7 @@ bodyClass: home-page
   {% if not p.exploration and not p.hidden %}
   <a href="/work/{{ p.slug }}/" class="portfolio-item" data-categories="{{ p.categories | catClasses }}">
     {% if p.cover %}
-    <img src="/uploads/{{ p.cover }}" alt="{{ p.title }}" loading="{% if loop.index <= 8 %}eager{% else %}lazy{% endif %}">
+    <img src="{{ p.cover }}" alt="{{ p.title }}" loading="{% if loop.index <= 8 %}eager{% else %}lazy{% endif %}">
     {% endif %}
     <div class="portfolio-item-overlay">
       <h3 class="portfolio-item-title">{{ p.title }}</h3>

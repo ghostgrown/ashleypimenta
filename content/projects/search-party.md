@@ -5,22 +5,22 @@ order: 50
 categories:
   - "BANNER"
   - "DIGITAL"
-cover: "2019/04/SearchParty-featureimage.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470519/tf3f9wsvmjaqyukdwjrn.jpg"
 gallery:
   - type: image
-    image: "2018/11/SearchParty-SamsungBanner-1780x402.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470510/zjvibklemrb9swpn3dcr.png"
     caption: "Banner promoting show Search Party on TBS for Samsung platform."
     width: "1-1"
   - type: image
-    image: "2019/04/searchparty-screenshot.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470519/le98trj9udtghx32begl.png"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2019/04/SearchParty-rokusocial-1200x628.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470519/oxqbqzzftmncdyfmozim.jpg"
     caption: "Banner promoting Search Party on TBS for Roku platform."
     width: "1-1"
   - type: image
-    image: "2019/04/SearchParty-TapjoyGlispa-1200x628.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470519/wybsbatlnugxtutwadhm.jpg"
     caption: "Banner promoting Search Party on TBS for tablet platform."
     width: "1-1"
 description: |

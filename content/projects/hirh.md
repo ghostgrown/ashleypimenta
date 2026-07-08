@@ -5,38 +5,38 @@ order: 7
 categories:
   - "DIGITAL"
   - "MOTION"
-cover: "2026/06/AshleyPimenta_FeatureImage_902x742_HIRH.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470563/ak3rbnln8kdbnwflrkyk.jpg"
 gallery:
   - type: video
-    file: "2026/06/CNN-HIRH-Snipe-OlympicBombing-NEXT.mp4"
+    file: "https://res.cloudinary.com/uwsjmkh2/video/upload/v1783470563/uty0ao38fkfywtotg6te.mp4"
     width: "1-1"
   - type: video
-    file: "2026/06/CNN-HIRH-Snipe-OlympicBombing-TON.mp4"
+    file: "https://res.cloudinary.com/uwsjmkh2/video/upload/v1783470564/aafcjsxd2wztczomjy1u.mp4"
     width: "1-1"
   - type: video
-    file: "2026/06/CNN-HIRH-Snipe-OlympicBombing-SUN.mp4"
+    file: "https://res.cloudinary.com/uwsjmkh2/video/upload/v1783470564/ybz8jibknu38xyhs7hon.mp4"
     width: "1-1"
   - type: image
-    image: "2026/06/CNN_HIRH_FS-Dated-OlympicBomb-8ET-PT.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470564/hp0idbnkv4zzlcdhsi5y.jpg"
     caption: "On-Air Fullscreen Graphic"
     width: "1-1"
   - type: slider
     width: "1-1"
     slides:
-      - image: "2026/06/CNN_HIRH_KA_FS_launch-Next.jpg"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470565/a9judnascux58cza3i0n.jpg"
         caption: "On-Air Fullscreen Graphic"
-      - image: "2026/06/CNN_HIRH_KA_FS_launch-NextSun.jpg"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470565/niha1rzykg6emma73zvq.jpg"
         caption: "On-Air Fullscreen Graphic"
-      - image: "2026/06/CNN_HIRH_KA_FS_launch-Sunday.jpg"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470565/m2dmgnzs5qqwrktwribw.jpg"
         caption: "On-Air Fullscreen Graphic"
-      - image: "2026/06/CNN_HIRH_KA_FS_launch-Tomorrow.jpg"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470565/eayogggezgnwlyeky2d2.jpg"
         caption: "On-Air Fullscreen Graphic"
-      - image: "2026/06/CNN_HIRH_KA_FS_launch-Tonight.jpg"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470565/cg5ymvtkacvqhjspuhwo.jpg"
         caption: "On-Air Fullscreen Graphic"
-      - image: "2026/06/CNN_HIRH_FS-Dated-Titanic.v2.jpg"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470564/uy5pp0ed5pi0cctzv0gl.jpg"
         caption: "On-Air Fullscreen Graphic"
   - type: image
-    image: "2026/06/CNN_HIRH_FS-Next.v2.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470565/wy7ootszpmdu2qdpguzl.jpg"
     caption: "On-Air Fullscreen Graphic"
     width: "1-1"
 description: |

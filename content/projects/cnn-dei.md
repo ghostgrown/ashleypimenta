@@ -6,38 +6,38 @@ categories:
   - "BANNER"
   - "DIGITAL"
   - "PRINT"
-cover: "2025/10/AshleyPimenta_FeatureImage_902x742_CNNInclusion.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470559/nm0wu18dzotw2ocr1nth.jpg"
 gallery:
   - type: image
-    image: "2025/10/CNN_DEI-Banner_23.5x80-Mockup-1-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470560/sjyneaa6jcicbvkba4bp.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2025/10/CNN_DEI-Banner_23.5x80-Mockup-2.2-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470560/pkdavfdcnjfhr3rafiiz.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/10/CNN_DEI-Banner_23.5x80-Mockup-3-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470560/p3yuq7gvpuiukpnqz8to.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/10/CNN_DEI-Banner_23.5x80-Mockup-5-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470560/cvr7xuu5dffdxekvwkky.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/10/CNN_DEI-Banner_23.5x80-Mockup-ReScaling-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470560/kiuv9u2q22c0o06lzch9.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/10/CNN_DEI-Banner_23.5x80-Mockup-ReScaling-2.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470561/jwihkgm7b8aezrpbacpg.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/10/CNN_DEI-Banner_23.5x80-Mockup-ReScaling-3.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470561/lgwfzqjest1el5gyanh6.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/10/CNN_Inclusion_Convention_2025_NewsletterAd-3_AAJA-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470561/yalgsh1avixrfa2aumav.jpg"
     caption: ""
     width: "1-1"
 description: |

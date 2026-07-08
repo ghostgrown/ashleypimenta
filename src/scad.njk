@@ -12,7 +12,7 @@ bodyClass: home-page
   <a href="/work/{{ p.slug }}/" class="portfolio-item" data-categories="{{ p.categories | catClasses }}">
     {% if p.cover %}
     <img
-      src="/uploads/{{ p.cover }}"
+      src="{{ p.cover }}"
       alt="{{ p.title }}"
       loading="{% if loop.index <= 6 %}eager{% else %}lazy{% endif %}"
     >

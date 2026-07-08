@@ -4,46 +4,46 @@ exploration: true
 order: 26
 categories:
   - "PRINT"
-cover: "2019/02/undergroundpress-featureimage.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/eoimpbvo7jrpbfoszqgm.jpg"
 gallery:
   - type: image
-    image: "2019/02/alien-packaging-hero.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/guag6sknohlb4ldyiuug.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2019/02/alienmap-closedbookletform.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/czvlrxh4stpof63a9btz.jpg"
     caption: "UFO Map: cover"
     width: "1-1"
   - type: image
-    image: "2019/02/alienmap-semiopenedup.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/gqivu73ncuxvade199ab.jpg"
     caption: "UFO Map: half opened up"
     width: "1-1"
   - type: image
-    image: "2019/02/alienmap.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/polr4wekdxnnoqgxstrw.jpg"
     caption: "UFO (charted) Map of accurate sightings, documented abduction sites, and crash landings. 
 Lines were created using pins and color coded thread that naturally created this unique pattern in connection to Earth's Ley Lines."
     width: "1-1"
   - type: image
-    image: "2019/02/alienmap-closeup.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/ad5qjw24nhnsb58ttwrn.jpg"
     caption: "UFO Map: Close-up"
     width: "1-1"
   - type: image
-    image: "2019/02/aliens-postcard-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/dvfc9hszmrugajepeuqn.jpg"
     caption: "Underground Press Postcard: Government DNA cloning"
     width: "1-1"
   - type: image
-    image: "2019/02/aliens-postcard.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/b0uwhzco5ohnm63j1lg7.jpg"
     caption: "Underground Press Postcard: Government DNA cloning close-up"
     width: "1-1"
   - type: slider
     width: "1-1"
     slides:
-      - image: "2019/02/alien-peacetreaty-zoom.jpg"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/zif437uvbbuqbmxjkr4c.jpg"
         caption: ""
-      - image: "2019/02/alien-peacetreaty.jpg"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/atyie2umidl0wetvsdcz.jpg"
         caption: ""
   - type: image
-    image: "2019/02/Alien-Deliverables.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/brcefzte99emf33ebl7i.png"
     caption: "Underground Press Deliverables:
 Peace Treaty, Newspaper, Ley Lines booklet, UFO Map, Poisoned Planet Poster, Postcards"
     width: "1-1"

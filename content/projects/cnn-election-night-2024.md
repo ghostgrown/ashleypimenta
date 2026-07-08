@@ -6,51 +6,51 @@ categories:
   - "DIGITAL"
   - "MOTION"
   - "PRINT"
-cover: "2025/09/AshleyPimenta_FeatureImage_902x742_ElectionNight-1.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470555/lgkhlacilawhgrphgw2h.jpg"
 gallery:
   - type: image
-    image: "2025/09/ARCH_03-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470555/qzakzxs37grddflyqq9d.jpg"
     caption: ""
     width: "1-1"
   - type: video
-    file: "2025/09/CNN_ElectionNight-Snipe-Dated.mp4"
+    file: "https://res.cloudinary.com/uwsjmkh2/video/upload/v1783470556/sj419xi26kvzoumt2abz.mp4"
     width: "1-1"
   - type: video
-    file: "2025/09/CNN_ElectionNight-Snipe-NextTues.mp4"
+    file: "https://res.cloudinary.com/uwsjmkh2/video/upload/v1783470556/id31jidlasjblw9a9yz5.mp4"
     width: "1-1"
   - type: video
-    file: "2025/09/CNN_ElectionNight-Snipe-Next.mp4"
+    file: "https://res.cloudinary.com/uwsjmkh2/video/upload/v1783470556/k8isgnjljkhv29cqkcxr.mp4"
     width: "1-1"
   - type: image
-    image: "2025/09/CNN_ElectionNight-Snipe.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470556/krb7pyo7fryoxwocoloa.jpg"
     caption: "Snipe screenshot"
     width: "1-1"
   - type: image
-    image: "2025/09/CNN_ElectionNight-FS-Today.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470555/y2wqulqesg9tfph634my.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/09/CNN_ElectionNight-FS-Next.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470555/uotmarhdlspfq5ebtvkx.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/09/CNN_ElectionNight-FS-Tom.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470556/eoz7euthmodc9iva1lgu.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/09/CNN_ElectionNight-FS-NextTues.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470555/rinajax5qdsmolowmzaf.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/09/CNN_ElectionNight-FS-Tuesday.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470555/ofbxzigdzywervy0spg0.jpg"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/09/CNN_ENIA_KA_2024_16x9-scaled.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470555/vds4beo2kgvihgyqhx0s.png"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2025/09/CNN_ENIA_KA_2024_16x9-scaled.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470555/vds4beo2kgvihgyqhx0s.png"
     caption: ""
     width: "1-1"
 description: |

@@ -4,30 +4,30 @@ exploration: true
 order: 21
 categories:
   - "PRINT"
-cover: "2018/11/burberry-featureimage.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/vwf6fctjzgqic6f7wirn.jpg"
 gallery:
   - type: image
-    image: "2018/11/headshot-burberry.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/g6aqwqlg9hyjafcxn0ze.jpg"
     caption: "Complete invitation"
     width: "1-1"
   - type: image
-    image: "2018/11/burberry-vertshot3.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/mnai9ailxq7lzrbk6izx.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/burberry-vertshot.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/vmbu9y32ytlsu42rwwtg.jpg"
     caption: "Gold foil on black paper"
     width: "1-1"
   - type: image
-    image: "2018/11/burberry-halfshot.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/jvxtsasks0ip61ncmmjd.jpg"
     caption: "Hand made envelope with plaid pattern interior under lipped black layer and vellum sleeve"
     width: "1-1"
   - type: image
-    image: "2018/11/burberry-halfshot-3.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/bpoessgmrjo2phadkt76.jpg"
     caption: "Hand cut die cut"
     width: "1-1"
   - type: image
-    image: "2018/11/burberry-halfshot-2.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/edp2wpcm7opwv1yxt8ak.jpg"
     caption: ""
     width: "1-1"
 description: |

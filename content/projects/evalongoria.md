@@ -6,34 +6,34 @@ categories:
   - "DIGITAL"
   - "PRINT"
   - "PROMOTIONAL"
-cover: "2025/10/AshleyPimenta_FeatureImage_902x742_EvaLongoria.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470559/ugchrssdrvqbrfbkqpcx.jpg"
 gallery:
   - type: image
-    image: "2025/10/CNN_PopcornBox-Mockups-7.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470562/ayyn0tsnatpk8e5t0txd.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2025/10/2211370348-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470558/dvve1koscdkayarztzys.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2025/10/CNN_SFS_SVA_HoldingSlide-Scope.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470562/ga3a63oilkfxpdyf5ls0.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2025/10/2211370464-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470558/dn9q7aqvqmobfs4cp78z.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2025/10/2211370667-scaled.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470558/ixsdvezdvmpmnyxyqsdu.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2025/10/NGG_3839_JoXgtqwa-scaled.jpeg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470562/dvmmhj52zo7c8igw17eg.jpg"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2025/10/CNN_SFS_Event-1-scaled-e1759757686446.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470562/wh2wmssu1tpz2g1io7og.jpg"
     caption: ""
     width: "1-2"
 description: |

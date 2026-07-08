@@ -5,10 +5,10 @@ order: 18
 categories:
   - "BANNER"
   - "DIGITAL"
-cover: "2020/04/LastOG_featureimage.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470531/w7duploie3nj9p6njqoq.jpg"
 gallery:
   - type: image
-    image: "2019/05/screencapture-tbs-shows-the-last-og-cookbook-2019-02-21-10_32_18.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470522/r5itlu0xah2bzl11olxg.png"
     caption: "Designed the landing page for The Last O.G. sweepstakes on the TBS website."
     width: "1-1"
 description: |

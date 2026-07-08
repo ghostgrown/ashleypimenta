@@ -36,7 +36,7 @@ eleventyComputed:
 
       {% if item.type == "image" %}
       <div class="gallery-item width-{{ item.width | replace('/', '-') }}">
-        <img src="/uploads/{{ item.image }}" alt="{{ item.caption or project.title }}" loading="lazy">
+        <img src="{{ item.image }}" alt="{{ item.caption or project.title }}" loading="lazy">
         {% if item.caption %}
         <p class="gallery-caption">{{ item.caption }}</p>
         {% endif %}
@@ -47,7 +47,7 @@ eleventyComputed:
         <div class="slider-track">
           {% for slide in item.slides %}
           <div class="slide {% if loop.first %}active{% endif %}">
-            <img src="/uploads/{{ slide.image }}" alt="{{ slide.caption or project.title }}" loading="lazy">
+            <img src="{{ slide.image }}" alt="{{ slide.caption or project.title }}" loading="lazy">
             {% if slide.caption %}
             <p class="gallery-caption">{{ slide.caption }}</p>
             {% endif %}
@@ -63,7 +63,7 @@ eleventyComputed:
       {% elif item.type == "video" %}
       <div class="gallery-item gallery-video width-{{ item.width | replace('/', '-') }}">
         <video autoplay muted loop playsinline controls>
-          <source src="/uploads/{{ item.file }}">
+          <source src="{{ item.file }}">
         </video>
       </div>
       {% endif %}

@@ -5,37 +5,37 @@ order: 23
 categories:
   - "DIGITAL"
   - "PRINT"
-cover: "2018/11/featureimage-palmsnights3.png"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/b6hlmbwwbndq6atga9sq.png"
 gallery:
   - type: image
-    image: "2019/01/PalmsNights-Microsite-Homepage.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/zgyhde5w9nbdrfnxpmt2.png"
     caption: "Palms Nights home page"
     width: "1-1"
   - type: slider
     width: "1-1"
     slides:
-      - image: "2018/11/Screen-Shot-2018-11-08-at-2.03.17-PM.png"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470510/bbk712wr2zhvnk57q2km.png"
         caption: ""
-      - image: "2018/11/palmsnights-zoomppage.png"
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/xxrkxm52smyoj6ezbtpg.png"
         caption: ""
   - type: image
-    image: "2019/04/PalmsNights-printad-2.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470518/h4uqdbmxr3v47zauphb8.jpg"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2019/04/abette20_ADBR252_ULI_Sp18_LasVegas_1-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470519/uhguyex5sqde2nus9lk5.jpg"
     caption: ""
     width: "1-2"
   - type: image
-    image: "2019/04/PalmsNights-printad-3.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470519/wd15mtx0a2yui4gg392n.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2019/04/PalmsNights-OOH.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470518/nx16gtsrg48m7rkayiu6.jpg"
     caption: ""
     width: "1-1"
   - type: image
-    image: "2018/11/OOH-portfolio-rgb.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470510/jrx990ncamyqhbjecyp0.png"
     caption: "OOH bus shelter ad promo"
     width: "1-1"
 description: |

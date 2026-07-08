@@ -4,22 +4,22 @@ subtitle: "VIDEO, ART DIRECTION"
 order: 15
 categories:
   - "ART DIRECTION"
-cover: "2019/10/doosan-featureimage.jpg"
+cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470524/xahxxmaub6umdhtasmmc.jpg"
 gallery:
   - type: image
-    image: "2019/10/Screen-Shot-2019-10-15-at-9.56.36-AM-1.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470524/barbljxw780gmr2pw5h1.png"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2019/10/Screen-Shot-2019-10-15-at-10.19.13-AM.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470524/t4obsvgttvdn3kx7kvcn.png"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2019/10/Screen-Shot-2019-10-15-at-10.06.25-AM.png"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470523/p5zukl63zg82lmnoc0fn.png"
     caption: ""
     width: "1-3"
   - type: image
-    image: "2019/10/unnamed-1.jpg"
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470524/bkgk4f4fmqzhqb7cqmwy.jpg"
     caption: ""
     width: "1-1"
 description: |
