@@ -1,0 +1,1 @@
+Found it. The gallery uses flex-wrap, which leaves dead gaps whenever a run of same-width images doesn't divide evenly into a row (e.g. 5 half-width images in a row = 2 pairs + 1 orphan with empty space beside it). Converting to a 12-column CSS grid with dense packing fixes this — later items fill gaps instead of leaving blank space.

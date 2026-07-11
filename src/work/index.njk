@@ -71,4 +71,16 @@ eleventyComputed:
     {% endfor %}
   </div>
   {% endif %}
+
+  {% if project.prevSlug or project.nextSlug %}
+  <nav class="project-pager {% if not project.prevSlug or not project.nextSlug %}project-pager-single{% endif %}">
+    {% if project.prevSlug %}
+    <a href="/work/{{ project.prevSlug }}/" class="project-pager-arrow project-pager-prev" aria-label="Previous project: {{ project.prevTitle }}">&#8592;</a>
+    {% endif %}
+    <a href="/" class="project-pager-label">View Other Projects</a>
+    {% if project.nextSlug %}
+    <a href="/work/{{ project.nextSlug }}/" class="project-pager-arrow project-pager-next" aria-label="Next project: {{ project.nextTitle }}">&#8594;</a>
+    {% endif %}
+  </nav>
+  {% endif %}
 </div>

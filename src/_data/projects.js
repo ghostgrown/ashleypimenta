@@ -122,5 +122,16 @@ module.exports = function () {
     };
   }).filter(Boolean);
 
-  return projects.sort((a, b) => a.order - b.order);
+  const sorted = projects.sort((a, b) => a.order - b.order);
+
+  // Attach prev/next for lateral nav, based on the same visible order as the homepage grid
+  const visible = sorted.filter((p) => !p.exploration && !p.hidden);
+  visible.forEach((p, i) => {
+    p.prevSlug = i > 0 ? visible[i - 1].slug : null;
+    p.prevTitle = i > 0 ? visible[i - 1].title : null;
+    p.nextSlug = i < visible.length - 1 ? visible[i + 1].slug : null;
+    p.nextTitle = i < visible.length - 1 ? visible[i + 1].title : null;
+  });
+
+  return sorted;
 };
