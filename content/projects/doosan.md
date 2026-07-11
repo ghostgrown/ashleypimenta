@@ -6,6 +6,10 @@ categories:
   - "ART DIRECTION"
 cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470524/xahxxmaub6umdhtasmmc.jpg"
 gallery:
+  - type: youtube
+    youtube: "MwV5EbSH3UA"
+    caption: ""
+    width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470524/barbljxw780gmr2pw5h1.png"
     caption: ""

@@ -302,8 +302,6 @@ a:hover { color: var(--black); }
   .photo-gallery { padding: 0 12px; }
   .about-wrap { padding: 32px 20px 60px; }
   .project-page { padding: 28px 16px 60px; }
-  .width-1-2, .width-1-3, .width-1-4, .width-2-3,
-  .width-gbwide, .width-gbsq { flex: 0 0 100%; }
 }
 
 /* ============================================================
@@ -599,6 +597,39 @@ a:hover { color: var(--black); }
 .width-gbwide { flex: 0 0 calc(80% - (var(--g) * 4 / 5)); }
 .width-gbsq   { flex: 0 0 calc(20% - (var(--g) / 5)); }
 
+/* Horizontal "did you know" fact banners — half width on desktop
+   (side by side, as WordPress), full width on mobile (see below). */
+.width-hbanner { flex: 0 0 calc(50% - (var(--g) / 2)); }
+
+/* Document previews (NYC Case Study) — half width on wide desktop,
+   but each on its own line on tablet + mobile (see the <=1199px rule). */
+.width-doc { flex: 0 0 calc(50% - (var(--g) / 2)); }
+
+/* Third-width on desktop, but per-set mobile behavior:
+   .width-gleam (Gleam "B" campaign, 6 tiles) -> 2-per-row on mobile;
+   .width-eth   (Ethereum facts set, 3 tiles) -> each on its own row. */
+.width-gleam,
+.width-eth { flex: 0 0 calc(33.3333% - (var(--g) * 2 / 3)); }
+
+/* Tablet + mobile: NYC Case Study pages each get their own full-width line. */
+@media (max-width: 1199px) {
+  .project-gallery .width-doc { flex: 0 0 100%; }
+}
+
+/* Mobile layout. Placed AFTER the base width rules and scoped to
+   .project-gallery so it wins over them at narrow widths. Quarter tiles go
+   2-per-row (a 4-item set reads as a clean 2x2); halves and thirds keep
+   their base widths (2- and 3-per-row); banners/wide items span the row. */
+@media (max-width: 767px) {
+  .project-gallery .width-1-4,
+  .project-gallery .width-gleam { flex: 0 0 calc(50% - (var(--g) / 2)); }
+  .project-gallery .width-2-3,
+  .project-gallery .width-gbwide,
+  .project-gallery .width-gbsq,
+  .project-gallery .width-hbanner,
+  .project-gallery .width-eth { flex: 0 0 100%; }
+}
+
 .gallery-item img {
   width: 100%;
   height: auto;
@@ -643,6 +674,10 @@ a:hover { color: var(--black); }
 /* Video */
 .gallery-video video { width: 100%; display: block; }
 
+/* YouTube embed — responsive 16:9 */
+.youtube-embed { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; }
+.youtube-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
 
 /* ============================================================
    PHOTOGRAPHY PAGE
@@ -669,6 +704,7 @@ a:hover { color: var(--black); }
 .photo-item.w-half  { flex: 0 0 calc(50% - 2px); }
 .photo-item.w-third { flex: 0 0 calc(33.333% - 3px); }
 .photo-item.w-fifth { flex: 0 0 calc(20% - 4px); }
+.photo-item.w-sixth { flex: 0 0 calc(16.666% - 4px); }
 
 .photo-item img {
   width: 100%;
@@ -678,9 +714,25 @@ a:hover { color: var(--black); }
 
 @media (max-width: 560px) {
   .photo-item.w-half,
-  .photo-item.w-third,
   .photo-item.w-fifth { flex: 0 0 calc(50% - 2px); }
+  /* w-third stays 3-across on mobile + tablet (Ashley, 2026-07-11). */
+  /* w-sixth: 3-across on mobile so the tall row isn't microscopic. */
+  .photo-item.w-sixth { flex: 0 0 calc(33.333% - 3px); }
 }
+
+/* All breakpoints: multi-column photos share a fixed cell shape and the
+   image fills it (object-fit: cover), so every cell in a row is the same
+   height and there are no jagged gray gaps between uneven images. Shorter
+   images crop to match the row instead of leaving space (Ashley, 2026-07-11).
+   Full-width photos keep their natural height. */
+.photo-item.w-half,
+.photo-item.w-third,
+.photo-item.w-fifth,
+.photo-item.w-sixth { aspect-ratio: 3 / 4; }
+.photo-item.w-half img,
+.photo-item.w-third img,
+.photo-item.w-fifth img,
+.photo-item.w-sixth img { height: 100%; object-fit: cover; }
 
 /* Lightbox */
 .lightbox {

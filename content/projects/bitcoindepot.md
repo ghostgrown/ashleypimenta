@@ -69,6 +69,14 @@ gallery:
     caption: "Digital Franchise Flyer"
     width: "1-1"
   - type: image
+    image: "/uploads/2020/03/BitcoinDepot-NYCaseStudy-1-1-pdf.jpg"
+    caption: "NYC Case Study | Page 1"
+    width: "doc"
+  - type: image
+    image: "/uploads/2020/03/BitcoinDepot-NYCaseStudy-2-1-pdf.jpg"
+    caption: "NYC Case Study | Page 2"
+    width: "doc"
+  - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470527/dulb6ikdt6wzuiin9hxv.png"
     caption: "Banner Ads Set | 300 × 250, 320 × 480, 480 × 320, 300 × 250"
     width: "1-1"
@@ -102,6 +110,10 @@ gallery:
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470527/gy72aqqyng3gqbsaqx1x.png"
     caption: "NACS Half Page AD | Print"
+    width: "1-1"
+  - type: image
+    image: "/uploads/2020/03/BitcoinDepot-MarketingMaterials_US-pdf.jpg"
+    caption: "Gas Station Spin Off Deliverables"
     width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470526/tqloultbxibsjd6xysvw.png"
@@ -155,23 +167,23 @@ gallery:
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470528/ctv8wkbac9halbk21qsm.jpg"
     caption: "Social Media | Bitcoin Fact"
-    width: "1-2"
+    width: "hbanner"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470529/kkhw7yw1wonmccso079x.jpg"
     caption: "Social Media | Litecoin Fact"
-    width: "1-2"
+    width: "hbanner"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470529/cv4tur4brz4ra7wvvt7s.jpg"
     caption: "Social Media | Ethereum facts set"
-    width: "1-3"
+    width: "eth"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470529/wkerx24nglwby1hbyyxt.jpg"
     caption: "Social Media | Ethereum facts set"
-    width: "1-3"
+    width: "eth"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470528/a68lq5ggjf08snhauqcc.jpg"
     caption: "Social Media | Ethereum facts set"
-    width: "1-3"
+    width: "eth"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470544/btbrfyfmrtxqc5idgteb.jpg"
     caption: "Social Media Graphic | Giveaway"
@@ -224,29 +236,33 @@ gallery:
     caption: "Social Media | Beer Day"
     width: "1-1"
   - type: image
+    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470525/x9chtaopphwfwvkvji5q.jpg"
+    caption: ""
+    width: "1-1"
+  - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470532/lrjz7zqzem8cbuto9dmo.jpg"
     caption: ""
-    width: "1-3"
+    width: "gleam"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470532/cphkmkgxnxsbzthxyagp.jpg"
     caption: ""
-    width: "1-3"
+    width: "gleam"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470532/rlcp6gsqog9sbok3woko.jpg"
     caption: ""
-    width: "1-3"
+    width: "gleam"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470532/e1oaru7wfyn1pijsjl9g.jpg"
     caption: ""
-    width: "1-3"
+    width: "gleam"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470533/srwipv0mt9toz2qxdtmt.jpg"
     caption: ""
-    width: "1-3"
+    width: "gleam"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470528/dlvdanz0kcmvrslpctbj.jpg"
     caption: ""
-    width: "1-3"
+    width: "gleam"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470546/oavz80jplfjhumwsas4x.png"
     caption: ""

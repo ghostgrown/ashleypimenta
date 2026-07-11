@@ -69,6 +69,16 @@ eleventyComputed:
         <p class="gallery-caption">{{ item.caption }}</p>
         {% endif %}
       </div>
+
+      {% elif item.type == "youtube" %}
+      <div class="gallery-item gallery-youtube width-{{ item.width | replace('/', '-') }}">
+        <div class="youtube-embed">
+          <iframe src="https://www.youtube.com/embed/{{ item.youtube }}" title="{{ item.caption or project.title }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+        </div>
+        {% if item.caption %}
+        <p class="gallery-caption">{{ item.caption }}</p>
+        {% endif %}
+      </div>
       {% endif %}
 
     {% endfor %}

@@ -189,15 +189,15 @@ photos:
     caption: ''
   - order: 48
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470539/sg2o6jyv57fwcujcgb1u.jpg
-    width: half
+    width: full
     caption: ''
-  - order: 49
+  - order: 63.5
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470537/gbohnuodjvdtpyb7v6bi.jpg
-    width: half
+    width: sixth
     caption: ''
   - order: 50
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470537/hozaxsigfhot88ysbtpv.jpg
-    width: half
+    width: full
     caption: ''
   - order: 51
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470543/iqrcbjhpwqpzivye9vu5.jpg
@@ -253,21 +253,21 @@ photos:
     caption: ''
   - order: 64
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470536/eakbldefitpulh6knpsj.jpg
-    width: fifth
-    caption: ''
-  - order: 65
-    image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470535/va5cyjfrrt1tj7x5a2lb.jpg
-    width: fifth
+    width: sixth
     caption: ''
   - order: 66
-    image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470537/irwu6vhqpsegodeb9ebp.jpg
-    width: fifth
+    image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470535/va5cyjfrrt1tj7x5a2lb.jpg
+    width: sixth
     caption: ''
   - order: 67
+    image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470537/irwu6vhqpsegodeb9ebp.jpg
+    width: sixth
+    caption: ''
+  - order: 65
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470542/hh83v89nxg77t9sqzwzo.jpg
-    width: fifth
+    width: sixth
     caption: ''
   - order: 68
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470541/ofepmddkozkhdeuwusxg.jpg
-    width: fifth
+    width: sixth
     caption: ''

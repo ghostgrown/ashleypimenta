@@ -19,12 +19,13 @@ gallery:
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470547/dveu6cceqlvh50xvaajy.jpg"
     caption: "CNN Social Media Graphic"
     width: "1-1"
-  - type: image
-    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470547/c9wnmhz7ptmncnbghmm7.jpg"
-    caption: "CNN Social Media Graphic"
-    width: "1-2"
+  # DISABLED for now (Ashley, 2026-07-11) — "The more you know" quote graphic. Re-enable by uncommenting.
+  # - type: image
+  #   image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470547/c9wnmhz7ptmncnbghmm7.jpg"
+  #   caption: "CNN Social Media Graphic"
+  #   width: "1-1"
   - type: slider
-    width: "1-3"
+    width: "1-1"
     slides:
       - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470548/v2qnzmpz4aprtti4fuwp.png"
         caption: ""
@@ -39,7 +40,7 @@ gallery:
       - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470549/a8df8iltfgk8jpz64qkh.png"
         caption: ""
   - type: slider
-    width: "2-3"
+    width: "1-1"
     slides:
       - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470547/fqg0mbeh4fdcttkisdhy.jpg"
         caption: ""

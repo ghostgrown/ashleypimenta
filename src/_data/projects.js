@@ -64,6 +64,11 @@ module.exports = function () {
           const file = (block.match(/file:\s*"([^"]*)"/) || [])[1] || "";
           const width = (block.match(/width:\s*"([^"]*)"/) || [])[1] || "1-1";
           gallery.push({ type, file, width });
+        } else if (type === "youtube") {
+          const youtube = (block.match(/youtube:\s*"([^"]*)"/) || [])[1] || "";
+          const caption = (block.match(/caption:\s*"([^"]*)"/) || [])[1] || "";
+          const width = (block.match(/width:\s*"([^"]*)"/) || [])[1] || "1-1";
+          gallery.push({ type, youtube, caption, width });
         }
       }
     }
