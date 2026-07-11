@@ -177,15 +177,15 @@ photos:
     caption: ''
   - order: 45
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470537/lh31hgvwwvvengbatnv0.jpg
-    width: half
+    width: third
     caption: ''
   - order: 46
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470539/cjzk29xpudawsnfnicg0.jpg
-    width: half
+    width: third
     caption: ''
   - order: 47
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470538/jcagzahl9ihzweiycq51.jpg
-    width: half
+    width: third
     caption: ''
   - order: 48
     image: https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470539/sg2o6jyv57fwcujcgb1u.jpg
