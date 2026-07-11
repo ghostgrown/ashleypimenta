@@ -1,83 +1,131 @@
-# WordPress Source Data — Bitcoin Depot (recovered 2026-07-10)
+# WordPress Source of Truth — Bitcoin Depot
 
-Recovered directly from the live WordPress database (`ashleypimenta_com_1` on DreamHost,
-via phpMyAdmin) before the DreamHost hosting is cancelled. The old WordPress site is no
-longer reachable through `ashleypimenta.com` (DNS now points at the Netlify/Eleventy
-rebuild), so this was pulled straight from the database rather than the rendered page.
+This file preserves the **real rendered WordPress page** so the original layout is
+never lost, even after DreamHost hosting is cancelled.
 
-## Site / page builder
+## Saved source files (in repo)
 
-- Post ID `5034`, post type `portfolio`, post status `publish`
-- Builder: **WPBakery Page Builder (Visual Composer)** — not Elementor. Confirmed via
-  `_wpb_vc_js_status` meta key and `post_content` starting with WPBakery shortcodes:
-  `[vc_row][vc_column][vc_column_text]...`
-- `sub_title` meta: `ART DIRECTION & BRAND IDENTITY`
-- Theme stores per-gallery-image layout as **ACF (Advanced Custom Fields) repeater
-  fields** on the post itself, not inside the WPBakery shortcode content:
-  - `gallery_{N}_image` — attachment ID of the Nth gallery image
-  - `gallery_{N}_column_width` — original width class for that image (`1-1`, `1-2`,
-    `1-3`, or `1-4`), same notation already used in `content/projects/*.md`
+- `_backup/wordpress-bitcoindepot-rendered-2026-01-16.html` — the **actual rendered
+  HTML** of `https://www.ashleypimenta.com/portfolio/bitcoindepot/`, captured from the
+  Internet Archive snapshot dated **2026-01-16 22:33:41 UTC**. This is a true browser
+  render (Kalium theme output), not a reconstruction. It is the authoritative layout.
+- `_backup/wordpress-export-2026-06-15.xml` — full WordPress WXR export (2026-06-15).
+  Newer than the archive, but it is database *metadata* (ACF fields), not a render.
 
-## Original gallery width sequence (index → width), 76 images total
+## Theme / rendering facts (from the rendered HTML)
 
-This is the authoritative, original per-image width assignment from WordPress, in
-gallery order. The current `content/projects/bitcoindepot.md` in this repo has only
-68 `width:` entries for the same gallery — WPBakery counted every image individually,
-while the migration to Eleventy grouped some adjacent same-width images into
-`type: slider` blocks (one width per slider, not per slide), so the two lists are not
-a 1:1 index match. Use this as the source of truth when auditing/fixing width
-mismatches — don't assume current-file index N corresponds to original index N.
+- Theme: **Kalium** (child theme `kalium-child`). Portfolio type-2, `alt-four`.
+- Gallery container: `<div class="gallery captions-below"><div class="row nivo">…`.
+- Each gallery item is a Bootstrap column; **ACF `column_width` maps to a col class**:
+  - `1-1` → `col-xs-12` (full width)
+  - `1-2` → `col-xs-12 col-sm-6` (half)
+  - `1-3` → `col-xs-12 col-sm-4` (third)
+  - `1-4` → `col-xs-12 col-sm-3` (quarter)
+- Columns sit in a wrapping row (flex/float), **in source order, top-aligned** — items
+  do NOT reflow to backfill gaps. A row whose widths sum to <100% leaves trailing
+  whitespace on the right. (This is why the Eleventy gallery must be `flex-wrap`, not
+  CSS-grid `auto-flow: dense`.)
+- Captions render **below** each item in `<div class="caption">`.
+- Item types seen: plain `image`, `slider` (`portfolio-images-slider`), `video`
+  (`portfolio-video`, `<video mp4="…">`), and **before/after `comparison`**
+  (`figure.comparison-image-slider` / `cd-image-label` / `cd-resize-img` — a draggable
+  US-vs-CA overlay).
 
-```
-0:1-1   1:1-1   2:1-1   3:1-1   4:1-4   5:1-4   6:1-4   7:1-4
-8:1-1   9:1-1   10:1-1  11:1-1  12:1-1  13:1-1  14:1-2  15:1-2
-16:1-1  17:1-1  18:1-1  19:1-1  20:1-3  21:1-1  22:1-1  23:1-1
-24:1-1  25:1-2  26:1-2  27:1-1  28:1-1  29:1-3  30:1-3  31:1-3
-32:1-2  33:1-2  34:1-1  35:1-2  36:1-2  37:1-2  38:1-2  39:1-2
-40:1-2  41:1-3  42:1-3  43:1-3  44:1-2  45:1-2  46:1-2  47:1-2
-48:1-2  49:1-2  50:1-4  51:1-4  52:1-4  53:1-3  54:1-4  55:1-4
-56:1-2  57:1-1  58:1-3  59:1-3  60:1-3  61:1-3  62:1-3  63:1-3
-64:1-2  65:1-3  66:1-1  67:1-1  68:1-1  69:1-1  70:1-2  71:1-3
-72:1-3  73:1-3  74:1-1  75:1-1
-```
+## Authoritative gallery structure (62 items, exact render order)
 
-(A few indices have `image: NULL` — likely a deleted/replaced attachment still holding
-a width slot: indices 3, 9, 17, 35, 50, 56, 64, 67.)
-
-## post_content (WPBakery shortcode wrapper, 2096 chars)
+Format: `# | width | type | caption | file(s)`
 
 ```
-[vc_row][vc_column][vc_column_text]
-<p class="p1">...
+ 0 | 1-1  | image      | Satoshi ATM Wrap – Redesign                   | ATMWrap-US-Mockup.png
+ 1 | 1-1  | image      |                                               | (needs asset: image)
+ 2 | 1-4  | image      | ATM Wrap (Left) | 2021                        | Bitcoin-Depot-Product-Wrap-Left.jpg
+ 3 | 1-4  | image      | ATM Wrap | 2021                               | atm.jpg
+ 4 | 1-4  | image      | ATM Wrap (Right) | 2021                       | Bitcoin-Depot-Product-Wrap-Right.jpg
+ 5 | 1-4  | image      | ATM Found in Wild Shot | 2025                 | BitcoinDepot-ATM-Wild.jpg
+ 6 | 1-1  | image      | Finney ATM Wrap – Redesign                    | BitcoinDepot-ATM-Finney-scaled.png
+ 7 | 1-1  | slider     |                                               | Linkedin-Employee-Banner2-scaled.jpg, Linkedin-Employee-Banner1a-scaled.jpg, Linkedin-Employee-Banner3a-scaled.jpg
+ 8 | 1-1  | image      | Trade Show Booth Design | ATMIA + NACS CONFER | BitcoinDepot-TadeShowBoothDesign-ATMIANACS.png
+ 9 | 1-1  | image      | Digital Contract Flyer | Page 1               | BitcoinDepot-ContractFlyer-FINAL-A.png
+10 | 1-1  | image      | Digital Contract Flyer | Page 2               | BitcoinDepot-ContractFlyer-FINAL-B.png
+11 | 1-1  | image      | Digital Franchise Flyer                       | BitcoinDepot-Franchise-Flyer-2021-FINAL.png
+12 | 1-2  | image      | NYC Case Study | Page 1                       | (needs asset: image)
+13 | 1-2  | image      | NYC Case Study | Page 2                       | (needs asset: image)
+14 | 1-1  | image      | Banner Ads Set | 300 × 250, 320 × 480, 480 ×  | BitcoinDepot-HM-BannerSet.png
+15 | 1-1  | video      |                                               | (needs asset: video)
+16 | 1-1  | image      | Banner Ads – CoinATMRadar | 728x90, 300x250   | BitcoinDepot-CoinATMRadar.png
+17 | 1-1  | image      | APP Launch Rollout | Fullscreen Graphic       | AppLaunch-Mockup-SM-3-FINAL-scaled.jpg
+18 | 1-1  | image      | APP Launch Rollout | Bitcoin Depot Website Ba | AppLaunch-Website-Banner-scaled.jpg
+19 | 1-1  | image      | APP Launch Rollout | Email Design             | AppLaunch-EmailDesign-FINAL-scaled.png
+20 | 1-1  | image      | NACS Half Page AD | Print                     | BitcoinDepot-NACS-HalfPage-AD.png
+21 | 1-1  | image      | Gas Station Spin Off Deliverables             | (needs asset: image)
+22 | 1-1  | image      | Promotional Banners + Google Display Banner A | BitcoinDepot-GoogleDisplayAd-Set-2.png
+23 | 1-3  | image      | Social Media | Atlanta Inno Tech Madness      | SM-TechMadness-2000x2000-1.jpg
+24 | 1-3  | image      | Social Media                                  | SM-CyberSet-2-IG-scaled.jpg
+25 | 1-3  | image      | Social Media Animation                        | SM-10KFollowers.gif
+26 | 1-2  | image      |                                               | SM-CyberSet-1-TW-scaled.jpg
+27 | 1-2  | image      |                                               | SM-CyberSet-1-TW-scaled.jpg
+28 | 1-1  | image      | Digital Support Graphic                       | SupportLine-Graphic-Twitter-2048x1024-1.jpg
+29 | 1-2  | slider     |                                               | sm-steps-2000x2000-cover.2.jpg, sm-steps-2000x2000-1.jpg, sm-steps-2000x2000-2.jpg, sm-steps-2000x2000-3.jpg, sm-steps-2000x2000-4.jpg
+30 | 1-2  | image      | Social Media Fact                             | SocialMedia-BTCFact_2000x2000-compressed.jpg
+31 | 1-2  | image      | Social Media | Bitcoin Fact                   | SM-BTCFacts2_3000x3000-ig-scaled.jpg
+32 | 1-2  | image      | Social Media | Litecoin Fact                  | SM-LTCFacts_3000x3000-scaled.jpg
+33 | 1-2  | image      | Social Media | Bitcoin Fact                   | SM-BTCFacts2_3000x3000-twitter-scaled.jpg
+34 | 1-2  | image      | Social Media | Litecoin Fact                  | SM-LTCFacts_Twitter2-scaled.jpg
+35 | 1-3  | image      | Social Media | Ethereum facts set             | SM-ETHFacts-Cover_2000x2000-compressed.jpg
+36 | 1-3  | image      | Social Media | Ethereum facts set             | SM-ETHFacts_2000x2000-compressed.v2.jpg
+37 | 1-3  | image      | Social Media | Ethereum facts set             | SM-ETHFacts-1_2000x2000-compressed.jpg
+38 | 1-2  | image      | Social Media Graphic | Giveaway               | BitcoinDepot-SM-IG-500Giveaway-Graphic.jpg
+39 | 1-2  | image      | Social Media                                  | SM-Graphic-BuyOnline.jpg
+40 | 1-2  | image      | [Seasonal] Animation created for Independence | SocialMedia-IndependenceDay.v3-2020_2000x2000.gif
+41 | 1-2  | image      | Social Media                                  | Artboard-1-scaled.jpg
+42 | 1-2  | image      | Social Media | Quote                          | BitcoinDepot-SM-CoinDesk.v2-compressed.jpg
+43 | 1-2  | image      | Social Media | Animation                      | sm-1000BTMs-2000x2000-1.gif
+44 | 1-4  | slider     |                                               | SM-BlackHistoryMonth-1-2000x2000-1.jpg, SM-BlackHistoryMonth-2-IanBalina-2000x2000-1.jpg, SM-BlackHistoryMonth-4-DeleAtanda-2000x2000-1.jpg, SM-BlackHistoryMonth-3-WhitneyGriffith-2000x2000-1.jpeg
+45 | 1-4  | image      | Social Media | St. Patrick's Day              | BitcoinDepot-StPattysDay2020_2000x2000.jpg
+46 | 1-4  | image      | Social Media | Halloween                      | sm-pumpkin-2000x2000-1.jpg
+47 | 1-4  | image      | Social Media | New Year                       | BitcoinDepot-SocialMedia-NewYears2021.v2.jpg
+48 | 1-1  | image      | Social Media | Beer Day                       | Photographs-BeerDay-Twitter_2048x1024-scaled.jpg
+49 | 1-3  | image      |                                               | GleamCampaign-Graphics-Fire_2000x2000.jpg
+50 | 1-3  | image      |                                               | GleamCampaign-Graphics-Pizza_2000x2000.jpg
+51 | 1-3  | image      |                                               | GleamCampaign-Graphics-Banana_2000x2000.jpg
+52 | 1-3  | image      |                                               | GleamCampaign-Graphics-Dice_2000x2000.jpg
+53 | 1-3  | image      |                                               | BitcoinDepot-WatermelonDay-SocialMedia_2000x20000-compressed.jpg
+54 | 1-3  | image      |                                               | SM-BTCTheme-Autumn2020-2000x2000-1.jpg
+55 | 1-1  | image      |                                               | BitcoinDepot-PackageDesign-Promotion.png
+56 | 1-1  | image      | Swag Giveaway Illustration                    | BitcoinDepot-Package-Twitter-Illustration-rgb-1-scaled.jpg
+57 | 1-3  | image      |                                               | BitcoinDepot-CompanySWAG-1.png
+58 | 1-3  | image      |                                               | BitcoinDepot-CompanySWAG-2.png
+59 | 1-3  | image      |                                               | BitcoinDepot-CompanySWAG-3.png
+60 | 1-1  | image      | Random Giveaway | Transparent Sticker         | Bitcoin-Depot.png
+61 | 1-1  | image      | Billboard Design on Lindbergh Road in Atlanta | Billboard-LindberghRoad-ATL-scaled.jpg
 ```
 
-Full text wasn't fully recoverable through the phpMyAdmin UI (truncates long cell
-values in the query grid; export/print/clipboard tools opened in popup windows the
-browser automation couldn't reach). What's confirmed: it's a thin WPBakery wrapper
-around a text block — the actual gallery/layout data lives in the ACF `gallery_N_*`
-fields above, not in this shortcode content.
+## Assets NOT migrated to Cloudinary (block a perfect carbon copy)
 
-## How to get more (if needed later)
+These items exist in the render but their images were never migrated to Cloudinary
+(the `ef8ef3f` migration skipped PDFs, and the Canadian comparison image was missed):
 
-Access path used: DreamHost panel → Websites → ashleypimenta.com → Content →
-Manage Database → PHPMyAdmin (auto-authenticated deep link, no password entry
-needed) → database `ashleypimenta_com_1` → table `wp_5trakg_posts` / `wp_5trakg_postmeta`.
+- Item 1 `comparison` — US side is on Cloudinary; **Canadian side is missing**
+  (`BitcoinDepot-ATM-ScreenTM-Template_5760x2560-Portfolio-CA-1`).
+- Item 12 `NYC Case Study | Page 1` — PDF preview, no Cloudinary asset.
+- Item 13 `NYC Case Study | Page 2` — PDF preview, no Cloudinary asset.
+- Item 21 `Gas Station Spin Off Deliverables` — PDF preview, no Cloudinary asset.
 
-Useful queries:
+Everything else (all other images, both sliders, the video) resolves to Cloudinary.
 
-```sql
--- find a portfolio post by title
-SELECT ID, post_title, post_status, post_type FROM wp_5trakg_posts WHERE post_title LIKE '%Bitcoin Depot%';
+## KNOWN SOURCE CONFLICT (do not resolve by guessing — see [[feedback-never-guess]])
 
--- full gallery width sequence for a given post
-SELECT CAST(SUBSTRING_INDEX(SUBSTRING_INDEX(meta_key,'_',2),'_',-1) AS UNSIGNED) AS idx,
-       MAX(CASE WHEN meta_key LIKE '%_column_width' THEN meta_value END) AS width,
-       MAX(CASE WHEN meta_key LIKE '%_image' THEN meta_value END) AS image_id
-FROM wp_5trakg_postmeta
-WHERE post_id = 5034
-  AND (meta_key REGEXP '^gallery_[0-9]+_column_width$' OR meta_key REGEXP '^gallery_[0-9]+_image$')
-GROUP BY idx ORDER BY idx;
-```
+The saved render is from **2026-01-16**; the site was edited afterward (WXR export
+`post_modified` = 2026-06-09). Items present in the June export but **absent from the
+2026-01-16 render** — so their current layout cannot be confirmed from saved sources:
 
-This same approach (swap `post_id`) works for any other project page's original
-gallery widths, before DreamHost hosting is cancelled and this data is gone for good.
+- **Google Display Banner Ad | Set 1** (`GoogleDisplayAdBanners-2020-1200x300`) and
+  **Google Display Banner Ad | Set** (`BitcoinDepot-googleads-2020`). Ashley states
+  these sit **on the same line** in the live WordPress. The June export lists them as
+  `1-1` + `1-3` (which would stack) — so either the export is stale or the widths were
+  changed live after export. The current live site is unreachable (DNS moved to
+  Netlify; DreamHost server blocks direct-IP access), and the newest Internet Archive
+  snapshot is the 2026-01-16 one. **Get the current live render or Ashley's explicit
+  intended widths before placing these — do not guess.**
+- The June export also adds a Cinco de Mayo tile, a Pride tile, and a duplicated
+  "Abandoned Cart" tile that are not in the 2026-01-16 render.

@@ -65,6 +65,9 @@ eleventyComputed:
         <video autoplay muted loop playsinline controls>
           <source src="{{ item.file }}">
         </video>
+        {% if item.caption %}
+        <p class="gallery-caption">{{ item.caption }}</p>
+        {% endif %}
       </div>
       {% endif %}
 

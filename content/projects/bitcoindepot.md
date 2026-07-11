@@ -17,11 +17,11 @@ cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470530/vbk72j4ii4s
 gallery:
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470562/uk7qh5bkqk7ogbxjtvtx.png"
-    caption: "Satoshi ATM Wrap, Redesign"
+    caption: "Satoshi ATM Wrap – Redesign"
     width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470526/g6dfincgna8wnqf3tqhi.jpg"
-    caption: "Bitcoin Depot BTM Screen Design – United States Version"
+    caption: ""
     width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470525/i96din4dodveioz3gbt6.jpg"
@@ -41,8 +41,17 @@ gallery:
     width: "1-4"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470526/txvrtkjqocff4kaxca6y.png"
-    caption: "Finney ATM Wrap, Redesign"
+    caption: "Finney ATM Wrap – Redesign"
     width: "1-1"
+  - type: slider
+    width: "1-1"
+    slides:
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470563/zkagotr720hfxep5ejiv.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470562/p7rtxvlt2jf7xmmgsfle.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470563/rppyxbgsl82uymkdgrh4.jpg"
+        caption: ""
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470651/fht9ztqk6czmkjaex6ic.png"
     caption: "Trade Show Booth Design | ATMIA + NACS CONFERENCE | 2021"
@@ -61,20 +70,23 @@ gallery:
     width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470527/dulb6ikdt6wzuiin9hxv.png"
-    caption: "Banner Ads Set | 300x250, 320x480, 480x320, 300x250"
+    caption: "Banner Ads Set | 300 × 250, 320 × 480, 480 × 320, 300 × 250"
+    width: "1-1"
+  - type: video
+    file: "https://res.cloudinary.com/uwsjmkh2/video/upload/v1783470527/ixstw3fnsfke30lrpewv.mp4"
     width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470526/oajxma4tyhgxdbxumwhw.png"
-    caption: "Banner Ads, CoinATMRadar | 728x90, 300x250"
+    caption: "Banner Ads – CoinATMRadar | 728x90, 300x250"
     width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470528/yaismdcxux6yhek1rrqo.jpg"
     caption: "Google Display Banner Ad | Set 1"
-    width: "1-1"
+    width: "gbwide"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470545/nbezmrsjt6lz7p2kcwfy.jpg"
     caption: "Google Display Banner Ad | Set"
-    width: "1-3"
+    width: "gbsq"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470525/ooqxkj01dmvwubyqab4o.jpg"
     caption: "APP Launch Rollout | Fullscreen Graphic"
@@ -91,10 +103,6 @@ gallery:
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470527/gy72aqqyng3gqbsaqx1x.png"
     caption: "NACS Half Page AD | Print"
     width: "1-1"
-  - type: image
-    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470527/wi8obb2dvr5maeafhilz.jpg"
-    caption: "Abandoned Cart Email Graphic"
-    width: "1-2"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470526/tqloultbxibsjd6xysvw.png"
     caption: "Promotional Banners + Google Display Banner Ads | 1080x1080, 1200x300, 300x250 728x90"
@@ -114,15 +122,24 @@ gallery:
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470528/knpd8c4koh0wnlqlvyle.jpg"
     caption: ""
-    width: "1-2"
-  - type: image
-    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470528/knpd8c4koh0wnlqlvyle.jpg"
-    caption: ""
-    width: "1-2"
+    width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470535/u97dfbhjzvebez7dme5a.jpg"
     caption: "Digital Support Graphic"
     width: "1-1"
+  - type: slider
+    width: "1-2"
+    slides:
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470531/qxig1gorusmxbnxnn6lf.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470530/zu4ywkzlm2hc8t8mcdyr.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470530/mryozzmzh1we8shlxfem.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470530/ymxftbxusxxywgqeydjl.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470531/nkx2j0poqfyjsotjszea.jpg"
+        caption: ""
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470530/adaaakthslf3rtlsybjn.jpg"
     caption: "Social Media Fact"
@@ -145,15 +162,15 @@ gallery:
     width: "1-2"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470529/cv4tur4brz4ra7wvvt7s.jpg"
-    caption: ""
+    caption: "Social Media | Ethereum facts set"
     width: "1-3"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470529/wkerx24nglwby1hbyyxt.jpg"
-    caption: ""
+    caption: "Social Media | Ethereum facts set"
     width: "1-3"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470528/a68lq5ggjf08snhauqcc.jpg"
-    caption: ""
+    caption: "Social Media | Ethereum facts set"
     width: "1-3"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470544/btbrfyfmrtxqc5idgteb.jpg"
@@ -165,7 +182,7 @@ gallery:
     width: "1-2"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470533/noheoif5zsi91yv0sh1v.gif"
-    caption: "Animation created for Independence Day"
+    caption: "[Seasonal] Animation created for Independence Day"
     width: "1-2"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470525/cni5eofswk1rop7ldwzf.jpg"
@@ -179,18 +196,21 @@ gallery:
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470530/sivwzmcafr3xdkf8xhvx.gif"
     caption: "Social Media | Animation"
     width: "1-2"
-  - type: image
-    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470532/cxk6ojxqtupwdii2m1wn.jpg"
-    caption: "[Seasonal] Social Media Graphic | Cinco De Mayo"
+  - type: slider
     width: "1-4"
+    slides:
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470544/meo65umkypwdrxvm6wx2.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470544/dilj5ckxdg2qm2jlwshi.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470545/hlowu2untdsxmzomrboi.jpg"
+        caption: ""
+      - image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470544/aoinaxbld6kjca47pqru.jpg"
+        caption: ""
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470527/uf433uwjg1gezpls6nyb.jpg"
     caption: "Social Media | St. Patrick's Day"
     width: "1-4"
-  - type: image
-    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470546/qee7in57ku0ttyprjuwc.jpg"
-    caption: "Social Media Graphic | Pride"
-    width: "1-3"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470530/cd3ksvbxnry1ug6buyxj.jpg"
     caption: "Social Media | Halloween"
@@ -228,14 +248,6 @@ gallery:
     caption: ""
     width: "1-3"
   - type: image
-    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470529/yj7er4c8qsyd5uxdikqo.jpg"
-    caption: ""
-    width: "1-3"
-  - type: image
-    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470533/psi4wugcrcxpxe2osjrd.jpg"
-    caption: ""
-    width: "1-1"
-  - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470546/oavz80jplfjhumwsas4x.png"
     caption: ""
     width: "1-1"
@@ -243,10 +255,6 @@ gallery:
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470527/hyc8szo26msep0a2igqz.jpg"
     caption: "Swag Giveaway Illustration"
     width: "1-1"
-  - type: image
-    image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470525/x9chtaopphwfwvkvji5q.jpg"
-    caption: ""
-    width: "1-2"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470545/omf0woov1cxxatpetown.png"
     caption: ""
@@ -265,8 +273,9 @@ gallery:
     width: "1-1"
   - type: image
     image: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470531/grbr6vvomdzbqwelmzc3.jpg"
-    caption: "Billboard Design on Lindbergh Road in Atlanta, pre BTM wrap redesign"
+    caption: "Billboard Design on Lindbergh Road in Atlanta pre BTM wrap redesign."
     width: "1-1"
+
 description: |
   Directed and produced all design and creative assets for Bitcoin Depot, a fast-growing fintech cryptocurrency startup.
 

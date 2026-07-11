@@ -302,7 +302,8 @@ a:hover { color: var(--black); }
   .photo-gallery { padding: 0 12px; }
   .about-wrap { padding: 32px 20px 60px; }
   .project-page { padding: 28px 16px 60px; }
-  .width-1-2, .width-1-3, .width-1-4 { grid-column: span 12; }
+  .width-1-2, .width-1-3, .width-1-4, .width-2-3,
+  .width-gbwide, .width-gbsq { flex: 0 0 100%; }
 }
 
 /* ============================================================
@@ -568,11 +569,10 @@ a:hover { color: var(--black); }
 .project-gallery {
   --g: 16px;
   margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-flow: dense;
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--g);
-  align-items: start;
+  align-items: flex-start;
 }
 
 .gallery-item {
@@ -580,14 +580,24 @@ a:hover { color: var(--black); }
 }
 
 /* Width classes matching WordPress 1-1, 1-2, 1-3, 1-4 column system.
-   grid-auto-flow: dense packs later items into gaps left by uneven
-   runs (e.g. an odd number of half-width images) instead of leaving
-   dead space, matching how the original WordPress gallery packed. */
-.width-1-1 { grid-column: span 12; }
-.width-1-2 { grid-column: span 6; }
-.width-1-3 { grid-column: span 4; }
-.width-1-4 { grid-column: span 3; }
-.width-2-3 { grid-column: span 8; }
+   flex-wrap keeps items in their original source order and simply
+   wraps to the next row — matching how the WordPress gallery flowed.
+   The per-class gap subtraction is each item's fair share of the row
+   gaps, so any row whose widths sum to a full row (as the original
+   WordPress layout arranged them) fills edge-to-edge with no dead
+   space, while an incomplete row leaves trailing whitespace on the
+   right instead of pulling a later image up out of order. */
+.width-1-1 { flex: 0 0 100%; }
+.width-1-2 { flex: 0 0 calc(50% - (var(--g) / 2)); }
+.width-1-3 { flex: 0 0 calc(33.3333% - (var(--g) * 2 / 3)); }
+.width-1-4 { flex: 0 0 calc(25% - (var(--g) * 3 / 4)); }
+.width-2-3 { flex: 0 0 calc(66.6666% - (var(--g) / 3)); }
+
+/* Google Display banner pair — a wide 4:1 banner beside a 1:1 square,
+   sized by aspect ratio so both render at the SAME HEIGHT on one line
+   (4/5 + 1/5 of the row width), matching the original WordPress layout. */
+.width-gbwide { flex: 0 0 calc(80% - (var(--g) * 4 / 5)); }
+.width-gbsq   { flex: 0 0 calc(20% - (var(--g) / 5)); }
 
 .gallery-item img {
   width: 100%;
