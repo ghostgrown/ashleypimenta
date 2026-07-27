@@ -95,11 +95,13 @@ is closed or autopay is cancelled before then.
 | Domain | Role | Detail |
 |---|---|---|
 | `ashleypimenta.com` | Hosted, Shared Unlimited | Registration is **elsewhere** (Porkbun). Panel offers "Transfer Registration," confirming DreamHost does not hold it |
-| **`ghost-grown.com`** | **Registration Only — DreamHost IS the registrar** | Renewal $19.99/year, **expires 2027-02-06**, **auto-renewal OFF**, transfer lock ON. A `ghost-grown.com` folder also exists on the server under user `dh_h53ea8` |
+| `ghost-grown.com` | Registration Only — DreamHost is the registrar | Renewal $19.99/year, expires 2027-02-06, auto-renewal already OFF, transfer lock ON. A `ghost-grown.com` folder also exists on the server under user `dh_h53ea8` |
 
-⚠️ **`ghost-grown.com` is registered at DreamHost.** Closing the account puts that registration at
-risk. It must be transferred out (to Porkbun, alongside the others) before the account is closed.
-Auto-renewal is already off, so it would also lapse on 2027-02-06 regardless.
+**Decision (Ashley, 2026-07-26): let `ghost-grown.com` go.** The real Ghostgrown domain is
+**`ghostgrownxo.com`**, already set up elsewhere. `ghost-grown.com` is unwanted, holds nothing of
+value, and auto-renewal is already off, so it lapses on its own at 2027-02-06. No transfer is
+needed and nothing has to be timed around it. This removes the only step in the shutdown that had
+an external delay.
 
 ---
 
@@ -353,9 +355,26 @@ in cold storage is a better outcome than permanently losing 50 PDFs to avoid it.
 
 Ordered by consequence. Items 1–5 are permanent losses.
 
+### Can you just stop paying and keep the files? No.
+
+Researched 2026-07-26 against DreamHost's own documentation:
+
+| Question | Answer |
+|---|---|
+| Can the account stay open without a paid plan? | **Yes** — the account object remains open, and cancelling a plan issues an account credit |
+| Do the files survive that? | **No.** Removing hosting ("No Hosting (DNS Only)") **permanently deletes all files, users, and data on the server**. The account survives as an empty shell |
+| Is there a free tier that parks a WordPress install? | No |
+| Does deleting the unused ghostgrownart / goblinworldwide databases lower the bill? | **No.** Shared Unlimited is a flat $16.99/month regardless of how many databases or sites sit on it. Deleting them is housekeeping worth $0 |
+| Refund or credit? | Cancelling only the plan gives a **credit**. A **refund** requires fully closing the account |
+
+So there is no path that both stops the payment and preserves the data. Extraction has to happen
+first, then cancellation.
+
+### The checklist
+
 | # | Action | Why | Recoverable after closing? |
 |---|---|---|---|
-| 1 | **Transfer `ghost-grown.com` registration off DreamHost** (to Porkbun) | DreamHost is the registrar. Closing the account puts a domain you own at risk. Transfer lock is ON, so unlock it first and get the auth code | ❌ **No — you could lose the domain** |
+| 1 | ~~Transfer `ghost-grown.com`~~ **Nothing to do** | Resolved: unwanted domain, auto-renew already off, lapses 2027-02-06 on its own. Real domain is `ghostgrownxo.com` | — |
 | 2 | **Download the whole `wp-content/uploads/` folder** from `/home/dh_svunx2/ashleypimenta.com/` | 831 attachments, ~11 years of source files, including the 4 items never migrated. Last access you will have | ❌ **No. Gone forever** |
 | 3 | **Export the 2 `ashleypimenta_com` databases** as `.sql` (phpMyAdmin → Export) | Captures what the WXR misses: theme options, widgets, slider configs. The other 5 databases are intentionally skipped — see §4 | ❌ No |
 | 4 | Download `wp-content/themes/kalium-child/` and `.htaccess`. Open `wp-config.php` and **record the `$table_prefix` value in this file**, then discard it | Custom CSS, `functions.php`, rewrite rules. The prefix is needed to read a restored dump; the credentials in that file are worthless once the account closes and must not be archived anywhere | ❌ No |
