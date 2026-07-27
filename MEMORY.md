@@ -1,6 +1,8 @@
 # ashleypimenta.com — Project Memory
 
-Eleventy portfolio site for Ashley M. Bettencourt-Pimenta. Live at `ashleypimenta.netlify.app`. Custom domain (`ashleypimenta.com`) still on Dreamhost — DNS flip pending.
+Eleventy portfolio site for Ashley M. Bettencourt-Pimenta. Live at `ashleypimenta.com` (and `ashleypimenta.netlify.app`). Registrar Porkbun, DNS + hosting on Netlify. **DNS flip is done — the domain no longer touches DreamHost.**
+
+> **DreamHost / WordPress history:** the full record of how the old WordPress site was hosted, accessed, and built — plus the shutdown checklist and a rebuild spec — is at **`_backup/dreamhost-wordpress-setup.md`**. Read that before touching anything DreamHost-related.
 
 ## Stack
 
@@ -71,7 +73,8 @@ npm run build    # one-shot build to _site/
 
 ## Open Items
 
-- [ ] **Domain DNS flip** — point ashleypimenta.com to Netlify, cancel Dreamhost
+- [x] **Domain DNS flip** — done. Porkbun registrar, Netlify DNS + hosting
+- [ ] **Cancel DreamHost** — extraction first, then close before **2026-08-19**. Full checklist and shutdown log in `_backup/dreamhost-wordpress-setup.md` §9 and §12. Account backup was requested 2026-07-26 19:52:59; do not close until the archive is downloaded **and verified**
 - [ ] **Decap CMS** — wire up `/admin/` with Netlify Identity
 - [ ] **Remaining captions** — burberry, bookcovers, palmsnights, basquiat-book, lifeisgood, thetruth, evalongoria, cnn-dei, cnn-back-to-where-it-all-began, juliachild, people-of-earth, moonstruck-fine-foods
 - [ ] **BMW order** — lone item at bottom of 4-col grid, ask Ashley where she wants it
