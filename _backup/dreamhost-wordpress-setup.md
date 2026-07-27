@@ -171,11 +171,14 @@ Server `iad1-mysql-e2-16a:philibert`, hostname `mysql.ashleypimenta.com`.
 
 **Total: 7 databases, ~153 MiB, across three different websites.**
 
-`ghostgrownart.com` and `goblinworldwide.com` are no longer hosted (neither appears in Websites),
-but **their databases are still here and still hold their content.** If either of those sites
-matters even a little, those dumps need to come down too. `ashleypimenta_com_1` at 65.88 MiB is
-the largest and is almost certainly the live one; `ashleypimenta_com` is likely the older install
-matching `ashleypimenta.com.old`.
+`ashleypimenta_com_1` at 65.88 MiB is the largest and is almost certainly the live one;
+`ashleypimenta_com` is likely the older install matching `ashleypimenta.com.old`.
+
+**Decision (Ashley, 2026-07-26): only `ashleypimenta.com` gets backed up.**
+`ghostgrownart.com` and `goblinworldwide.com` **never became live sites** — they were builds that
+were never launched, unused for years. Their five databases are intentionally abandoned and will
+be destroyed when the account closes. No separate deletion step is needed; closing the account
+removes them. This was a deliberate call, not an oversight.
 
 ---
 
@@ -311,6 +314,28 @@ Known un-migrated items (per `wordpress.md`): the Canadian side of the Bitcoin D
 comparison slider, and three PDF-preview items (NYC Case Study pages 1–2, Gas Station Spin Off
 Deliverables). Those exist only on DreamHost.
 
+### Coverage analysis (measured 2026-07-26)
+
+| | Files |
+|---|---|
+| Unique files in the WordPress media library | **807** |
+| Already on Cloudinary and referenced by the live site | **406** |
+| **Exists only on DreamHost** | **~401** |
+
+Media library by type: 568 jpg, 150 png, **50 pdf**, 20 mp4, 7 gif, 4 jpeg, 3 mov, 3 heic, 1 zip,
+1 mp3. Cloudinary holds 333 jpg, 84 png, 13 mp4, 3 gif and **zero PDFs**.
+
+**All 50 PDFs are un-migrated.** They are the single most concrete loss: real deliverables with no
+copy anywhere else. The rest of the ~401 gap is a mix of Kalium demo imagery (the ~38 demo pages
+and demo portfolio items all carry images), older or alternate versions of work that did get
+migrated, and genuinely un-migrated pieces.
+
+**Why selective download is impossible:** Cloudinary renamed every migrated asset to a random
+public ID (e.g. `auogvf5njagmy1hqxrqc.jpg`). Original filenames were not preserved, so the 406
+already-safe files cannot be matched back and excluded. The download is all-or-nothing, which
+means roughly half of it is redundant. That redundancy is accepted deliberately: one archived zip
+in cold storage is a better outcome than permanently losing 50 PDFs to avoid it.
+
 ---
 
 ## 8. How the migration was done
@@ -332,9 +357,9 @@ Ordered by consequence. Items 1–5 are permanent losses.
 |---|---|---|---|
 | 1 | **Transfer `ghost-grown.com` registration off DreamHost** (to Porkbun) | DreamHost is the registrar. Closing the account puts a domain you own at risk. Transfer lock is ON, so unlock it first and get the auth code | ❌ **No — you could lose the domain** |
 | 2 | **Download the whole `wp-content/uploads/` folder** from `/home/dh_svunx2/ashleypimenta.com/` | 831 attachments, ~11 years of source files, including the 4 items never migrated. Last access you will have | ❌ **No. Gone forever** |
-| 3 | **Export all 7 MySQL databases** as `.sql` (phpMyAdmin → Export) | Captures what the WXR misses, plus the entire ghostgrownart.com and goblinworldwide.com sites | ❌ No |
-| 4 | Download `wp-content/themes/kalium-child/`, `wp-config.php`, `.htaccess` | Custom CSS, `functions.php`, rewrite rules | ❌ No |
-| 5 | Look inside `ashleypimenta.com.old` and the unattached SFTP users' home dirs | Unknown contents; may hold older work | ❌ No |
+| 3 | **Export the 2 `ashleypimenta_com` databases** as `.sql` (phpMyAdmin → Export) | Captures what the WXR misses: theme options, widgets, slider configs. The other 5 databases are intentionally skipped — see §4 | ❌ No |
+| 4 | Download `wp-content/themes/kalium-child/` and `.htaccess`. Open `wp-config.php` and **record the `$table_prefix` value in this file**, then discard it | Custom CSS, `functions.php`, rewrite rules. The prefix is needed to read a restored dump; the credentials in that file are worthless once the account closes and must not be archived anywhere | ❌ No |
+| 5 | Look inside `ashleypimenta.com.old` | Unknown contents; may hold older portfolio work | ❌ No |
 | 6 | Take a fresh WXR export | The saved one is 2026-06-15. Also settles the Google Display Banner width conflict in `wordpress.md` | ❌ No |
 | 7 | Save the final invoice | Records | Retrievable from `amasters.bp@gmail.com` |
 | 8 | Decide before **2026-08-19** | AutoPay will charge $16.99 to the Amex ending 2000 on that date | — |
@@ -348,10 +373,27 @@ gives you a download link. Do that first, verify the download, then work through
 
 **Where to put what you download:**
 
-| File | Destination |
-|---|---|
-| 7 `.sql` dumps, fresh WXR, `kalium-child/`, `wp-config.php`, `.htaccess` | `Code/ashleypimenta/_backup/dreamhost-final/` (small, text-ish, fine for git) |
-| Raw `uploads/` folder | Google Drive — too large for git |
+**Storage constraints (Ashley, 2026-07-26): no Google Drive, ever. Nothing kept permanently on
+the Mac — iCloud is always full.** Files touch the laptop only in transit (download → upload →
+delete).
+
+⚠️ **This GitHub repo (`ghostgrown/ashleypimenta`) is PUBLIC.** Nothing with credentials can be
+committed here. A WordPress `.sql` dump contains the admin email and password hash;
+`wp-config.php` contains live database credentials. Cloudinary URLs are also publicly reachable.
+So the archive splits into two piles.
+
+| Pile | Contents | Destination | Why |
+|---|---|---|---|
+| **Public-safe media** | All 807 media files: images, the 50 PDFs, videos. Est. 1.5–3 GB | **Cloudinary** account `uwsjmkh2`, dedicated folder `dreamhost-archive-2026/` | Already the site's asset host. Free tier is 25 GB. Separate folder so it never mixes with what the live portfolio references |
+| **Private** | The 2 `ashleypimenta_com` `.sql` dumps (gzipped), `kalium-child/` theme, fresh WXR export, `.htaccess` | **A new PRIVATE GitHub repo** (e.g. `ashleypimenta-archive`) | Free, unlimited private repos, 100 MB per-file limit which the gzipped dump fits under. Never the public repo |
+| **Do not keep** | `wp-config.php` | — | Its only real content is DB credentials that become worthless when the account closes. The table prefix is recorded in this file instead, which is the sole part worth having |
+
+Cloudinary free-tier caveats: roughly 10 MB per image and 100 MB per video. A few large originals
+may reject on upload; note any that fail rather than assuming everything went.
+
+About half the media duplicates what is already on Cloudinary (see §7). That is unavoidable
+(renamed public IDs cannot be matched back) and harmless, since it lives in a separate archive
+folder that is never browsed.
 
 ---
 
@@ -386,9 +428,8 @@ paths depend on files that only exist on DreamHost right now.
 ## 11. Open questions
 
 - What is in `ashleypimenta.com.old` (Feb 2024)? Never opened.
-- What is in the 8 unattached SFTP users' home directories?
-- Do ghostgrownart.com or goblinworldwide.com matter enough to preserve? Their databases are
-  intact but the sites are unhosted.
+- ~~Do ghostgrownart.com or goblinworldwide.com matter enough to preserve?~~ **Resolved
+  2026-07-26: no.** Neither ever went live. Both are intentionally being let go.
 - Which `ashleypimenta_com` database is live — almost certainly `_1` at 65.88 MiB, but confirm
   against `wp-config.php` before relying on it.
 - Does the live WordPress differ from the 2026-06-15 export? The Google Display Banner Ad width
