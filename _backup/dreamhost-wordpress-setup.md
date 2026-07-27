@@ -304,6 +304,35 @@ Microsite, Mobile App, Motion, OOH, OOH Campaign, Print, Projects, plus Main Men
 
 **A WXR export is not a backup.** It is content metadata and cannot restore a site alone.
 
+### ⚠️ Correction (2026-07-26): most of this was already backed up
+
+An earlier draft of this file overstated the risk. **The images are already preserved in this
+repo's git history.** Commit `ef8ef3f` (2026-07-08) removed `uploads/` from the working tree, not
+from history, and that history is pushed to GitHub.
+
+```
+git ls-tree -r --name-only ef8ef3f^ -- uploads   →  419 files
+  321 jpg · 75 png · 13 mp4 · 4 pdf · 3 jpeg · 3 gif      (.git is 656 MB)
+```
+
+Recover any of them with `git checkout ef8ef3f^ -- uploads`.
+
+So every image the live site uses exists in **three** places: Cloudinary, local `.git`, and
+GitHub. Revised risk picture:
+
+| | Files |
+|---|---|
+| WordPress media library | 807 |
+| Preserved in git history | 419 |
+| **Only on DreamHost** | **~388** |
+
+That ~388 is overwhelmingly Kalium demo imagery, old duplicates, and unused alternate versions.
+**The only genuinely valuable items are the ~46 PDFs** that were never migrated.
+
+**Consequence: this is a small errand, not a rescue.** The plan below was simplified accordingly —
+no object storage, no private repo for database dumps, no Cloudinary archive folder. Grab the
+PDFs, close the account.
+
 ### Where the images actually live
 
 | Location | Coverage |
@@ -370,7 +399,25 @@ Researched 2026-07-26 against DreamHost's own documentation:
 So there is no path that both stops the payment and preserves the data. Extraction has to happen
 first, then cancellation.
 
-### The checklist
+### The checklist (SIMPLIFIED — see the correction in §7)
+
+Since the images are already safe in git history, this reduces to four steps:
+
+1. Wait for the backup email (`amasters.bp@gmail.com`, subject *DreamHost account backup complete!*)
+2. Pull the **~46 un-migrated PDFs** out of the archive
+3. Commit them to `uploads/` in this repo — they are Ashley's own portfolio work, a few MB, and
+   this repo is already where the other 419 files live
+4. Close the DreamHost account before **2026-08-19**
+
+Optional extras only if they turn out to be easy: skim `ashleypimenta.com.old` for anything
+interesting, and grab `kalium-child/` if a WordPress rebuild ever seems likely (it does not).
+
+**Dropped as unnecessary:** Cloudflare R2 / Backblaze object storage, a Cloudinary archive folder,
+a private GitHub repo for `.sql` dumps, and preserving the ghostgrownart / goblinworldwide
+databases. All of that was built around a data-loss risk that turned out to be mostly already
+mitigated.
+
+### The original full checklist (kept for reference)
 
 | # | Action | Why | Recoverable after closing? |
 |---|---|---|---|
@@ -393,26 +440,21 @@ gives you a download link. Do that first, verify the download, then work through
 **Where to put what you download:**
 
 **Storage constraints (Ashley, 2026-07-26): no Google Drive, ever. Nothing kept permanently on
-the Mac — iCloud is always full.** Files touch the laptop only in transit (download → upload →
-delete).
+the Mac — iCloud is always full.**
 
-⚠️ **This GitHub repo (`ghostgrown/ashleypimenta`) is PUBLIC.** Nothing with credentials can be
-committed here. A WordPress `.sql` dump contains the admin email and password hash;
-`wp-config.php` contains live database credentials. Cloudinary URLs are also publicly reachable.
-So the archive splits into two piles.
+Because the images are already preserved in git history (§7), there is almost nothing to store.
+The plan is deliberately boring:
 
-| Pile | Contents | Destination | Why |
-|---|---|---|---|
-| **Public-safe media** | All 807 media files: images, the 50 PDFs, videos. Est. 1.5–3 GB | **Cloudinary** account `uwsjmkh2`, dedicated folder `dreamhost-archive-2026/` | Already the site's asset host. Free tier is 25 GB. Separate folder so it never mixes with what the live portfolio references |
-| **Private** | The 2 `ashleypimenta_com` `.sql` dumps (gzipped), `kalium-child/` theme, fresh WXR export, `.htaccess` | **A new PRIVATE GitHub repo** (e.g. `ashleypimenta-archive`) | Free, unlimited private repos, 100 MB per-file limit which the gzipped dump fits under. Never the public repo |
-| **Do not keep** | `wp-config.php` | — | Its only real content is DB credentials that become worthless when the account closes. The table prefix is recorded in this file instead, which is the sole part worth having |
+| Contents | Destination | Why |
+|---|---|---|
+| The **~46 un-migrated PDFs** | `uploads/` **in this repo**, committed | Ashley's own portfolio work, a few MB. The other 419 files already live in this repo's history, so this is the same shelf |
+| Everything else in the archive | **Nothing.** Delete after extracting the PDFs | Kalium demo imagery, duplicates, unused versions. No value |
+| `.sql` dumps, `kalium-child/`, `wp-config.php` | **Do not keep** | A WordPress rebuild is not happening. `wp-config.php` is credentials only, worthless once the account closes, and must never be committed |
 
-Cloudinary free-tier caveats: roughly 10 MB per image and 100 MB per video. A few large originals
-may reject on upload; note any that fail rather than assuming everything went.
-
-About half the media duplicates what is already on Cloudinary (see §7). That is unavoidable
-(renamed public IDs cannot be matched back) and harmless, since it lives in a separate archive
-folder that is never browsed.
+⚠️ **This repo (`ghostgrown/ashleypimenta`) is PUBLIC.** The PDFs are portfolio work and fine to
+commit. A WordPress `.sql` dump contains the admin email and password hash, and `wp-config.php`
+contains live database credentials — neither may ever be committed here. Since neither is being
+kept, this is moot, but the rule stands if that decision is ever revisited.
 
 ---
 
@@ -483,6 +525,11 @@ server. Use with §5 (stack) and §10 (restore steps).
 
 ### Licenses required
 
+**WordPress itself is free and always was.** The only recurring cost in this whole setup was
+DreamHost hosting at $16.99/month ($204/year). The products below are commercial, but were bought
+once via ThemeForest years ago, not subscribed to — check the ThemeForest account tied to
+`amasters.bp@gmail.com` before re-buying anything.
+
 | Product | Vendor | Notes |
 |---|---|---|
 | Kalium | Laborator, via ThemeForest | Paid. Without it, imported content has no layout |
@@ -507,9 +554,10 @@ must use flex-wrap, never CSS grid `auto-flow: dense`, or the layout will silent
 **Resume phrase: "DreamHost backup is here."** When Ashley says this in any session, the
 completion email has landed in `amasters.bp@gmail.com` (subject: *DreamHost account backup
 complete!*). Pick up at the first unchecked box below: help her download the archive, **verify**
-its contents (media files present, `.sql` files present, not a truncated or empty zip), move media
-to Cloudinary `dreamhost-archive-2026/` and the private files to a private GitHub repo, then and
-only then close the account. Do not close the account before the verify box is checked.
+it opens and is not truncated, extract the **~46 un-migrated PDFs**, commit them to `uploads/` in
+this repo, delete the rest, then close the account. Read §7's correction first — the images are
+already preserved in git history, so this is a small errand, not a rescue. Do not close the
+account before the verify box is checked.
 
 | Date | Event |
 |---|---|
@@ -517,10 +565,8 @@ only then close the account. Do not close the account before the verify box is c
 | 2026-07-26 19:52:59 | **Full account backup scheduled** via Panel → Billing → Backup Your Account ("Back me up!"). Covers all SFTP users, mailboxes, and MySQL databases. Completion email goes to `amasters.bp@gmail.com` |
 | ⬜ pending | Backup email received, archive downloaded |
 | ⬜ pending | Archive **verified** — zip opened, media and `.sql` files confirmed present |
-| ⬜ pending | Media uploaded to Cloudinary `dreamhost-archive-2026/` |
-| ⬜ pending | `.sql` + `kalium-child/` + WXR pushed to private GitHub repo |
-| ⬜ pending | Table prefix recorded in §11, `wp-config.php` discarded |
-| ⬜ pending | Local copies deleted |
+| ⬜ pending | ~46 un-migrated PDFs extracted and committed to `uploads/` in this repo |
+| ⬜ pending | Rest of the archive deleted (demo imagery, duplicates, `.sql`, `wp-config.php`) |
 | ⬜ pending | **Account closed** (must be before 2026-08-19 to avoid another $16.99) |
 
 **Rule: the account is not closed until the verify line above is checked.** A scheduled backup is
