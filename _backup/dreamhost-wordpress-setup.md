@@ -504,6 +504,13 @@ must use flex-wrap, never CSS grid `auto-flow: dense`, or the layout will silent
 
 ## 12. Shutdown log
 
+**Resume phrase: "DreamHost backup is here."** When Ashley says this in any session, the
+completion email has landed in `amasters.bp@gmail.com` (subject: *DreamHost account backup
+complete!*). Pick up at the first unchecked box below: help her download the archive, **verify**
+its contents (media files present, `.sql` files present, not a truncated or empty zip), move media
+to Cloudinary `dreamhost-archive-2026/` and the private files to a private GitHub repo, then and
+only then close the account. Do not close the account before the verify box is checked.
+
 | Date | Event |
 |---|---|
 | 2026-07-26 | This record written and panel-verified |
