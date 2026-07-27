@@ -444,7 +444,84 @@ paths depend on files that only exist on DreamHost right now.
 
 ---
 
-## 11. Open questions
+## 11. Build-this-again spec
+
+Everything needed to stand up an identical setup from scratch, without referring to the old
+server. Use with §5 (stack) and §10 (restore steps).
+
+### Hosting shape
+
+| Component | What it was | Notes for a rebuild |
+|---|---|---|
+| Plan | DreamHost Shared Unlimited, $16.99/mo | Any shared host with PHP 8.3 + MySQL works. Nothing here needed DreamHost specifically |
+| Web server | Apache | `.htaccess` rewrite rules assume Apache. On nginx the WP rules must be translated |
+| PHP | 8.3 | |
+| Database | MySQL, one DB per install | |
+| SSL | Enabled, `https` canonical | Let's Encrypt is fine |
+| Canonical host | **`www.ashleypimenta.com`** | Every internal URL in the export uses `www`. Keep `www` canonical on a rebuild or run a search-replace across the DB |
+| Install path | Domain root (`/home/{user}/{domain}/`) | Not a subdirectory install |
+
+### WordPress configuration
+
+| Setting | Value |
+|---|---|
+| Site title | Ashley M. Bettencourt-Pimenta (Ash Bettencourt) |
+| Tagline | Graphic & Digital Design |
+| Language | en-US |
+| Permalink structure | `/%postname%/`, with `portfolio` as a custom post type at `/portfolio/{slug}/` |
+| Admin user | `ashleypimenta_5s5k5m` (display name `ashleysuper`) |
+| Table prefix | ⬜ **TO RECORD** — read `$table_prefix` from `wp-config.php` before discarding it |
+
+### Install order (order matters)
+
+1. WordPress core
+2. Plugins: WPBakery Page Builder → Livemesh Addons → Slider Revolution → MasterSlider →
+   Advanced WordPress Backgrounds → WPFront Scroll Top
+3. Kalium parent theme, then `kalium-child`, then activate the child
+4. Only then import content — WPBakery shortcodes render as literal `[vc_row]` text if the
+   builder is not active at import time
+
+### Licenses required
+
+| Product | Vendor | Notes |
+|---|---|---|
+| Kalium | Laborator, via ThemeForest | Paid. Without it, imported content has no layout |
+| WPBakery Page Builder | WPBakery | Paid. Often bundled with Kalium |
+| Slider Revolution | ThemeCore | Paid. Often bundled with Kalium |
+
+Livemesh Addons, MasterSlider, Advanced WordPress Backgrounds and WPFront Scroll Top have free
+versions sufficient for this build.
+
+### The portfolio layout contract
+
+The single most important piece of custom logic, documented in full in `wordpress.md`: each
+gallery item carries a `column_width` field (`1-1`, `1-2`, `1-3`, `1-4`) that maps to Bootstrap
+column classes, and an `item_type` (`image`, `slider`, `video`, `comparison`). Items lay out in
+source order in a wrapping row, top-aligned, and do **not** backfill gaps. Any reimplementation
+must use flex-wrap, never CSS grid `auto-flow: dense`, or the layout will silently differ.
+
+---
+
+## 12. Shutdown log
+
+| Date | Event |
+|---|---|
+| 2026-07-26 | This record written and panel-verified |
+| 2026-07-26 19:52:59 | **Full account backup scheduled** via Panel → Billing → Backup Your Account ("Back me up!"). Covers all SFTP users, mailboxes, and MySQL databases. Completion email goes to `amasters.bp@gmail.com` |
+| ⬜ pending | Backup email received, archive downloaded |
+| ⬜ pending | Archive **verified** — zip opened, media and `.sql` files confirmed present |
+| ⬜ pending | Media uploaded to Cloudinary `dreamhost-archive-2026/` |
+| ⬜ pending | `.sql` + `kalium-child/` + WXR pushed to private GitHub repo |
+| ⬜ pending | Table prefix recorded in §11, `wp-config.php` discarded |
+| ⬜ pending | Local copies deleted |
+| ⬜ pending | **Account closed** (must be before 2026-08-19 to avoid another $16.99) |
+
+**Rule: the account is not closed until the verify line above is checked.** A scheduled backup is
+not a downloaded backup, and a downloaded backup is not a verified one.
+
+---
+
+## 13. Open questions
 
 - What is in `ashleypimenta.com.old` (Feb 2024)? Never opened.
 - ~~Do ghostgrownart.com or goblinworldwide.com matter enough to preserve?~~ **Resolved
