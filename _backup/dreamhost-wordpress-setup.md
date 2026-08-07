@@ -554,8 +554,9 @@ must use flex-wrap, never CSS grid `auto-flow: dense`, or the layout will silent
 **Resume phrase: "DreamHost backup is here."** When Ashley says this in any session, the
 completion email has landed in `amasters.bp@gmail.com` (subject: *DreamHost account backup
 complete!*). Pick up at the first unchecked box below: help her download the archive, **verify**
-it opens and is not truncated, extract the **~46 un-migrated PDFs**, commit them to `uploads/` in
-this repo, delete the rest, then close the account. Read §7's correction first — the images are
+it opens and is not truncated, extract the **38 still-missing PDFs** listed under "The extraction
+gap" below, commit them to `_backup/pdfs-from-dreamhost/` in this repo alongside the 11 already
+there, delete the rest, then close the account. Read §7's correction first — the images are
 already preserved in git history, so this is a small errand, not a rescue. Do not close the
 account before the verify box is checked.
 
@@ -563,14 +564,73 @@ account before the verify box is checked.
 |---|---|
 | 2026-07-26 | This record written and panel-verified |
 | 2026-07-26 19:52:59 | **Full account backup scheduled** via Panel → Billing → Backup Your Account ("Back me up!"). Covers all SFTP users, mailboxes, and MySQL databases. Completion email goes to `amasters.bp@gmail.com` |
-| ⬜ pending | Backup email received, archive downloaded |
+| 2026-07-26 ~23:38 | **12 PDFs pulled manually** from the media library into `_backup/pdfs-from-dreamhost/`. All 2018–2019 SCAD process books. Left uncommitted at the time |
+| 2026-08-07 | Those PDFs **committed and pushed** (commit `58d8cb2`), one exact duplicate dropped, so **11 files, 158 MB** now live in this repo and on GitHub |
+| ⬜ pending | Backup email received, archive downloaded — `~/Downloads` empty as of 2026-08-07, no DreamHost mail in the connected inbox (it goes to `amasters.bp@gmail.com`) |
 | ⬜ pending | Archive **verified** — zip opened, media and `.sql` files confirmed present |
-| ⬜ pending | ~46 un-migrated PDFs extracted and committed to `uploads/` in this repo |
+| ⬜ pending | **The other 38 PDFs extracted** and committed — see the gap list below |
 | ⬜ pending | Rest of the archive deleted (demo imagery, duplicates, `.sql`, `wp-config.php`) |
 | ⬜ pending | **Account closed** (must be before 2026-08-19 to avoid another $16.99) |
 
 **Rule: the account is not closed until the verify line above is checked.** A scheduled backup is
 not a downloaded backup, and a downloaded backup is not a verified one.
+
+### The extraction gap (measured 2026-08-07)
+
+Diffed the 50 unique PDF filenames in `wordpress-export-2026-06-15.xml` against what is actually
+in this repo. **12 pulled, 38 still only on DreamHost.** Everything already saved is 2018–2019
+SCAD coursework. **Every professional client deliverable is still on the server.**
+
+| Group | Missing | What it is |
+|---|---|---|
+| Bitcoin Depot | 23 | Brand Book Internal, Brand Book III, Comprehensive Solutions Guide `_02`/`v3`/`v4`, ATMIA Solutions Guide, NY Case Study 1/2/FINAL, Franchise Flyer, Distributor Program Flyer, Contract Flyer, Marketing Materials US, Simon Malls posters (Barton Creek TX, Ross Park GA), PreReDesign |
+| CNN | 8 | Presidential Debate 2024 CandidateA `_09` through `_12`, Popcorn Box mockups |
+| SCAD / personal | 7 | AlienPresentation, alien-processbook, PalmsNights OOH, PalmsNights ProcessBook, Body Glove web `_03`, Independent Contractor Flyer 2020, two old resume PDFs |
+
+Full list:
+
+- `AlienPresentation.pdf`
+- `BitcoinDepot-ATMIA-Solutions-Guide-2021-1.pdf`
+- `BitcoinDepot-ATMIA-Solutions-Guide-2021.pdf`
+- `BitcoinDepot-BrandBook-Internal.pdf`
+- `BitcoinDepot-BrandBookIII-2021-Internal.pdf`
+- `BitcoinDepot-Comprehensive-Solutions-Guide-2021_02-1.pdf`
+- `BitcoinDepot-Comprehensive-Solutions-Guide-2021_02.pdf`
+- `BitcoinDepot-Comprehensive-Solutions-Guide-2021_v3.pdf`
+- `BitcoinDepot-Comprehensive-Solutions-Guide-2021_v4.pdf`
+- `BitcoinDepot-ContractFlyer-2.pdf`
+- `BitcoinDepot-ContractFlyer.pdf`
+- `BitcoinDepot-DistributorProgram-Flyer-2021.pdf`
+- `BitcoinDepot-Franchise-Flyer-2021-FINAL-1.pdf`
+- `BitcoinDepot-Franchise-Flyer-2021-FINAL.pdf`
+- `BitcoinDepot-MarketingMaterials_US.pdf`
+- `BitcoinDepot-NYCaseStudy-1-1.pdf`
+- `BitcoinDepot-NYCaseStudy-1.pdf`
+- `BitcoinDepot-NYCaseStudy-2-1.pdf`
+- `BitcoinDepot-NYCaseStudy-2.pdf`
+- `BitcoinDepot-NYCaseStudy-FINAL.pdf`
+- `BitcoinDepot-PreReDesign.pdf`
+- `BitcoinDepot-SimonMallsPoster-BartonCreekSquare-TX.pdf`
+- `BitcoinDepot-SimonMallsPoster-RossParkMall-GA.pdf`
+- `CNN-Presidential-Debate-2024-CandidateA_09-1.pdf`
+- `CNN-Presidential-Debate-2024-CandidateA_09-2.pdf`
+- `CNN-Presidential-Debate-2024-CandidateA_09.pdf`
+- `CNN-Presidential-Debate-2024-CandidateA_10.pdf`
+- `CNN-Presidential-Debate-2024-CandidateA_11.pdf`
+- `CNN-Presidential-Debate-2024-CandidateA_12.pdf`
+- `CNN_PopcornBox-Mockups-7-1.pdf`
+- `CNN_PopcornBox-Mockups-7.pdf`
+- `Independent-Contractor-Flyer-2020.v4.pdf`
+- `PalmsNights-OOH.pdf`
+- `PalmsNights-ProcessBook.pdf`
+- `alien-processbook.pdf`
+- `ashleypimenta-resume.pdf`
+- `ashleypimenta-resumeweb.pdf`
+- `blodyglove-portfolio-web_03.pdf`
+
+Several are near-duplicates (`-1`, `-2` suffixes are WordPress re-upload collisions), so the real
+count of distinct pieces is closer to 28. Dedupe by checksum after extraction, the way
+`Palms-Nights-Process-Book-1.pdf` was dropped on 2026-08-07.
 
 ---
 
