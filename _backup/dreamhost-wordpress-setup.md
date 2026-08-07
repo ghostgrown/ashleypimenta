@@ -581,6 +581,26 @@ Diffed the 50 unique PDF filenames in `wordpress-export-2026-06-15.xml` against 
 in this repo. **12 pulled, 38 still only on DreamHost.** Everything already saved is 2018–2019
 SCAD coursework. **Every professional client deliverable is still on the server.**
 
+**Wayback recovery attempt (2026-08-07): mostly a dead end.** A CDX query across the whole
+`ashleypimenta.com` domain found captures of only **7 PDFs, ever**. Zero Bitcoin Depot, zero CNN,
+those were 2025/12 uploads and the crawler never reached them. Of the 7, four were already saved.
+Results:
+
+| File | Outcome |
+|---|---|
+| `alien-processbook.pdf` | ✅ Recovered, 80 MB, verified against archived `content-length` |
+| `AlienPresentation.pdf` | ✅ Recovered, 80 MB, verified |
+| `PalmsNights-ProcessBook.pdf` | ❌ Archived but **truncated by the crawler at exactly 1 MiB of 3,893,443 bytes**. Still has to come off the server |
+
+Verify recovered PDFs by comparing byte count to `x-archive-orig-content-length` and grepping the
+last 64 KB for `%%EOF`. A 2 KB tail is too small and gives false truncation reports.
+
+**Revised gap: 36 files.** Remove `alien-processbook.pdf` and `AlienPresentation.pdf` from the
+list below.
+
+⚠️ **Repo weight:** `.git` is now ~975 MB after these commits. Anything further this large should
+go somewhere other than a git repo.
+
 | Group | Missing | What it is |
 |---|---|---|
 | Bitcoin Depot | 23 | Brand Book Internal, Brand Book III, Comprehensive Solutions Guide `_02`/`v3`/`v4`, ATMIA Solutions Guide, NY Case Study 1/2/FINAL, Franchise Flyer, Distributor Program Flyer, Contract Flyer, Marketing Materials US, Simon Malls posters (Barton Creek TX, Ross Park GA), PreReDesign |
@@ -589,7 +609,6 @@ SCAD coursework. **Every professional client deliverable is still on the server.
 
 Full list:
 
-- `AlienPresentation.pdf`
 - `BitcoinDepot-ATMIA-Solutions-Guide-2021-1.pdf`
 - `BitcoinDepot-ATMIA-Solutions-Guide-2021.pdf`
 - `BitcoinDepot-BrandBook-Internal.pdf`
@@ -623,7 +642,6 @@ Full list:
 - `Independent-Contractor-Flyer-2020.v4.pdf`
 - `PalmsNights-OOH.pdf`
 - `PalmsNights-ProcessBook.pdf`
-- `alien-processbook.pdf`
 - `ashleypimenta-resume.pdf`
 - `ashleypimenta-resumeweb.pdf`
 - `blodyglove-portfolio-web_03.pdf`
