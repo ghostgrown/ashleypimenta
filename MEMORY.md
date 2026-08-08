@@ -74,7 +74,34 @@ npm run build    # one-shot build to _site/
 ## Open Items
 
 - [x] **Domain DNS flip** — done. Porkbun registrar, Netlify DNS + hosting
-- [ ] **Cancel DreamHost** — extraction first, then close before **2026-08-19**. Full checklist and shutdown log in `_backup/dreamhost-wordpress-setup.md` §9 and §12. Account backup was requested 2026-07-26 19:52:59; do not close until the archive is downloaded **and verified**
+- [ ] **Cancel DreamHost** — extraction first, then close before **2026-08-19**. Full checklist and shutdown log in `_backup/dreamhost-wordpress-setup.md` §9 and §12. See the state-of-play box below before touching anything
 - [ ] **Decap CMS** — wire up `/admin/` with Netlify Identity
 - [ ] **Remaining captions** — burberry, bookcovers, palmsnights, basquiat-book, lifeisgood, thetruth, evalongoria, cnn-dei, cnn-back-to-where-it-all-began, juliachild, people-of-earth, moonstruck-fine-foods
 - [ ] **BMW order** — lone item at bottom of 4-col grid, ask Ashley where she wants it
+
+---
+
+## ⚠️ DreamHost shutdown — state of play as of 2026-08-07
+
+A session crashed mid-extraction on 2026-07-26 and left confusing wreckage. This is what is
+actually true, so nobody re-walks the circle. Detail lives in `_backup/dreamhost-wordpress-setup.md` §12.
+
+| Fact | Status |
+|---|---|
+| Account backup on DreamHost's servers | ✅ Complete, downloadable in panel. **Expires 2026-08-09** |
+| `user/iad1-shared-b8-41_dh_svunx2.tar.gz` (12.76 GiB) | The archive holding the WordPress install. **Never downloaded** |
+| `~/Downloads/pdfs.tar.gz` | **0 bytes.** Failed artifact of the crashed session. Delete it, it is not a backup |
+| `~/Downloads/mftp_zip_2026_07_26_20_*.zip` ×3 | 219 MB of file-manager exports. **Already mined**, safe to delete |
+| PDFs in the media library | 50 total |
+| PDFs recovered so far | **17** (13 in `_backup/pdfs-from-dreamhost/`, 4 more pulled from zip #3 on 2026-08-07) |
+| **Still only on DreamHost** | **33**, including 19 Bitcoin Depot and all 8 CNN Presidential Debate boards |
+| Wayback Machine as a fallback | ❌ Only ever captured 7 PDFs from this domain, zero Bitcoin Depot, zero CNN |
+
+**Storage constraint (Ashley, restated 2026-08-07): she does not want this material living on her
+laptop.** That rules out committing more big PDFs here — `.git` already grew to ~975 MB from the
+first batch. Cloudinary was tried and **only partly works: the free plan rejects any raw upload
+over 10 MB**, so 6 of the 17 uploaded and 11 bounced. A destination for the large files is still
+undecided. GitHub release assets (2 GB per file, no clone required) is the leading candidate.
+
+**Do not close the DreamHost account** until the remaining 33 are off the server. Renewal charges
+2026-08-19.
