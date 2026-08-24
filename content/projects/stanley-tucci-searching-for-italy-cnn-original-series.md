@@ -1,7 +1,7 @@
 ---
 title: "Stanley Tucci | Searching For Italy (CNN Original Series)"
 subtitle: "GRAPHIC DESIGN"
-order: 11
+order: 12
 categories:
   - "BANNER"
   - "DIGITAL"

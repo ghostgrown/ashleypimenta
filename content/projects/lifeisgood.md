@@ -1,7 +1,7 @@
 ---
 title: "Life is Good"
 exploration: true
-order: 25
+order: 26
 categories:
   - "PRINT"
 cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470514/semf0yl2w3l7hf6xvuy9.jpg"

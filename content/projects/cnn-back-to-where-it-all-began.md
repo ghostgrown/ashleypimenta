@@ -1,7 +1,7 @@
 ---
 title: "CNN | BACK TO WHERE IT ALL BEGAN"
 subtitle: "GRAPHIC DESIGN, ILLUSTRATION"
-order: 8
+order: 9
 categories:
   - "ILLUSTRATION"
   - "PRINT"

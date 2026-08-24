@@ -1,7 +1,7 @@
 ---
 title: "The Last O.G. (TBS)"
 subtitle: "GRAPHIC DESIGN"
-order: 18
+order: 19
 categories:
   - "BANNER"
   - "DIGITAL"

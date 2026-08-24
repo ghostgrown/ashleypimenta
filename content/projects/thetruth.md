@@ -1,7 +1,7 @@
 ---
 title: "Underground Press"
 exploration: true
-order: 26
+order: 27
 categories:
   - "PRINT"
 cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470516/eoimpbvo7jrpbfoszqgm.jpg"

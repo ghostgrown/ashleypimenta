@@ -1,7 +1,7 @@
 ---
 title: "CNN | How It Really Happened (CNN Original Series)"
 subtitle: "GRAPHIC DESIGN, MOTION"
-order: 7
+order: 8
 categories:
   - "DIGITAL"
   - "MOTION"

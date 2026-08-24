@@ -1,7 +1,7 @@
 ---
 title: "CNN | PRESIDENTIAL DEBATE"
 subtitle: "GRAPHIC DESIGN, MOTION, PRINT"
-order: 5
+order: 6
 categories:
   - "DIGITAL"
   - "MOTION"

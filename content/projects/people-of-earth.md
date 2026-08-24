@@ -1,7 +1,7 @@
 ---
 title: "People of Earth Vinyl Cover"
 subtitle: "PRINT"
-order: 14
+order: 15
 categories:
   - "PRINT"
 cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470532/ni8dtz0w1pmy4poxikqg.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "Mental Illness Book Covers"
 exploration: true
-order: 22
+order: 23
 categories:
   - "PRINT"
 cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470515/q3hhj2mdmwpihttcsv97.jpg"
