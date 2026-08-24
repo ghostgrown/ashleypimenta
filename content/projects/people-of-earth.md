@@ -1,6 +1,7 @@
 ---
 title: "People of Earth Vinyl Cover"
 subtitle: "PRINT"
+year: "2019"
 order: 15
 categories:
   - "PRINT"

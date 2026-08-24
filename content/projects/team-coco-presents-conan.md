@@ -1,5 +1,6 @@
 ---
 title: "Team Coco presents Conan (TBS)"
+year: "2018-2019"
 order: 20
 categories:
   - "BANNER"

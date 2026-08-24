@@ -1,6 +1,7 @@
 ---
 title: "The Last O.G. (TBS)"
 subtitle: "GRAPHIC DESIGN"
+year: "2018-2019"
 order: 19
 categories:
   - "BANNER"

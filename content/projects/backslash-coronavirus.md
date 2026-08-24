@@ -1,5 +1,6 @@
 ---
 title: "Coronavirus"
+year: "2018"
 hidden: true
 order: 57
 categories:

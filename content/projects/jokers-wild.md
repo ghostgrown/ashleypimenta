@@ -1,6 +1,7 @@
 ---
 title: "Joker's Wild (TNT)"
 subtitle: "GRAPHIC DESIGN"
+year: "2018-2019"
 order: 52
 categories:
   - "BANNER"

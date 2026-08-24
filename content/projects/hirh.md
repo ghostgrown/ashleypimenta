@@ -1,6 +1,7 @@
 ---
 title: "CNN | How It Really Happened (CNN Original Series)"
 subtitle: "GRAPHIC DESIGN, MOTION"
+year: "2024"
 order: 8
 categories:
   - "DIGITAL"

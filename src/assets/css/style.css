@@ -903,3 +903,11 @@ a:hover { color: var(--black); }
 @media (max-width: 767px) {
   .site-main { padding-top: 64px; }
 }
+
+.project-year {
+  margin-top: 6px;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  color: var(--mid);
+}

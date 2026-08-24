@@ -16,6 +16,9 @@ eleventyComputed:
     {% if project.subtitle %}
     <p class="project-subtitle">{{ project.subtitle }}</p>
     {% endif %}
+    {% if project.year %}
+    <p class="project-year">{{ project.year }}</p>
+    {% endif %}
     {% if project.description %}
     <div class="project-description">
       {{ project.description | nl2br | safe }}

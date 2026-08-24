@@ -116,6 +116,7 @@ module.exports = function () {
       slug,
       title: getScalar("title"),
       subtitle: getScalar("subtitle"),
+      year: getScalar("year"),
       order: parseInt(getScalar("order")) || 99,
       categories: getList("categories"),
       cover: getScalar("cover"),

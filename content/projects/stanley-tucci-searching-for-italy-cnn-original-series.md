@@ -1,6 +1,7 @@
 ---
 title: "Stanley Tucci | Searching For Italy (CNN Original Series)"
 subtitle: "GRAPHIC DESIGN"
+year: "2023"
 order: 12
 categories:
   - "BANNER"

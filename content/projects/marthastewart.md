@@ -1,6 +1,7 @@
 ---
 title: "CNN | The Many Lives of Martha Stewart (CNN Original Series)"
 subtitle: "GRAPHIC DESIGN, MOTION"
+year: "2025"
 order: 7
 categories:
   - "BANNER"

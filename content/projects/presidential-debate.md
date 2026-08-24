@@ -1,6 +1,7 @@
 ---
 title: "CNN | PRESIDENTIAL DEBATE"
 subtitle: "GRAPHIC DESIGN, MOTION, PRINT"
+year: "2024"
 order: 6
 categories:
   - "DIGITAL"

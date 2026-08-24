@@ -1,6 +1,7 @@
 ---
 title: "Doosan Equipment presents Sandlot (2019 MLB Season)"
 subtitle: "VIDEO, ART DIRECTION"
+year: "2019"
 order: 16
 categories:
   - "ART DIRECTION"

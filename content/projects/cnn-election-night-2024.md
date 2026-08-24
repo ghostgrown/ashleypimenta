@@ -1,6 +1,7 @@
 ---
 title: "CNN | ELECTION NIGHT 2024"
 subtitle: "GRAPHIC DESIGN, MOTION"
+year: "2024"
 order: 5
 categories:
   - "DIGITAL"

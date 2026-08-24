@@ -1,6 +1,7 @@
 ---
 title: "CNN | Breaking Bread (CNN Original Series)"
 subtitle: "GRAPHIC DESIGN"
+year: "2025"
 order: 1
 categories:
   - "DIGITAL"

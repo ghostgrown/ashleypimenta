@@ -1,5 +1,6 @@
 ---
 title: "Bees Chalk Competition"
+year: "2018"
 hidden: true
 order: 54
 categories:

@@ -1,6 +1,7 @@
 ---
 title: "CNN | Inclusion Graphics"
 subtitle: "GRAPHIC DESIGN, PRINT"
+year: "2025"
 order: 3
 categories:
   - "BANNER"

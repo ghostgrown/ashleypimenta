@@ -1,6 +1,7 @@
 ---
 title: "CNN | BACK TO WHERE IT ALL BEGAN"
 subtitle: "GRAPHIC DESIGN, ILLUSTRATION"
+year: "2023"
 order: 9
 categories:
   - "ILLUSTRATION"

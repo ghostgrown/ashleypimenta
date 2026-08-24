@@ -1,6 +1,7 @@
 ---
 title: "Julia Child Documentary (CNN Original Films)"
 subtitle: "GRAPHIC DESIGN, COLLAGE"
+year: "2022"
 order: 11
 categories:
   - "BANNER"

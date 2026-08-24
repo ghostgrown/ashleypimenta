@@ -1,6 +1,7 @@
 ---
 title: "JetStream: Black Hat T-Shirt"
 subtitle: "ILLUSTRATION, PRINT"
+year: "2026"
 order: 4
 categories:
   - "ILLUSTRATION"

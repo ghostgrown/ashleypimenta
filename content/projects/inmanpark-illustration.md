@@ -1,5 +1,6 @@
 ---
 title: "Inman Park Festival Poster"
+year: "2018"
 hidden: true
 order: 55
 categories:

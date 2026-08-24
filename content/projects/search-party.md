@@ -1,6 +1,7 @@
 ---
 title: "Search Party (TBS)"
 subtitle: "GRAPHIC DESIGN"
+year: "2018-2019"
 order: 50
 categories:
   - "BANNER"
