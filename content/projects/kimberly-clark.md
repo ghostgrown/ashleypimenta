@@ -1,5 +1,6 @@
 ---
-title: "Kimberly-Clark"
+title: "Digital Shelf"
+client: "Kimberly-Clark"
 subtitle: "DIGITAL, E-COMMERCE"
 year: "2026"
 order: 13
@@ -13,6 +14,7 @@ gallery:
     caption: ""
     width: "1-1"
 description: |
-  Designing for Adult & Feminine Care, Baby & Child Care, and Family Care on brands such as
-  Cottonelle, Scott, Viva, Kleenex, Huggies, and Kotex.
+  Designing for Adult & Feminine Care, Baby & Child Care, and Family Care on brands such as<br class="br-wide"> Cottonelle, Scott, Viva, Kleenex, Huggies, and Kotex.
+
+  Product page imagery and content for each brand's own website and for retailers including<br class="br-wide"> Amazon, Target, Walmart, and Costco.
 ---

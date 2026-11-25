@@ -1,5 +1,6 @@
 ---
-title: "CNN | ELECTION NIGHT 2024"
+title: "Election Night 2024"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, MOTION"
 year: "2024"
 order: 5

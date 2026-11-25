@@ -1,5 +1,6 @@
 ---
-title: "CNN | PRESIDENTIAL DEBATE"
+title: "Presidential Debate"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, MOTION, PRINT"
 year: "2024"
 order: 6

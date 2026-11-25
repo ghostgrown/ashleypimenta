@@ -1,5 +1,6 @@
 ---
-title: "CNN | Christiane Amanpour 40TH Anniversary (Special Edition 2023 Pin)"
+title: "Christiane Amanpour 40th Anniversary (Special Edition 2023 Pin)"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, ILLUSTRATION"
 year: "2023"
 order: 10

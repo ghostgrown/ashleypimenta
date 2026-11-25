@@ -1,5 +1,6 @@
 ---
-title: "JetStream: Black Hat T-Shirt"
+title: "Black Hat T-Shirt"
+client: "JetStream Cybersecurity"
 subtitle: "ILLUSTRATION, PRINT"
 year: "2026"
 order: 4

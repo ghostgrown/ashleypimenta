@@ -1,5 +1,6 @@
 ---
-title: "Stanley Tucci | Searching For Italy (CNN Original Series)"
+title: "Stanley Tucci: Searching For Italy (A CNN Original Series)"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN"
 year: "2023"
 order: 12
@@ -45,7 +46,7 @@ gallery:
     caption: "Stanley Tucci Invite"
     width: "1-1"
 description: |
-  CNN Original Series: Stanley Tucci Searching For Italy
+  A CNN Original Series: Stanley Tucci Searching For Italy
 links:
   - label: "Warner Bros. Discovery"
     url: "https://wbd.com/two-time-emmy-award-winning-cnn-original-series-stanley-tucci-searching-for-italy-continues-its-second-season-sunday-october-9-at-9pm-et-pt/"

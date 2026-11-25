@@ -1,5 +1,6 @@
 ---
-title: "Moonstruck Fine Foods"
+title: "Menu Design"
+client: "Moonstruck Fine Foods"
 subtitle: "MENU DESIGN"
 year: "2021"
 order: 15

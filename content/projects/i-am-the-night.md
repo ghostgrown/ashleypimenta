@@ -1,5 +1,6 @@
 ---
-title: "I am The Night (TNT)"
+title: "I Am the Night (TNT)"
+client: "Turner Broadcasting"
 subtitle: "GRAPHIC DESIGN"
 year: "2018-2019"
 order: 18

@@ -1,5 +1,6 @@
 ---
-title: "CNN | Inclusion Graphics"
+title: "Inclusion Graphics"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, PRINT"
 year: "2025"
 order: 3

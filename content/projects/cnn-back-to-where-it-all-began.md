@@ -1,5 +1,6 @@
 ---
-title: "CNN | BACK TO WHERE IT ALL BEGAN"
+title: "Back to Where It All Began"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, ILLUSTRATION"
 year: "2023"
 order: 9

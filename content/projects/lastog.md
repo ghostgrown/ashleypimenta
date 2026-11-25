@@ -1,5 +1,6 @@
 ---
 title: "The Last O.G. (TBS)"
+client: "Turner Broadcasting"
 subtitle: "GRAPHIC DESIGN"
 year: "2018-2019"
 order: 20

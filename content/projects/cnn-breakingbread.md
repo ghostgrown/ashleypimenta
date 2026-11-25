@@ -1,5 +1,6 @@
 ---
-title: "CNN | Breaking Bread (CNN Original Series)"
+title: "Breaking Bread (A CNN Original Series)"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN"
 year: "2025"
 order: 1

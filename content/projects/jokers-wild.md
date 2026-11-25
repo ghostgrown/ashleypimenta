@@ -1,5 +1,6 @@
 ---
 title: "Joker's Wild (TNT)"
+client: "Turner Broadcasting"
 subtitle: "GRAPHIC DESIGN"
 year: "2018-2019"
 order: 52

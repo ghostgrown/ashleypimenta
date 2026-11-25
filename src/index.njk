@@ -56,6 +56,7 @@ bodyClass: home-page
     <img src="{{ p.cover }}" alt="{{ p.title }}" loading="{% if loop.index <= 8 %}eager{% else %}lazy{% endif %}">
     {% endif %}
     <div class="portfolio-item-overlay">
+      {% if p.client %}<p class="portfolio-item-client">{{ p.client }}</p>{% endif %}
       <h3 class="portfolio-item-title">{{ p.title }}</h3>
     </div>
   </a>

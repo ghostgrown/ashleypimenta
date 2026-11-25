@@ -1,5 +1,6 @@
 ---
 title: "Search Party (TBS)"
+client: "Turner Broadcasting"
 subtitle: "GRAPHIC DESIGN"
 year: "2018-2019"
 order: 50

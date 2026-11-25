@@ -1,5 +1,6 @@
 ---
-title: "CNN | The Many Lives of Martha Stewart (CNN Original Series)"
+title: "The Many Lives of Martha Stewart (A CNN Original Series)"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, MOTION"
 year: "2025"
 order: 7

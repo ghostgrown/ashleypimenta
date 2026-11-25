@@ -1,5 +1,6 @@
 ---
 title: "MLB Post Season 2018 (TBS)"
+client: "Turner Broadcasting"
 subtitle: "GRAPHIC DESIGN"
 year: "2018"
 order: 22

@@ -1,5 +1,6 @@
 ---
-title: "CNN | How It Really Happened (CNN Original Series)"
+title: "How It Really Happened (A CNN Original Series)"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, MOTION"
 year: "2024"
 order: 8
@@ -41,7 +42,7 @@ gallery:
     caption: "On-Air Fullscreen Graphic"
     width: "1-1"
 description: |
-  CNN Original Series: How It Really Happened
+  A CNN Original Series: How It Really Happened
 links:
   - label: "PRESS ROOM"
     url: "https://cnnpressroom.blogs.cnn.com/2024/10/24/cnn-original-series-how-it-really-happened-hosted-by-jesse-l-martin-returns-on-sunday-november-17-at-9pm-et-pt/"

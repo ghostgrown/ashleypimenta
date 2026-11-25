@@ -1,5 +1,6 @@
 ---
-title: "CNN | Eva Longoria: Searching For Spain (CNN Original Series)"
+title: "Eva Longoria: Searching For Spain (A CNN Original Series)"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, PRINT, DIGITAL"
 year: "2025"
 order: 2

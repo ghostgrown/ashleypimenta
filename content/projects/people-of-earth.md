@@ -1,5 +1,6 @@
 ---
-title: "People of Earth Vinyl Cover"
+title: "Vinyl Cover"
+client: "People of Earth"
 subtitle: "PRINT"
 year: "2019"
 order: 16

@@ -12,6 +12,7 @@ eleventyComputed:
 <div class="project-page">
   <div class="project-header">
     <a href="/" class="back-link">&#8592; Work</a>
+    {% if project.client %}<p class="project-client">{{ project.client }}</p>{% endif %}
     <h1 class="project-title">{{ project.title }}</h1>
     {% if project.subtitle %}
     <p class="project-subtitle">{{ project.subtitle }}</p>

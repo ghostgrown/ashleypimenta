@@ -1,5 +1,6 @@
 ---
-title: "Doosan Equipment presents Sandlot (2019 MLB Season)"
+title: "Sandlot (2019 MLB Season)"
+client: "Doosan Equipment"
 subtitle: "VIDEO, ART DIRECTION"
 year: "2019"
 order: 17

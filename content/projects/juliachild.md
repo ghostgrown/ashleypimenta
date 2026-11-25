@@ -1,5 +1,6 @@
 ---
-title: "Julia Child Documentary (CNN Original Films)"
+title: "Julia Child Documentary (A CNN Original Film)"
+client: "CNN"
 subtitle: "GRAPHIC DESIGN, COLLAGE"
 year: "2022"
 order: 11
@@ -79,7 +80,7 @@ gallery:
     caption: ""
     width: "1-2"
 description: |
-  CNN Original Films: Julia Child Documentary
+  A CNN Original Film: Julia Child Documentary
 links:
   - label: "HBO Max Media Release"
     url: "https://pressroom.warnermedia.com/us/media-release/hbo-max/hbo-max-orders-julia-series-lionsgate-television-and-3-arts-entertainment"
