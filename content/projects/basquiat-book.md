@@ -1,7 +1,7 @@
 ---
 title: "The Art and Story of Jean-Michel Basquiat"
 exploration: true
-order: 25
+order: 26
 categories:
   - "PRINT"
 cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470511/e4uadfpgrti4gdgdhyvc.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "Palms Nights Campaign"
 exploration: true
-order: 24
+order: 25
 categories:
   - "DIGITAL"
   - "PRINT"

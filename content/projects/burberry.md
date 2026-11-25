@@ -1,7 +1,7 @@
 ---
 title: "Burberry Invitation"
 exploration: true
-order: 22
+order: 23
 categories:
   - "PRINT"
 cover: "https://res.cloudinary.com/uwsjmkh2/image/upload/v1783470513/vwf6fctjzgqic6f7wirn.jpg"
