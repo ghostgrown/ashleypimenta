@@ -3,7 +3,7 @@ title: "Digital Shelf"
 client: "Kimberly-Clark"
 subtitle: "DIGITAL, E-COMMERCE"
 year: "2026"
-order: 13
+order: 5
 categories:
   - "DIGITAL"
   - "E-COMMERCE"

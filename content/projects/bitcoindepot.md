@@ -3,7 +3,7 @@ title: "Rebrand"
 client: "Bitcoin Depot"
 subtitle: "ART DIRECTION & BRAND IDENTITY"
 year: "2019-2021"
-order: 14
+order: 13
 categories:
   - "ART DIRECTION"
   - "BANNER"

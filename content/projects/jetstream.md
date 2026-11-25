@@ -3,7 +3,7 @@ title: "Black Hat T-Shirt"
 client: "JetStream Cybersecurity"
 subtitle: "ILLUSTRATION, PRINT"
 year: "2026"
-order: 4
+order: 14
 categories:
   - "ILLUSTRATION"
   - "PRINT"
