@@ -933,3 +933,41 @@ a:hover { color: var(--black); }
   letter-spacing: 0.12em;
   color: var(--mid);
 }
+
+/* ============================================================
+   ABOUT: BRANDS WORKED WITH (logo strip, mirrors bettencourtstudios.com)
+   ============================================================ */
+.about-brands {
+  --bg: #ffffff; /* knockout fill used inside a few inline logo SVGs */
+  width: min(1000px, calc(100vw - 2 * var(--gutter)));
+  margin-left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-bottom: 0;
+}
+.brands-strip {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  justify-items: center;
+  align-items: center;
+  gap: 40px 16px;
+  margin-top: 28px;
+}
+.brand-logo {
+  height: 24px;
+  width: auto;
+  max-width: 100%;
+  color: var(--black);
+  opacity: 0.4;
+  transition: opacity 0.2s;
+  display: block;
+}
+.brand-logo:hover { opacity: 0.75; }
+.brand-img { filter: brightness(0); object-fit: contain; }
+@media (max-width: 991px) {
+  .brands-strip { grid-template-columns: repeat(4, 1fr); gap: 36px 16px; }
+}
+@media (max-width: 767px) {
+  .brands-strip { gap: 28px 12px; }
+  .brand-logo { transform: scale(0.8); }
+}
